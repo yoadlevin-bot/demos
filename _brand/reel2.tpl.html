@@ -1,0 +1,48 @@
+<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><link rel="stylesheet" href="base.css"><link rel="stylesheet" href="reel.css"><link rel="stylesheet" href="tech.css"><style>.stage.grid:before{z-index:0}.big em,.mid em{text-shadow:0 0 50px rgba(63,149,246,.55)}.num{text-shadow:0 0 70px rgba(63,149,246,.55)}</style>
+<style>
+.num{font:900 420px/0.8 Heebo;letter-spacing:-.04em;color:var(--acc);direction:ltr;text-align:right;opacity:0;transform:translateX(-60px);transition:all .7s cubic-bezier(.2,.8,.2,1)}
+.on .num{opacity:1;transform:none}
+.light{background:var(--paper);color:var(--ink)}
+</style></head><body>
+<div class="stage grid grain on-dark">
+  {{LOGO_D}}
+
+  <section class="sc" id="s1">
+    <div class="big" style="font-size:136px"><span class="ln"><span>3 סימנים</span></span><span class="ln"><span>שהאתר שלך</span></span><span class="ln"><span><em>מבריח לקוחות</em></span></span></div>
+  </section>
+
+  <section class="sc" id="s2">
+    <div class="num">01</div>
+    <div class="mid" style="margin-top:40px"><span class="ln"><span>בטלפון צריך</span></span><span class="ln"><span>לעשות <em style="font-style:normal;color:var(--acc)">זום</em> כדי לקרוא.</span></span></div>
+    <div class="sub pop d3">רוב האנשים מחפשים עסק מהטלפון. אם קשה לקרוא, הם סוגרים ועוברים הלאה.</div>
+  </section>
+
+  <section class="sc" id="s3">
+    <div class="num">02</div>
+    <div class="mid" style="margin-top:40px"><span class="ln"><span>אין כפתור</span></span><span class="ln"><span>וואטסאפ או חיוג.</span></span></div>
+    <div class="sub pop d3">מי שרוצה לפנות לא יחפש את המספר שלך. הוא צריך לחיצה אחת.</div>
+  </section>
+
+  <section class="sc" id="s4">
+    <div class="num">03</div>
+    <div class="mid" style="margin-top:40px"><span class="ln"><span>האתר נראה</span></span><span class="ln"><span>כאילו עצר בזמן.</span></span></div>
+    <div class="sub pop d3">אתר ישן ומוזנח גורם ללקוח לתהות אם גם העסק ככה.</div>
+  </section>
+
+  <section class="sc" id="s5">
+    <div class="mid"><span class="ln"><span>זיהית סימן אחד?</span></span><span class="ln"><span class="thin">שלח לי את הקישור,</span></span><span class="ln"><span class="thin">ואגיד לך מה הייתי משפר.</span></span></div>
+    <div class="sub pop d3" style="color:var(--acc);opacity:1;font-weight:700">בחינם, בלי התחייבות.</div>
+    <div class="pop d4" style="margin-top:60px"><div class="cta">{{WA}}<span class="ltr">058-7336636</span></div></div>
+  </section>
+  <div class="progress" id="pg"></div>
+</div>
+<script>
+const T=[["s1",0],["s2",2800],["s3",6400],["s4",10000],["s5",13600]];
+const total=18000;
+function show(id){document.querySelectorAll('.sc').forEach(s=>s.classList.toggle('on',s.id===id))}
+window.start=function(){
+  const pg=document.getElementById('pg');pg.style.transition=`width ${total}ms linear`;requestAnimationFrame(()=>pg.style.width='100%');
+  T.forEach(([id,t])=>setTimeout(()=>show(id),t));
+};
+if(!location.search.includes('rec'))start();
+</script></body></html>

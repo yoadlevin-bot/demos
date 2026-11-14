@@ -1,0 +1,11 @@
+/* tech look: navy + logo blue, grid, glow, glass */
+.t-dark{background:radial-gradient(90% 60% at 85% 0%,rgba(63,149,246,.28),transparent 60%),radial-gradient(70% 50% at 0% 100%,rgba(37,99,235,.22),transparent 60%),var(--ink);color:#fff}
+.t-deep{background:radial-gradient(80% 55% at 50% 110%,rgba(63,149,246,.35),transparent 60%),#070C18;color:#fff}
+.t-blue{background:radial-gradient(80% 60% at 90% 0%,#5AA8FF,transparent 55%),linear-gradient(160deg,#2F7FF0,#2563EB 55%,#1C46B8);color:#fff}
+.grid:before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px);background-size:72px 72px;-webkit-mask-image:radial-gradient(120% 90% at 70% 20%,#000 30%,transparent 80%);mask-image:radial-gradient(120% 90% at 70% 20%,#000 30%,transparent 80%)}
+.tag-mono{font:700 30px/1 Heebo;letter-spacing:.02em;color:var(--acc);direction:rtl;display:inline-flex;align-items:center;gap:12px}
+.tag-mono:before{content:"";width:12px;height:12px;border-radius:50%;background:var(--acc);box-shadow:0 0 18px var(--acc)}
+.t-blue .tag-mono{color:#fff}.t-blue .tag-mono:before{background:#fff;box-shadow:0 0 18px #fff}
+.glow{color:var(--acc);text-shadow:0 0 40px rgba(63,149,246,.55)}
+.glass{background:linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.14);border-radius:28px;backdrop-filter:blur(10px);box-shadow:0 40px 80px -30px rgba(0,0,0,.6)}
+.chip{display:inline-flex;align-items:center;gap:12px;padding:14px 22px;border-radius:999px;border:1px solid rgba(63,149,246,.5);background:rgba(63,149,246,.12);font:700 28px/1 Heebo;color:#cfe3ff}

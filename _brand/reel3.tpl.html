@@ -1,0 +1,42 @@
+<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><link rel="stylesheet" href="base.css"><link rel="stylesheet" href="reel.css"><link rel="stylesheet" href="tech.css"><style>.stage.grid:before{z-index:0}.big em,.mid em{text-shadow:0 0 50px rgba(63,149,246,.55)}.num{text-shadow:0 0 70px rgba(63,149,246,.55)}</style>
+<style>
+.stage.paper{background:var(--paper);color:var(--ink)}
+.step{opacity:0;transform:translateX(-50px);transition:all .6s cubic-bezier(.2,.8,.2,1)}
+.step.show{opacity:1;transform:none}
+.step .n{background:var(--ink)}
+.step.done .n{background:var(--acc);color:#fff}
+</style></head><body>
+<div class="stage grid grain on-dark">
+  {{LOGO_D}}
+
+  <section class="sc" id="s1">
+    <div class="big" style="font-size:136px"><span class="ln"><span>רוצה אתר,</span></span><span class="ln"><span>אבל לא רוצה</span></span><span class="ln"><span><em>לקנות חתול</em></span></span><span class="ln"><span><em>בשק?</em></span></span></div>
+  </section>
+
+  <section class="sc" id="s2">
+    <div class="tag-mono" style="font-size:40px">ככה זה עובד</div>
+    <div class="step" id="st1"><div class="n">1</div><div class="tx">שולחים לי את שם העסק<small>בוואטסאפ, הודעה אחת.</small></div></div>
+    <div class="step" id="st2"><div class="n">2</div><div class="tx">אני בונה סקיצה ראשונה<small>בחינם, עם הפרטים והסגנון שלך.</small></div></div>
+    <div class="step" id="st3"><div class="n">3</div><div class="tx">רואים, מתקנים, ורק אז<br>מתחייבים<small>5 סבבי תיקונים כלולים.</small></div></div>
+  </section>
+
+  <section class="sc" id="s3">
+    <div class="mid"><span class="ln"><span>אתה רואה</span></span><span class="ln"><span>את האתר שלך</span></span><span class="ln"><span><em style="font-style:normal">לפני</em> שאתה מחליט.</span></span></div>
+    <div class="pop d3" style="margin-top:70px"><div class="cta">{{WA}}<span class="ltr">058-7336636</span></div></div>
+  </section>
+  <div class="progress" id="pg"></div>
+</div>
+<script>
+const T=[["s1",0],["s2",3000],["s3",12600]];
+const total=17000;
+function show(id){document.querySelectorAll('.sc').forEach(s=>s.classList.toggle('on',s.id===id))}
+const add=(id,c,t)=>setTimeout(()=>document.getElementById(id).classList.add(c),t);
+window.start=function(){
+  const pg=document.getElementById('pg');pg.style.transition=`width ${total}ms linear`;requestAnimationFrame(()=>pg.style.width='100%');
+  T.forEach(([id,t])=>setTimeout(()=>show(id),t));
+  add('st1','show',3500);add('st1','done',5600);
+  add('st2','show',5900);add('st2','done',8200);
+  add('st3','show',8500);add('st3','done',11000);
+};
+if(!location.search.includes('rec'))start();
+</script></body></html>

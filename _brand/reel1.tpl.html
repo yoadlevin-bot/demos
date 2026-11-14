@@ -1,0 +1,52 @@
+<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><link rel="stylesheet" href="base.css"><link rel="stylesheet" href="reel.css"><link rel="stylesheet" href="tech.css"><style>.stage.grid:before{z-index:0}.big em,.mid em{text-shadow:0 0 50px rgba(63,149,246,.55)}.num{text-shadow:0 0 70px rgba(63,149,246,.55)}</style></head><body>
+<div class="stage grid grain on-dark">
+  {{LOGO_D}}
+
+  <section class="sc" id="s1">
+    <div class="big"><span class="ln"><span>לעסק שלך</span></span><span class="ln"><span><em>אין אתר?</em></span></span></div>
+    <div class="sub pop d2">תראה מה הלקוחות שלך רואים.</div>
+  </section>
+
+  <section class="sc" id="s2">
+    <div class="search pop">
+      <div class="bar">🔍 <span id="q"></span><span class="caret"></span></div>
+      <div class="r" id="r1"><span class="u">www.example-law.co.il</span><span class="t">משרד עו״ד · צוואות וירושות</span></div>
+      <div class="r" id="r2"><span class="u">www.example-legal.co.il</span><span class="t">עורכת דין לענייני ירושה</span></div>
+      <div class="r you" id="r3"><span class="t">העסק שלך <span class="tag">לא מופיע</span></span></div>
+    </div>
+    <div class="mid" id="lost" style="margin-top:80px;font-size:84px;opacity:0;transform:translateY(40px);transition:all .6s cubic-bezier(.2,.8,.2,1)">הלקוח הלך<br><span style="color:var(--acc)">למתחרה.</span></div>
+  </section>
+
+  <section class="sc" id="s3">
+    <div class="big"><span class="ln"><span>בוא נתקן</span></span><span class="ln"><span><em>את זה.</em></span></span></div>
+  </section>
+
+  <section class="sc" id="s4" style="padding-top:120px">
+    <div class="phone pop"><div class="notch"></div><div class="scr"><div class="site" id="site">%%SITE%%</div></div></div>
+    <div class="label">קונספט · עיצוב אישי לכל עסק</div>
+  </section>
+
+  <section class="sc" id="s5">
+    <div class="mid" style="font-size:88px"><span class="ln"><span>תראה את האתר שלך</span></span><span class="ln"><span><em style="font-style:normal">לפני</em> שאתה משלם.</span></span></div>
+    <div class="sub pop d2" style="margin-top:50px">סקיצה ראשונה בחינם.<br>מותאם לטלפון, נגיש, עם וואטסאפ.</div>
+    <div class="pop d3" style="margin-top:70px"><div class="cta">{{WA}}<span class="ltr">058-7336636</span></div></div>
+  </section>
+  <div class="progress" id="pg"></div>
+</div>
+<script>
+const T=[["s1",0],["s2",2600],["s3",8200],["s4",10000],["s5",17600]];
+const total=21500;
+function show(id){document.querySelectorAll('.sc').forEach(s=>s.classList.toggle('on',s.id===id))}
+function typeQ(txt,ms){const q=document.getElementById('q');let i=0;const iv=setInterval(()=>{q.textContent=txt.slice(0,++i);if(i>=txt.length)clearInterval(iv)},ms)}
+window.start=function(){
+  const pg=document.getElementById('pg');pg.style.transition=`width ${total}ms linear`;requestAnimationFrame(()=>pg.style.width='100%');
+  T.forEach(([id,t])=>setTimeout(()=>show(id),t));
+  setTimeout(()=>typeQ('עורך דין לצוואות ראש העין',55),3100);
+  setTimeout(()=>document.getElementById('r1').classList.add('show'),4700);
+  setTimeout(()=>document.getElementById('r2').classList.add('show'),5100);
+  setTimeout(()=>document.getElementById('r3').classList.add('show'),5700);
+  setTimeout(()=>{const l=document.getElementById('lost');l.style.opacity=1;l.style.transform='none'},6600);
+  setTimeout(()=>{const s=document.getElementById('site');const h=s.scrollHeight-1176;s.style.transform=`translateY(${-h}px)`},11000);
+};
+if(!location.search.includes('rec'))start();
+</script></body></html>

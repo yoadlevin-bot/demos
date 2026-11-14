@@ -1,0 +1,30 @@
+@font-face{font-family:Heebo;font-weight:300;src:url(node_modules/@fontsource/heebo/files/heebo-hebrew-300-normal.woff2)}
+@font-face{font-family:Heebo;font-weight:400;src:url(node_modules/@fontsource/heebo/files/heebo-hebrew-400-normal.woff2)}
+@font-face{font-family:Heebo;font-weight:500;src:url(node_modules/@fontsource/heebo/files/heebo-hebrew-500-normal.woff2)}
+@font-face{font-family:Heebo;font-weight:700;src:url(node_modules/@fontsource/heebo/files/heebo-hebrew-700-normal.woff2)}
+@font-face{font-family:Heebo;font-weight:800;src:url(node_modules/@fontsource/heebo/files/heebo-hebrew-800-normal.woff2)}
+@font-face{font-family:Heebo;font-weight:900;src:url(node_modules/@fontsource/heebo/files/heebo-hebrew-900-normal.woff2)}
+@font-face{font-family:Heebo;font-weight:300;src:url(node_modules/@fontsource/heebo/files/heebo-latin-300-normal.woff2);unicode-range:U+0000-00FF,U+20AA}
+@font-face{font-family:Heebo;font-weight:400;src:url(node_modules/@fontsource/heebo/files/heebo-latin-400-normal.woff2);unicode-range:U+0000-00FF,U+20AA}
+@font-face{font-family:Heebo;font-weight:500;src:url(node_modules/@fontsource/heebo/files/heebo-latin-500-normal.woff2);unicode-range:U+0000-00FF,U+20AA}
+@font-face{font-family:Heebo;font-weight:700;src:url(node_modules/@fontsource/heebo/files/heebo-latin-700-normal.woff2);unicode-range:U+0000-00FF,U+20AA}
+@font-face{font-family:Heebo;font-weight:800;src:url(node_modules/@fontsource/heebo/files/heebo-latin-800-normal.woff2);unicode-range:U+0000-00FF,U+20AA}
+@font-face{font-family:Heebo;font-weight:900;src:url(node_modules/@fontsource/heebo/files/heebo-latin-900-normal.woff2);unicode-range:U+0000-00FF,U+20AA}
+/* Levin Web Design brand tokens: navy + logo blue, taken from the logo and levin-webdesign.com */
+:root{--ink:#0B1324;--ink2:#15213B;--paper:#F6F7F9;--mist:#E6EDF8;--acc:#3F95F6;--acc-d:#2563EB;--mute:#5B6577;--wa:#0B7A3B}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#888;font-family:Heebo,sans-serif;direction:rtl;-webkit-font-smoothing:antialiased}
+.slide{position:relative;overflow:hidden;width:1080px;height:1350px;margin:0 0 40px}
+.story{height:1920px}
+.ltr{direction:ltr;unicode-bidi:isolate}
+/* logo lockup: mark + wordmark, same as the site header */
+.logo{position:absolute;display:flex;align-items:center;gap:18px;direction:ltr}
+.logo img{height:64px;width:auto;display:block}
+.logo .wm{display:flex;flex-direction:column;line-height:1}
+.logo .wm b{font:800 34px/1 Heebo;letter-spacing:.16em}
+.logo .wm small{font:600 15px/1 Heebo;letter-spacing:.42em;color:var(--acc);margin-top:7px}
+.on-dark .logo .wm b{color:#fff}.on-light .logo .wm b{color:var(--ink)}
+.on-light .logo .wm small{color:var(--acc-d)}
+.kicker{font:700 30px/1 Heebo;letter-spacing:.01em;display:flex;align-items:center;gap:16px}
+.kicker svg{width:34px;height:34px;flex:none}
+.grain:after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E")}

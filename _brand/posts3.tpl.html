@@ -1,0 +1,171 @@
+<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><link rel="stylesheet" href="base.css"><link rel="stylesheet" href="tech.css"><style>
+.dark{background:radial-gradient(110% 70% at 90% 0%,#1B2C55 0%,var(--ink) 58%);color:#fff}
+.light{background:var(--paper);color:var(--ink)}
+.mist{background:var(--mist);color:var(--ink)}
+.blue{background:linear-gradient(160deg,#2F7FF0,var(--acc-d) 60%,#1D4FC4);color:#fff}
+.pad{position:absolute;inset:100px 90px}
+.logo{bottom:76px;right:90px}
+.pg{position:absolute;bottom:96px;left:90px;font:500 28px/1 Heebo;opacity:.55;direction:ltr}
+h1{font:900 112px/1.02 Heebo;letter-spacing:-.025em;text-wrap:balance}
+h1 .thin{font-weight:300}
+h1 em,h2 em{font-style:normal;color:var(--acc)}
+.light h1 em,.mist h1 em,.light h2 em,.mist h2 em{color:var(--acc-d)}
+.blue h1 em{color:var(--ink)}
+h2{font:900 86px/1.05 Heebo;letter-spacing:-.02em}
+p.body{font:400 42px/1.55 Heebo;max-width:860px}
+.num{font:900 260px/0.8 Heebo;letter-spacing:-.04em;color:var(--acc);position:absolute;top:110px;left:90px;direction:ltr;opacity:.95}
+.mist .num,.light .num{color:var(--acc-d)}
+.swipe{position:absolute;bottom:96px;left:90px;font:700 30px/1 Heebo;display:flex;gap:14px;align-items:center}
+.cta{display:inline-flex;align-items:center;gap:20px;padding:30px 44px;border-radius:16px;font:800 42px/1 Heebo;background:var(--acc-d);color:#fff;box-shadow:0 30px 60px -24px rgba(37,99,235,.7)}
+.blue .logo .wm small{color:#D6E6FF}
+.blue .cta{background:#fff;color:var(--acc-d);box-shadow:0 30px 60px -24px rgba(0,0,0,.45)}
+.cta svg{width:46px;height:46px}
+.tel{font:800 48px/1 Heebo;margin-top:30px;direction:ltr;text-align:right}
+.list{list-style:none;display:grid;gap:30px;margin-top:64px}
+.list li{display:flex;gap:26px;align-items:flex-start;font:500 44px/1.3 Heebo}
+.list li b{font-weight:900}
+.ck{flex:none;width:58px;height:58px;border-radius:50%;background:var(--acc-d);display:grid;place-items:center;margin-top:-2px}
+.ck svg{width:30px;height:30px}
+.rule{height:2px;background:currentColor;opacity:.15;margin:56px 0}
+.search{background:#fff;border-radius:28px;padding:40px 44px;box-shadow:0 40px 80px -30px rgba(11,19,36,.45);color:var(--ink)}
+.search .bar{display:flex;align-items:center;gap:20px;border:2px solid #E3E5EA;border-radius:999px;padding:22px 30px;font:400 36px/1 Heebo;color:#333}
+.search .bar svg{width:38px;height:38px}
+.search .res{margin-top:34px;display:grid;gap:30px}
+.search .r{display:grid;gap:10px}
+.search .u{font:400 26px/1 Heebo;color:#5f6b7a;direction:ltr;text-align:right}
+.search .t{font:500 38px/1.2 Heebo;color:#1a3fbf}
+.search .you .t{color:#9aa0aa}
+.tag{display:inline-block;font:700 26px/1 Heebo;background:#ffe3dc;color:#cc3311;padding:10px 16px;border-radius:10px;margin-right:12px;vertical-align:middle}
+.ico{position:absolute;left:90px;bottom:200px;width:320px;height:320px}
+.phone{position:absolute;width:470px;height:960px;border-radius:70px;background:#060a14;padding:18px;box-shadow:0 60px 120px -30px rgba(0,0,0,.55),inset 0 0 0 2px #26324f}
+.phone .scr{width:100%;height:100%;border-radius:54px;overflow:hidden;position:relative;background:var(--paper)}
+.phone .notch{position:absolute;top:30px;left:50%;transform:translateX(-50%);width:130px;height:36px;border-radius:20px;background:#060a14;z-index:3}
+.price{display:flex;align-items:baseline;gap:18px;margin-top:40px}
+.price b{font:900 120px/1 Heebo;letter-spacing:-.03em;color:var(--acc);direction:ltr}
+.price span{font:500 38px/1.3 Heebo;opacity:.8}
+
+.slide{color:#fff}
+.num{font:900 250px/0.8 Heebo;letter-spacing:-.04em;color:var(--acc);position:absolute;top:110px;left:90px;direction:ltr;text-shadow:0 0 60px rgba(63,149,246,.5)}
+h1 em,h2 em{color:var(--acc);text-shadow:0 0 40px rgba(63,149,246,.45)}
+.t-blue h1 em,.t-blue h2 em{color:var(--ink);text-shadow:none}
+p.body{color:rgba(255,255,255,.82)}
+.t-blue p.body{color:#fff}
+.cta{background:var(--acc-d);color:#fff}
+.t-blue .cta{background:var(--ink);color:#fff;box-shadow:0 30px 60px -24px rgba(0,0,0,.5)}
+.t-blue .logo .wm small{color:#D6E6FF}
+.search.glass{background:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.04));color:#fff}
+.search.glass .bar{border-color:rgba(255,255,255,.18);color:#fff}
+.search.glass .u{color:#9fb3d1}.search.glass .t{color:#8cc0ff}.search.glass .you .t{color:#6f7d96}
+.ico{stroke:var(--acc)!important;filter:drop-shadow(0 0 24px rgba(63,149,246,.45))}
+.list li{color:#fff}
+</style></head><body>
+
+<!-- POST 1: carousel A -->
+<section class="slide t-dark grid grain">
+  <div class="pad">
+    <div class="tag-mono">לבעלי עסקים</div>
+    <h1 style="margin-top:60px">3 סיבות<br>שלקוחות<br><em>לא מוצאים</em><br><span class="thin">אותך בגוגל</span></h1>
+  </div>
+  <div class="search glass" style="position:absolute;left:90px;right:90px;bottom:240px">
+    <div class="bar">{{SEARCH}}<span>עורך דין לצוואות ראש העין</span></div>
+    <div class="res">
+      <div class="r"><span class="u">www.example-law.co.il</span><span class="t">משרד עו״ד · צוואות וירושות</span></div>
+      <div class="r you"><span class="t">העסק שלך <span class="tag">לא מופיע</span></span></div>
+    </div>
+  </div>
+  <div class="swipe">החליקו ←</div>
+  {{LOGO_D}}
+</section>
+<section class="slide t-deep grid grain">
+  <div class="num">01</div>
+  <div class="pad" style="top:440px"><h2>אין לך <em>אתר.</em></h2>
+  <p class="body" style="margin-top:40px">מי שמחפש בגוגל שירות כמו שלך מגיע למי שיש לו אתר. גם אם אתה מעולה, גם אם יש לך 50 ביקורות. בלי אתר, אתה פשוט לא בתחרות.</p></div>
+  {{ICON_GLOBE}}{{LOGO_D}}<div class="pg">2/5</div>
+</section>
+<section class="slide t-dark grid grain">
+  <div class="num">02</div>
+  <div class="pad" style="top:440px"><h2>הפרופיל בגוגל<br><em>חצי ריק.</em></h2>
+  <p class="body" style="margin-top:40px">בלי שעות פתיחה, בלי תמונות, בלי תשובות לביקורות. לקוח שרואה פרופיל מוזנח עובר לעסק הבא, בלי לחשוב פעמיים.</p></div>
+  {{ICON_PIN}}{{LOGO_D}}<div class="pg">3/5</div>
+</section>
+<section class="slide t-deep grid grain">
+  <div class="num">03</div>
+  <div class="pad" style="top:440px"><h2>האתר לא נוח<br><em>בטלפון.</em></h2>
+  <p class="body" style="margin-top:40px">רוב האנשים מחפשים עסק מהטלפון. אם צריך לעשות זום כדי לקרוא, או שאין כפתור להתקשר, הם יוצאים תוך שניות.</p></div>
+  {{ICON_PHONE}}{{LOGO_D}}<div class="pg">4/5</div>
+</section>
+<section class="slide t-blue grid grain">
+  <div class="pad">
+    <div class="tag-mono">סקיצה ראשונה בחינם</div>
+    <h1 style="margin-top:60px;font-size:106px">תראה את<br>האתר שלך<br><em>לפני</em> שאתה<br><span class="thin">משלם.</span></h1>
+    <p class="body" style="margin-top:44px">שלח לי את שם העסק בוואטסאפ, ואבנה לך סקיצה ראשונה. בחינם, בלי התחייבות.</p>
+    <div style="margin-top:54px"><div class="cta">{{WA}}<span class="ltr">058-7336636</span></div></div>
+  </div>
+  {{LOGO_W}}<div class="pg">5/5</div>
+</section>
+
+<!-- POST 2: carousel B -->
+<section class="slide t-dark grid grain">
+  <div class="pad">
+    <div class="tag-mono">לעורכי דין</div>
+    <h1 style="margin-top:60px">5 דברים<br>שחייבים<br>להיות <em>באתר</em><br><span class="thin">של עורך דין</span></h1>
+  </div>
+  <div class="phone" style="left:80px;bottom:-250px;transform:rotate(-8deg)"><div class="notch"></div><div class="scr" style="background:linear-gradient(180deg,#15213B 0 46%,var(--paper) 46%)">
+    <div style="padding:120px 40px 0;color:#fff"><div style="font:400 24px/1 Heebo;color:#9fc6fb">קונספט · משרד עורכי דין</div><div style="font:900 52px/1.05 Heebo;margin-top:22px">ליווי משפטי<br>בגובה העיניים</div><div style="margin-top:30px;display:inline-block;background:var(--acc-d);padding:16px 26px;border-radius:12px;font:700 26px/1 Heebo">שיחת ייעוץ</div></div>
+    <div style="padding:70px 40px;display:grid;gap:18px"><div style="height:22px;background:#d6dde8;border-radius:6px;width:80%"></div><div style="height:22px;background:#e2e8f1;border-radius:6px"></div><div style="height:22px;background:#e2e8f1;border-radius:6px;width:65%"></div></div>
+  </div></div>
+  <div class="swipe" style="left:auto;right:90px;bottom:240px">החליקו ←</div>
+  {{LOGO_D}}
+</section>
+<section class="slide t-deep grid grain">
+  <div class="pad">
+    <div class="tag-mono">הרשימה</div>
+    <ul class="list">
+      <li>{{CK}}<span><b>תחומי עיסוק ברורים.</b> הלקוח צריך להבין תוך 3 שניות אם אתה מתאים לבעיה שלו.</span></li>
+      <li>{{CK}}<span><b>תמונה אמיתית שלך.</b> אנשים בוחרים עורך דין שהם סומכים עליו, לא לוגו.</span></li>
+      <li>{{CK}}<span><b>וואטסאפ וטלפון בכל מסך.</b> מי שמתלבט צריך דרך קלה לפנות, עכשיו.</span></li>
+      <li>{{CK}}<span><b>ביקורות אמיתיות.</b> ציטוטים מלקוחות שמראים איך זה לעבוד איתך.</span></li>
+      <li>{{CK}}<span><b>נגישות.</b> שכל אחד יוכל להשתמש באתר, כולל אנשים עם מוגבלות.</span></li>
+    </ul>
+  </div>
+  {{LOGO_D}}<div class="pg">2/3</div>
+</section>
+<section class="slide t-blue grid grain">
+  <div class="pad">
+    <div class="tag-mono">אין לך אתר עדיין?</div>
+    <h1 style="margin-top:60px;font-size:106px">אבנה לך<br>סקיצה של האתר<br><em>לפני שתשלם</em><br><span class="thin">שקל.</span></h1>
+    <p class="body" style="margin-top:44px">תראה בדיוק איך המשרד שלך ייראה באינטרנט, ורק אז תחליט.</p>
+    <div style="margin-top:54px"><div class="cta">{{WA}}<span class="ltr">058-7336636</span></div></div>
+  </div>
+  {{LOGO_W}}<div class="pg">3/3</div>
+</section>
+
+<!-- POST 3 -->
+<section class="slide t-dark grid grain">
+  <div class="pad" style="display:flex;flex-direction:column;justify-content:center;bottom:220px">
+    <h1 style="font-size:150px;line-height:.98">אינסטגרם<br><span style="text-decoration:line-through;text-decoration-color:var(--acc);text-decoration-thickness:14px">זה אתר.</span></h1>
+    <div class="rule" style="opacity:.25"></div>
+    <p class="body" style="font-size:46px">כשמישהו מחפש בגוגל <b style="color:#fff">"רואה חשבון ברחובות"</b>, הפוסטים שלך לא מופיעים שם. אתר כן.</p>
+    <p class="body glow" style="font-size:46px;margin-top:30px;font-weight:700">אינסטגרם בשביל מי שכבר מכיר אותך. אתר בשביל מי שעוד לא.</p>
+  </div>
+  {{LOGO_D}}
+</section>
+
+<!-- POST 4 -->
+<section class="slide t-deep grid grain">
+  <div class="pad">
+    <div class="tag-mono">מה מקבלים</div>
+    <h1 style="margin-top:50px;font-size:94px">אתר שעובד בשבילך.<br><span class="thin">בלי כאב ראש.</span></h1>
+    <ul class="list" style="margin-top:54px;gap:24px">
+      <li style="font-size:40px">{{CK}}עיצוב אישי לעסק שלך, לא תבנית</li>
+      <li style="font-size:40px">{{CK}}מושלם בטלפון, עם כפתור וואטסאפ</li>
+      <li style="font-size:40px">{{CK}}מפה, ניווט בוויז ובגוגל מפות</li>
+      <li style="font-size:40px">{{CK}}עומד בתקן הנגישות הישראלי</li>
+      <li style="font-size:40px">{{CK}}5 סבבי תיקונים כלולים</li>
+    </ul>
+    <div class="chip" style="margin-top:50px">מחיר קבוע 2,900 ₪ · סקיצה ראשונה בחינם</div>
+  </div>
+  {{LOGO_D}}
+  <div class="pg" style="opacity:1;font:800 34px/1 Heebo;color:var(--acc)">058-7336636</div>
+</section>
+</body></html>
