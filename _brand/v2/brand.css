@@ -1,0 +1,20 @@
+@font-face{font-family:Heebo;font-weight:300;src:url(node_modules/@fontsource/heebo/files/heebo-hebrew-300-normal.woff2),url(node_modules/@fontsource/heebo/files/heebo-latin-300-normal.woff2)}
+@font-face{font-family:Heebo;font-weight:400;src:url(node_modules/@fontsource/heebo/files/heebo-hebrew-400-normal.woff2)}
+@font-face{font-family:Heebo;font-weight:400;src:url(node_modules/@fontsource/heebo/files/heebo-latin-400-normal.woff2);unicode-range:U+0000-00FF}
+@font-face{font-family:Heebo;font-weight:700;src:url(node_modules/@fontsource/heebo/files/heebo-hebrew-700-normal.woff2)}
+@font-face{font-family:Heebo;font-weight:700;src:url(node_modules/@fontsource/heebo/files/heebo-latin-700-normal.woff2);unicode-range:U+0000-00FF}
+@font-face{font-family:Heebo;font-weight:800;src:url(node_modules/@fontsource/heebo/files/heebo-hebrew-800-normal.woff2)}
+@font-face{font-family:Heebo;font-weight:800;src:url(node_modules/@fontsource/heebo/files/heebo-latin-800-normal.woff2);unicode-range:U+0000-00FF}
+@font-face{font-family:Heebo;font-weight:900;src:url(node_modules/@fontsource/heebo/files/heebo-hebrew-900-normal.woff2)}
+@font-face{font-family:Heebo;font-weight:900;src:url(node_modules/@fontsource/heebo/files/heebo-latin-900-normal.woff2);unicode-range:U+0000-00FF}
+@font-face{font-family:Heebo;font-weight:300;src:url(node_modules/@fontsource/heebo/files/heebo-latin-300-normal.woff2);unicode-range:U+0000-00FF}
+:root{--navy:#0B1324;--logo:#3F95F6;--blue:#2563EB;--grey:#F6F7F9;--sky:#E6EDF8}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Heebo,sans-serif;direction:rtl}
+.logo{display:flex;align-items:center;gap:.35em;direction:ltr}
+.logo svg{height:2.2em;width:auto}
+.logo .wm{display:flex;flex-direction:column;line-height:1;font-weight:800}
+.logo .wm b{font-weight:800;letter-spacing:.18em;font-size:1em}
+.logo .wm i{font-style:normal;letter-spacing:.32em;font-size:.48em;color:var(--logo);margin-top:.25em}
+.logo.dark .wm b{color:#fff}.logo.light .wm b{color:var(--navy)}
+.hl{color:var(--blue)}.dark .hl,.on-dark .hl{color:var(--logo)}
