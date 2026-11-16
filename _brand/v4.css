@@ -1,0 +1,47 @@
+/* v4: dark navy + glow + perspective grid floor + device mockups + pill chips; light tip slides */
+.d4{background:radial-gradient(70% 45% at 50% 38%,rgba(63,149,246,.30),transparent 70%),radial-gradient(60% 40% at 100% 0%,rgba(37,99,235,.25),transparent 70%),#060B17;color:#fff}
+.l4{background:#F6F7F9;color:#0B1324}
+.l4:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(11,19,36,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(11,19,36,.05) 1px,transparent 1px);background-size:60px 60px;-webkit-mask-image:linear-gradient(180deg,#000,transparent 70%);mask-image:linear-gradient(180deg,#000,transparent 70%)}
+.floor{position:absolute;left:-60%;right:-60%;bottom:-6%;height:52%;transform:perspective(520px) rotateX(68deg);transform-origin:50% 100%;background-image:linear-gradient(rgba(63,149,246,.55) 2px,transparent 2px),linear-gradient(90deg,rgba(63,149,246,.55) 2px,transparent 2px);background-size:90px 90px;-webkit-mask-image:linear-gradient(0deg,#000 10%,transparent 85%);mask-image:linear-gradient(0deg,#000 10%,transparent 85%);opacity:.55}
+.horizon{position:absolute;left:0;right:0;height:260px;background:radial-gradient(50% 50% at 50% 50%,rgba(63,149,246,.55),transparent 70%);filter:blur(10px)}
+/* laptop */
+.lap{position:absolute;filter:drop-shadow(0 60px 80px rgba(0,0,0,.6)) drop-shadow(0 0 60px rgba(63,149,246,.25))}
+.lap .lid{background:linear-gradient(180deg,#1a2233,#0b0f19);border-radius:26px 26px 6px 6px;padding:16px 16px 22px;border:2px solid #2b3550}
+.lap .scr{position:relative;aspect-ratio:1200/694;border-radius:6px;overflow:hidden;background:#000}
+.lap .scr img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.lap .cam{position:absolute;top:6px;left:50%;width:8px;height:8px;margin-left:-4px;border-radius:50%;background:#2b3550}
+.lap .base{height:24px;margin:0 -7%;background:linear-gradient(180deg,#e3e8ef,#9aa3b2 60%,#6b7384);border-radius:2px 2px 22px 22px;position:relative}
+.lap .base:after{content:"";position:absolute;top:0;left:42%;right:42%;height:9px;background:#8a93a3;border-radius:0 0 10px 10px}
+/* floating browser window */
+.win{position:absolute;border-radius:16px;overflow:hidden;background:#0e1424;border:1px solid rgba(255,255,255,.14);box-shadow:0 40px 70px -20px rgba(0,0,0,.7),0 0 40px rgba(63,149,246,.18)}
+.win .bar{height:34px;display:flex;align-items:center;gap:8px;padding:0 14px;background:rgba(255,255,255,.06);direction:ltr}
+.win .bar i{width:11px;height:11px;border-radius:50%;background:#3a4560;display:block}
+.win img{display:block;width:100%;aspect-ratio:1200/694;object-fit:cover;object-position:top}
+/* pills */
+.pills{display:flex;flex-wrap:wrap;gap:14px}
+.pill{display:inline-flex;align-items:center;gap:12px;padding:16px 26px;border-radius:999px;font:700 30px/1 Heebo;color:#E6F0FF;background:rgba(63,149,246,.12);border:1.5px solid rgba(63,149,246,.55);box-shadow:inset 0 0 20px rgba(63,149,246,.12)}
+.pill:before{content:"";width:12px;height:12px;border-radius:50%;background:#3F95F6;box-shadow:0 0 14px #3F95F6}
+.l4 .pill{color:#0B1324;background:#fff;border-color:#D5E2F5;box-shadow:0 8px 20px -10px rgba(11,19,36,.25)}
+.l4 .pill:before{background:#2563EB;box-shadow:none}
+.eyebrow{font:700 30px/1 Heebo;color:#3F95F6;display:flex;align-items:center;gap:14px}
+.eyebrow:before{content:"";width:12px;height:12px;border-radius:50%;background:currentColor;box-shadow:0 0 16px currentColor}
+.l4 .eyebrow{color:#2563EB}.l4 .eyebrow:before{box-shadow:none}
+.h{font:900 104px/1.02 Heebo;letter-spacing:-.025em;text-wrap:balance}
+.h em{font-style:normal;color:#3F95F6;text-shadow:0 0 44px rgba(63,149,246,.55)}
+.l4 .h em{color:#2563EB;text-shadow:none}
+.h .thin{font-weight:300}
+.p{font:400 40px/1.55 Heebo;color:rgba(255,255,255,.8);max-width:880px}
+.l4 .p{color:#3B4458}
+.cap{font:500 24px/1 Heebo;color:rgba(255,255,255,.5)}
+.btn{display:inline-flex;align-items:center;gap:18px;padding:30px 46px;border-radius:18px;font:800 42px/1 Heebo;color:#fff;background:linear-gradient(180deg,#3F95F6,#2563EB);box-shadow:0 24px 50px -16px rgba(37,99,235,.8),inset 0 1px 0 rgba(255,255,255,.35)}
+.btn svg{width:46px;height:46px}
+.tel{font:800 46px/1 Heebo;direction:ltr;text-align:right;color:#fff}
+.bignum{position:absolute;top:96px;left:90px;font:900 220px/.8 Heebo;letter-spacing:-.04em;color:#E2EAF6;direction:ltr}
+.tipcard{background:#fff;border:1px solid #E1E7F0;border-radius:28px;padding:44px 48px;box-shadow:0 30px 60px -30px rgba(11,19,36,.25)}
+.tipcard .row{display:flex;gap:22px;align-items:flex-start;font:500 35px/1.45 Heebo;color:#3B4458}
+.tipcard .row b{color:#0B1324;font-weight:800}
+.tipcard .dot{flex:none;width:52px;height:52px;border-radius:14px;background:#EAF1FD;display:grid;place-items:center;margin-top:2px}
+.tipcard .dot svg{width:30px;height:30px}
+.pg{position:absolute;bottom:92px;left:90px;font:600 28px/1 Heebo;opacity:.5;direction:ltr}
+.logo{bottom:74px;right:90px}
+.on-light .logo .wm b{color:#0B1324}
