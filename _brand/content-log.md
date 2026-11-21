@@ -8,3 +8,4 @@ Do not repeat a topic, profession or concept site from the previous 2 weeks.
 | 2026-11-15 | A | Carousel | Tip: "מחפשים אתכם בגוגל. מה הם מוצאים?" (Google profile, clear wording, mobile) | – |
 | 2026-11-15 | A | Post | Direct offer: "שלחו לנו את שם העסק" | מגדלור (phone mockup) |
 | 2026-11-20 | Reel (not published) | A "הכפתור / 23:47" (reel5), B "10,000 / 2,900" (reel6), C "שלחו שם של משרד, קבלו סקיצה" (reel7) — all failed the board after 2 fix rounds (best 8.56) | lawyers | עוגן – דיני עבודה (fictional) |
+| 2026-11-21 | Reel + post (not published, board avg 8.56–8.96) | reel8 "עורכי דין: 2,490 ₪" (BF, code בלאק); post-miluim (code מילואים); backups reel9 "23:47 כפתור" (code כפתור) + post-bf (code בלאק) | lawyers / reservists | עוגן – דיני עבודה (fictional) |
