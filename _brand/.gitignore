@@ -7,3 +7,5 @@ reel[0-9]*.html
 posts[0-9]*.html
 package.json
 package-lock.json
+post-*.html
+!*.tpl.html
