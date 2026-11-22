@@ -115,11 +115,11 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#060B17}
   <div class="hl" id="h1"><div id="clk"></div><h1 class="h"><span class="ln"><span>״אין לי זמן</span></span><span class="ln"><span><em>לאתר.״</em></span></span></h1></div>
   <div class="hl" id="h2"><h1 class="h"><span class="ln"><span>שולחים לנו</span></span><span class="ln"><span><em>את שם המשרד.</em></span></span></h1></div>
   <div class="hl" id="h3"><h1 class="h"><span class="ln"><span>את השאר</span></span><span class="ln"><span><em>אנחנו עושים.</em></span></span></h1></div>
-  <div id="sub0"><span class="pill bf">בלאק פריידי · <b>2,490 ₪</b> במקום 2,900 ₪</span></div>
+  <div id="sub0"><span class="pill bf">עורכי דין · <b>2,490 ₪</b> במקום 2,900 ₪</span></div>
 <div id="offer"><span class="pill">שלחו "זמן" · <span dir="ltr">058-7336636</span></span><span class="pill">סקיצה ראשונה בחינם</span></div>
   <div class="fict" id="fict">קונספט · עסק בדוי</div>
   <div id="end">
-    <h1 class="h"><span class="ln"><span>אין זמן?</span></span><span class="ln"><span><em>זה לוקח דקה.</em></span></span></h1>
+    <h1 class="h"><span class="ln"><span>דקה מכם.</span></span><span class="ln"><span><em>השאר עלינו.</em></span></span></h1>
     <div class="e-wa" id="e1">{{WA}}<span>סקיצה ראשונה בחינם.<br>רואים אותה לפני שמשלמים.</span></div>
     <div class="e-line" id="e2">שלחו <b>"זמן"</b> + שם המשרד בוואטסאפ:</div>
     <div class="e-tel" id="e3">058-7336636</div>
@@ -152,7 +152,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#060B17}
     <div class="view" id="chat">
       <div class="c-top"><span style="font:400 26px/1 Heebo;margin-bottom:6px">→</span><span class="c-av"><img src="mark-light.svg" alt="" style="width:70%;height:auto"></span><div class="c-nm"><b>Levin Web Design</b><small>חשבון עסקי</small></div></div>
       <div class="c-body"><div class="c-card"><span class="c-av" style="width:72px;height:72px"><img src="mark-light.svg" alt="" style="width:70%;height:auto"></span><b>Levin Web Design</b><small>בניית אתרים לעסקים</small><em>סקיצה ראשונה בחינם</em></div><div class="c-day">היום</div>
-        <div id="bub">עוגן, דיני עבודה, תל אביב<div class="meta"><span>23:47</span><svg id="tick" viewBox="0 0 18 12" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path id="tk1" d="M1 6.5l3.2 3.2L11 2.5"/><path id="tk2" d="M7 9.7l.4.4L14.6 2.5"/></svg></div></div>
+        <div id="bub">זמן · עוגן, דיני עבודה, תל אביב<div class="meta"><span>23:47</span><svg id="tick" viewBox="0 0 18 12" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path id="tk1" d="M1 6.5l3.2 3.2L11 2.5"/><path id="tk2" d="M7 9.7l.4.4L14.6 2.5"/></svg></div></div>
         <div id="rep">קיבלנו. הסקיצה בדרך.</div>
       </div>
       <div class="c-bar"><div class="c-in"><span id="typed"></span><span id="caret"></span></div><span id="send"><svg viewBox="0 0 24 24" fill="#fff"><path d="M3 20.5L21 12 3 3.5l.02 6.6L15 12 3.02 13.9z" transform="matrix(-1 0 0 1 24 0)"/></svg></span></div>
@@ -182,7 +182,7 @@ function lines(id,tin,tout,start0){ // line reveal from below, exit upward
   ls.forEach((s,i)=>{let a=eo(p(curT,tin+i*0.09,tin+i*0.09+0.42));if(start0!==undefined&&tin<=0)a=eo(cl(start0+curT/0.42*(1-start0)+i*-0.1));
     let o=eio(p(curT,tout+i*0.05,tout+i*0.05+0.3));s.style.transform=`translateY(${(1-a)*110-o*110}%)`;});
 }
-const msg='עוגן, דיני עבודה, תל אביב';
+const msg='זמן · עוגן, דיני עבודה, תל אביב';
 let curT=0;
 const RM=[[0,0.6],[0.5,1.1],[1.0,1.85],[2.2,3.25],[2.6,3.85],[5.0,5.55],[12.0,12.55]];
 function remap(tn){for(let i=1;i<RM.length;i++){const [a,b]=RM[i-1],[c,d]=RM[i];if(tn<=c)return b+(tn-a)/(c-a)*(d-b)}return 12.6}
@@ -198,7 +198,7 @@ function render0(tn){const t=remap(tn);curT=tn;
   const s0=$('sub0'); s0.style.opacity=cl(.8+p(tn,0,.3)*.2)*(1-p(tn,1.95,2.15)); s0.style.transform=`translateY(${-30*p(tn,1.95,2.2)}px)`;
   const oa=eo(p(tn,2.3,2.7)); $('offer').style.opacity=oa*(1-p(t,8.1,8.35)); $('offer').style.transform=`translateY(${(1-oa)*24}px)`;
   // fictional label
-  $('fict').style.opacity=1;
+  $('fict').style.opacity=p(t,5.6,5.9)*(1-p(t,8.1,8.4));
   // phone: slow push in, dip for pills, drop at end
   const push=eo(p(t,0,2.4)); let y=(1-push)*40, s=0.97+0.03*push;
   const dip=0;
