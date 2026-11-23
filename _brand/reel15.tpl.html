@@ -1,0 +1,110 @@
+<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><link rel="stylesheet" href="base.css"><link rel="stylesheet" href="v4.css">
+<!-- REEL15 "אתר במתנה" giveaway (23.11): 3-phone 3D carousel of different professions + confetti + kinetic type. Deterministic render(t). -->
+<style>
+html,body{width:1080px;height:1920px;overflow:hidden;background:#060B17;margin:0}
+.stage{position:absolute;inset:0;overflow:hidden;background:radial-gradient(55% 30% at 50% 66%,rgba(63,149,246,.34),transparent 70%),radial-gradient(60% 30% at 0% 0%,rgba(37,99,235,.25),transparent 70%),#060B17;color:#fff}
+#floor{position:absolute;left:0;top:0;width:1080px;height:1920px}
+.stage>.logo{top:236px;right:90px;bottom:auto;z-index:9}
+.stage>.logo img{height:66px}.stage>.logo .wm b{font-size:32px}.stage>.logo .wm small{font-size:14px}
+.hl{position:absolute;right:90px;left:90px;top:330px;z-index:8;display:none}
+.hl .h{font-size:120px;line-height:1.02}
+.ln{display:block;overflow:hidden;padding:0 30px 18px;margin:0 -30px -8px}
+.ln>span{display:block}
+#p0{position:absolute;right:90px;top:620px;z-index:8;display:flex;gap:12px}
+#p0 .pill{font-size:34px;padding:16px 26px;white-space:nowrap;background:rgba(10,20,40,.85)}
+#p0 .pill.g{background:#2563EB;border-color:#2563EB;color:#fff}#p0 .pill.g:before{background:#fff;box-shadow:none}
+.fict{position:absolute;left:90px;top:262px;z-index:8;font:600 26px/1 Heebo;color:rgba(255,255,255,.72);display:flex;gap:10px;align-items:center}
+.fict:before{content:"";width:10px;height:10px;border-radius:50%;background:#3F95F6;box-shadow:0 0 12px #3F95F6}
+#phones{position:absolute;left:0;right:0;top:0;height:1920px;perspective:1600px;z-index:5}
+.pp{position:absolute;top:0;left:0;transform-origin:50% 50%;filter:drop-shadow(0 50px 60px rgba(0,0,0,.7)) drop-shadow(0 0 50px rgba(63,149,246,.25))}
+.pp img{display:block;width:100%;height:auto}
+.tag{position:absolute;top:-70px;left:50%;transform:translateX(-50%);white-space:nowrap;font:800 30px/1 Heebo;color:#fff;background:#2563EB;padding:14px 24px;border-radius:99px;box-shadow:0 0 40px rgba(63,149,246,.6);opacity:0}
+#conf{position:absolute;inset:0;z-index:7;pointer-events:none}
+#conf i{position:absolute;top:0;left:0;display:block;border-radius:3px}
+#end{position:absolute;right:90px;left:90px;top:330px;z-index:8;display:none}
+#end .eb{display:inline-flex;align-items:center;gap:12px;font:800 34px/1 Heebo;background:#2563EB;color:#fff;padding:15px 26px;border-radius:99px;box-shadow:0 0 40px rgba(63,149,246,.5)}
+#end .h{font-size:124px;margin-top:30px}
+.e-l{font:500 46px/1.35 Heebo;color:rgba(255,255,255,.9);margin-top:34px;display:flex;align-items:center;gap:16px}.e-l svg{width:54px;height:54px;color:#25D366;flex:none}
+.e-tel{font:900 132px/1 Heebo;direction:ltr;text-align:right;color:#fff;margin-top:22px;text-shadow:0 0 50px rgba(63,149,246,.6)}
+.e-p{display:flex;flex-direction:column;align-items:flex-start;gap:14px;margin-top:36px}.e-p .pill{font-size:36px;padding:16px 26px;white-space:nowrap}
+#prog{position:absolute;bottom:0;right:0;height:8px;background:#3F95F6;box-shadow:0 0 18px #3F95F6;z-index:12}
+</style></head><body>
+<div class="stage grain on-dark">
+  <svg id="floor" viewBox="0 0 1080 1920"></svg>
+  {{LOGO_D}}
+  <div class="fict" id="fict">קונספטים · עסקים בדויים</div>
+  <div class="hl" id="h1"><h1 class="h"><span class="ln"><span>אתר מלא</span></span><span class="ln"><span><em>במתנה.</em></span></span></h1></div>
+  <div class="hl" id="h2"><h1 class="h"><span class="ln"><span>כל משתתף מקבל</span></span><span class="ln"><span><em>סקיצה בחינם.</em></span></span></h1></div>
+  <div class="hl" id="h3"><h1 class="h"><span class="ln"><span>ב־4 בדצמבר</span></span><span class="ln"><span>בוחרים עסק <em>אחד.</em></span></span></h1></div>
+  <div id="p0"><span class="pill g">הרשמה עד 3.12</span><span class="pill">שלחו "מתנה" + שם העסק</span></div>
+  <div id="phones">
+    <div class="pp" id="A"><img src="out/ph-mort.png" alt=""></div>
+    <div class="pp" id="B"><img src="out/ph-clinic.png" alt=""></div>
+    <div class="pp" id="C"><img src="out/ph-acc.png" alt=""><span class="tag" id="tag">העסק שהכי צריך אתר</span></div>
+  </div>
+  <div id="conf"></div>
+  <div id="end">
+    <span class="eb">אתר במתנה · עד 3.12</span>
+    <h1 class="h"><span class="ln"><span>שלחו <em>"מתנה"</em></span></span><span class="ln"><span>+ שם העסק:</span></span></h1>
+    <div class="e-l" id="e0">{{WA}}<span>בוואטסאפ:</span></div>
+    <div class="e-tel" id="e1">058-7336636</div>
+    <div class="e-p" id="e2"><span class="pill">כל משתתף: סקיצה בחינם</span><span class="pill">בלי התחייבות</span></div>
+  </div>
+  <div id="prog"></div>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+const T=12.5;
+(function(){const s=$('floor'),hy=1210,cx=540;let g='<defs><linearGradient id="fg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3F95F6" stop-opacity="0"/><stop offset=".25" stop-color="#3F95F6" stop-opacity=".75"/><stop offset="1" stop-color="#3F95F6" stop-opacity=".9"/></linearGradient></defs><g stroke="url(#fg)" stroke-width="2" opacity=".75">';
+ for(let i=-14;i<=14;i++){g+=`<line x1="${cx+i*14}" y1="${hy}" x2="${cx+i*260}" y2="1920"/>`}
+ for(let k=1;k<14;k++){const y=hy+Math.pow(k/13,2.1)*710;g+=`<line x1="0" y1="${y.toFixed(1)}" x2="1080" y2="${y.toFixed(1)}"/>`}
+ g+='</g><ellipse cx="540" cy="'+hy+'" rx="620" ry="70" fill="#3F95F6" opacity=".28" filter="blur(30px)"/>';s.innerHTML=g})();
+// confetti (deterministic)
+const CF=[];(function(){let h='';let r=7;const R=()=>{r=(r*16807)%2147483647;return r/2147483647};
+ for(let i=0;i<70;i++){const c=['#3F95F6','#FFFFFF','#9CC8FF','#2563EB'][i%4];const w=10+R()*12,hh=18+R()*16;
+  CF.push({x:R()*1080,d:R()*2.2,v:420+R()*380,sw:R()*60,rot:R()*360,vr:(R()-.5)*700,w,hh});h+=`<i style="width:${w}px;height:${hh}px;background:${c}"></i>`}
+ $('conf').innerHTML=h})();
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x)), p=(t,a,b)=>cl((t-a)/(b-a));
+const eo=x=>1-Math.pow(1-x,3), eio=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2, back=x=>{const c=1.6;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+function lines(id,tin,tout,pre){const el=$(id);el.style.display=(t0>=tin-0.01&&t0<tout+0.4)?'block':'none';
+ el.querySelectorAll('.ln>span').forEach((s,i)=>{let a=eo(p(t0,tin+i*0.09,tin+i*0.09+0.42));if(pre&&tin<=0)a=eo(cl(.6+t0/0.35*.4-i*.08));const o=eio(p(t0,tout+i*0.05,tout+i*0.05+0.3));s.style.transform=`translateY(${(1-a)*110-o*110}%)`})}
+// slots: center, right, left (x center, y top, width, rotY, z, dim)
+const S=[{x:540,y:760,w:470,ry:0,z:0,dim:1},{x:880,y:860,w:380,ry:-28,z:-160,dim:.75},{x:200,y:860,w:380,ry:28,z:-160,dim:.75}];
+const IMGH={A:2200/1080,B:1262/620,C:1390/682};
+let t0=0;
+window.render=function(t){t0=t;
+ $('prog').style.width=(t/T*100)+'%';
+ lines('h1',0,2.45,true); lines('h2',2.65,5.05); lines('h3',5.25,7.6);
+ // pill row (frame 0), exits with h1, back as cta row in h2/h3? keep only on scene1
+ const pa=cl(.85+t/0.3*.15); $('p0').style.opacity=pa*(1-p(t,5.1,5.35)); $('p0').style.transform=`translateY(${-30*p(t,7.55,7.85)}px)`;
+ $('fict').style.opacity=p(t,0.4,0.8)*(1-p(t,7.6,7.9));
+ // carousel order: slot index per phone; rotates at 2.8 and 4.2 (eased), then C to center for scene 3
+ const order={A:[2,0,1],B:[0,1,2],C:[1,2,0]}; // positions in steps 0,1,2
+ const k1=eio(p(t,2.8,3.5)), k2=eio(p(t,4.3,5.0));
+ const rise=eo(cl(.45+t/1.0*.55)); const drop=eio(p(t,7.6,8.4));
+ ['A','B','C'].forEach(id=>{const o=order[id];const a=S[o[0]],b=S[o[1]],c=S[o[2]];
+  const lerp=(k,u,v)=>u+(v-u)*k; const mix=f=>lerp(k2,lerp(k1,a[f],b[f]),c[f]);
+  let x=mix('x'),y=mix('y'),w=mix('w'),ry=mix('ry'),z=mix('z'),dim=mix('dim');
+  y+= (1-rise)*700 + (o[0]===0?0:(1-rise)*200);
+  // scene 3: side phones dim, center glows
+  const s3=eio(p(t,5.4,6.0))*(1-drop); if(dim<.99) dim=dim*(1-.55*s3);
+  y+=drop*620; const sc=1-drop*.12; dim*=1-drop*.55;
+  const h=w*IMGH[id]; const el=$(id); el.style.width=w+'px';
+  el.style.transform=`translate3d(${x-w/2}px,${y}px,${z}px) rotateY(${ry}deg) scale(${sc})`;
+  el.style.zIndex=Math.round(100+z); el.style.filter=`brightness(${dim}) drop-shadow(${ry>0?24:ry<0?-24:0}px 50px 60px rgba(0,0,0,.7)) drop-shadow(0 0 ${o[2]===0?60+40*s3:40}px rgba(63,149,246,${.25+.3*s3*(id==='C'?1:0)}))`;
+ });
+ const tg=back(p(t,5.6,6.0)); $('tag').style.opacity=p(t,5.6,5.75)*(1-drop); $('tag').style.transform=`translateX(-50%) scale(${.6+.4*cl(tg)})`;
+ // confetti bursts at 0 (already falling) and at 5.5
+ document.querySelectorAll('#conf i').forEach((el,i)=>{const c=CF[i];const burst=i<40?(0.5+c.d*0.5):(5.7+c.d*0.4);const tt=t-burst;
+  if(tt<0||tt>3.2){el.style.opacity=0;return}const y=700+tt*c.v*0.9, x=c.x+Math.sin(tt*3+i)*c.sw;el.style.opacity=(1-p(tt,2.4,3.2))*(i<40?(1-p(t,2.4,2.8)):1);
+  el.style.transform=`translate(${x}px,${y}px) rotate(${c.rot+tt*c.vr}deg)`});
+ // end card
+ const e=$('end'); e.style.display=t>=7.85?'block':'none';
+ const ea=eo(p(t,7.9,8.3)); e.querySelector('.eb').style.opacity=ea; e.querySelector('.eb').style.transform=`translateY(${(1-ea)*30}px)`;
+ e.querySelectorAll('.ln>span').forEach((s,i)=>{const a=eo(p(t,8.05+i*0.09,8.5+i*0.09));s.style.transform=`translateY(${(1-a)*110}%)`});
+ [['e0',8.45],['e1',8.65],['e2',8.95]].forEach(([id,a0])=>{const a=eo(p(t,a0,a0+0.4));$(id).style.opacity=a;$(id).style.transform=`translateY(${(1-a)*40}px)`});
+ const pulse=Math.max(0,Math.sin((t-9.6)*Math.PI/0.9))*(t>9.6?1:0); $('e1').style.textShadow=`0 0 ${50+30*pulse}px rgba(63,149,246,${.6+.25*pulse})`;
+};
+window.T=T;
+if(!location.search.includes('rec')){let s=performance.now();(function f(){render(((performance.now()-s)/1000)%T);requestAnimationFrame(f)})()} else render(0);
+</script></body></html>

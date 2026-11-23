@@ -9,3 +9,4 @@ Before each item: pick one not used in the last 5 items / 7 days. Same-day items
 | תנועה | physiotherapy clinic | רחובות | deep teal + mint | reel13 | REEL 23.11 |
 | אלמוג | tax advisor / accountant | פתח תקווה | forest green + copper | post-acc | POST 23.11 |
 | שקד | lawyer, family law | הרצליה | slate + rose-sand, scales icon | reel14 | REEL2 23.11 |
+| בית ראשון | mortgage advisor | ראשון לציון | light: white/sky + emerald, house icon | post-sale | POST2 23.11, REEL3 23.11 (carousel) |

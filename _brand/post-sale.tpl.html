@@ -1,0 +1,85 @@
+<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><link rel="stylesheet" href="base.css"><link rel="stylesheet" href="v4.css"><style>
+/* POST "נובמבר סייל" (23.11): stacked layout = huge headline, countdown strip, full-width CTA band, phone bleeding off the bottom. Light concept site (mortgage advisor). */
+html,body{margin:0}
+.slide{position:relative;width:1080px;height:1350px;overflow:hidden;background:radial-gradient(60% 40% at 50% 70%,rgba(63,149,246,.32),transparent 70%),radial-gradient(70% 30% at 100% 0%,rgba(37,99,235,.22),transparent 70%),#060B17;color:#fff}
+#floor{position:absolute;left:0;top:0;width:1080px;height:1350px}
+.slide>.logo{top:auto;bottom:64px;right:90px;z-index:7}
+.eb{position:absolute;top:84px;right:90px;display:inline-flex;align-items:center;gap:14px;background:#2563EB;color:#fff;font:800 32px/1 Heebo;padding:15px 28px;border-radius:99px;box-shadow:0 0 40px rgba(63,149,246,.45)}
+.eb:before{content:"";width:11px;height:11px;border-radius:50%;background:#fff}
+.h1{position:absolute;top:172px;right:90px;left:90px;font:900 112px/1.02 Heebo;letter-spacing:-.025em}
+.h1 em{font-style:normal;color:#3F95F6;text-shadow:0 0 44px rgba(63,149,246,.55)}
+.strip{position:absolute;top:432px;right:90px;left:90px;display:flex;align-items:center;gap:22px}
+.cd{display:flex;align-items:center;gap:16px;background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.2);border-radius:22px;padding:12px 26px 12px 22px}
+.cd b{font:900 74px/1 Heebo;color:#fff;text-shadow:0 0 30px rgba(63,149,246,.7)}
+.cd span{font:700 30px/1.15 Heebo;color:rgba(255,255,255,.85)}
+.old{font:600 40px/1.2 Heebo;color:rgba(255,255,255,.78)}
+.old s{text-decoration-color:#fff;text-decoration-thickness:5px}
+.old b{display:block;font:800 34px/1.2 Heebo;color:#fff}
+.band{position:absolute;top:592px;right:90px;left:90px;height:150px;border-radius:30px;background:rgba(12,22,44,.82);border:1.5px solid rgba(63,149,246,.55);box-shadow:0 0 60px rgba(63,149,246,.2);display:flex;align-items:center;justify-content:space-between;padding:0 40px;z-index:6}
+.band .l1{display:flex;align-items:center;gap:14px;font:600 34px/1.25 Heebo;color:rgba(255,255,255,.9)}
+.band .l1 svg{width:46px;height:46px;color:#25D366;flex:none}
+.band .l1 b{color:#fff;font-weight:900}
+.band .tel{font:900 74px/1 Heebo;direction:ltr;color:#fff;text-shadow:0 0 40px rgba(63,149,246,.6)}
+.fict{position:absolute;top:812px;right:90px;font:600 26px/1 Heebo;color:rgba(255,255,255,.72);display:flex;gap:10px;align-items:center;z-index:4}
+.fict:before{content:"";width:10px;height:10px;border-radius:50%;background:#3F95F6;box-shadow:0 0 12px #3F95F6}
+.free{position:absolute;top:866px;right:90px;width:300px;font:700 31px/1.3 Heebo;color:#fff;z-index:4}
+.free i{display:block;font-style:normal;font-weight:400;font-size:27px;color:rgba(255,255,255,.75);margin-top:10px}
+/* phone */
+#ph{position:absolute;left:130px;top:790px;width:540px;height:1100px;z-index:5;filter:drop-shadow(0 0 70px rgba(63,149,246,.28))}
+.phone{width:540px;height:1100px;border-radius:80px;background:linear-gradient(145deg,#2a3350,#0b0f1a 30%,#0b0f1a 70%,#2a3350);padding:18px;box-shadow:inset 0 0 0 2px #3a4566}
+.scr{width:504px;height:1064px;border-radius:64px;overflow:hidden;position:relative;background:#fff}
+.notch{position:absolute;top:28px;left:50%;margin-left:-70px;width:140px;height:40px;border-radius:22px;background:#05070d;z-index:20}
+.sb{position:absolute;top:0;left:0;right:0;height:80px;z-index:19;display:flex;align-items:center;justify-content:space-between;padding:18px 48px 0;direction:ltr;font:700 24px/1 Heebo;color:#0F2744;background:#F4F8FB}
+.sb .bat{width:38px;height:18px;border:2.5px solid currentColor;border-radius:6px;display:inline-block}
+.view{position:absolute;top:0;left:0;width:390px;transform:scale(1.2923);transform-origin:0 0}
+/* fictional mortgage-advisor site (light) */
+.m-hero{background:linear-gradient(180deg,#F4F8FB,#E8F1F7);padding:66px 22px 28px;position:relative;overflow:hidden;color:#0F2744}
+.m-hero:after{content:"";position:absolute;left:-60px;top:120px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(14,159,110,.18),transparent 70%)}
+.m-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:26px;position:relative;z-index:1}
+.m-brand{display:flex;align-items:center;gap:9px}.m-brand svg{width:32px;height:32px}
+.m-brand b{font:800 20px/1 Heebo;display:block}.m-brand small{font:500 11px/1 Heebo;color:#0E9F6E;display:block;margin-top:4px}
+.m-burger{width:24px;height:15px;border-top:2.5px solid #0F2744;border-bottom:2.5px solid #0F2744;position:relative}.m-burger:after{content:"";position:absolute;top:4px;left:0;right:0;border-top:2.5px solid #0F2744}
+.m-tag{display:inline-block;font:700 12px/1 Heebo;color:#0E9F6E;background:#DDF3EA;padding:7px 11px;border-radius:99px;position:relative;z-index:1}
+.m-h{font:900 42px/1.06 Heebo;margin-top:14px;position:relative;z-index:1;letter-spacing:-.01em}
+.m-h em{font-style:normal;color:#0E9F6E}
+.m-p{font:400 16px/1.55 Heebo;color:#3E5470;margin-top:10px;max-width:300px;position:relative;z-index:1}
+.m-btns{display:flex;gap:10px;margin-top:20px;position:relative;z-index:1}
+.m-wa{display:flex;align-items:center;gap:8px;background:#25D366;color:#06301A;font:800 16px/1 Heebo;padding:14px 16px;border-radius:12px;box-shadow:0 10px 24px -10px rgba(37,211,102,.8)}.m-wa svg{width:20px;height:20px}
+.m-call{display:flex;align-items:center;border:1.5px solid #0F2744;color:#0F2744;font:700 15px/1 Heebo;padding:13px 15px;border-radius:12px}
+.m-steps{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;padding:18px 16px;background:#fff}
+.m-steps div{background:#F4F8FB;border-radius:12px;padding:12px 8px;text-align:center;font:700 13px/1.3 Heebo;color:#0F2744}
+.m-steps b{display:grid;place-items:center;width:28px;height:28px;margin:0 auto 6px;border-radius:50%;background:#0F2744;color:#fff;font:900 13px/1 Heebo}
+.m-sec{padding:6px 22px 30px;background:#fff;color:#0F2744}
+.m-sec h3{font:900 24px/1.1 Heebo;margin:8px 0 6px}
+.m-row{display:flex;justify-content:space-between;border-bottom:1.5px solid #E3EBF2;padding:13px 0;font:700 16px/1 Heebo}.m-row span:last-child{color:#0E9F6E}
+</style></head><body>
+<section class="slide grain on-dark">
+<svg id="floor" viewBox="0 0 1080 1350"></svg>
+{{LOGO_D}}
+<div class="eb">נובמבר סייל · בלאק פריידיי</div>
+<div class="h1">יועצי משכנתאות:<br><em>אתר ב־2,490 ₪</em></div>
+<div class="strip"><div class="cd"><span>נשארו</span><b>7</b><span>ימים</span></div><div class="old">במקום <s>2,900 ₪</s><b>עד 30.11 כולל</b></div></div>
+<div class="band"><div class="l1">{{WA}}<span>שלחו <b>"משכנתא"</b><br>בוואטסאפ:</span></div><div class="tel">058-7336636</div></div>
+<div class="fict">קונספט · עסק בדוי</div>
+<div class="free">סקיצה ראשונה<br>בחינם, בלי התחייבות.<i>רואים את האתר<br>לפני שמשלמים.</i></div>
+<div id="ph"><div class="phone"><div class="scr"><div class="notch"></div>
+<div class="sb"><span>12:30</span><span class="bat"></span></div>
+<div class="view">
+  <div class="m-hero">
+    <div class="m-nav"><div class="m-brand"><svg viewBox="0 0 40 40" fill="none" stroke="#0E9F6E" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 19L20 7l14 12"/><path d="M10 16v17h20V16"/><path d="M17 33v-9h6v9"/></svg><div><b>בית ראשון</b><small>ייעוץ משכנתאות · ראשון לציון</small></div></div><span class="m-burger"></span></div>
+    <span class="m-tag">משכנתא ראשונה · מחזור · זכאות</span>
+    <div class="m-h">משכנתא?<br>בלי <em>לנחש.</em></div>
+    <div class="m-p">בדיקת זכאות, השוואת הצעות מהבנקים וליווי עד החתימה.</div>
+    <div class="m-btns"><span class="m-wa">{{WA}}<span>הודעה בוואטסאפ</span></span><span class="m-call">התקשרו</span></div>
+  </div>
+  <div class="m-steps"><div><b>1</b>שיחת היכרות</div><div><b>2</b>בדיקת זכאות</div><div><b>3</b>ליווי עד החתימה</div></div>
+  <div class="m-sec"><h3>השירותים</h3><div class="m-row"><span>משכנתא לדירה ראשונה</span><span>+</span></div><div class="m-row"><span>מחזור משכנתא</span><span>+</span></div></div>
+</div>
+</div></div></div>
+</section>
+<script>
+(function(){const s=document.getElementById('floor'),hy=860,cx=540;let g='<defs><linearGradient id="fg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3F95F6" stop-opacity="0"/><stop offset=".25" stop-color="#3F95F6" stop-opacity=".75"/><stop offset="1" stop-color="#3F95F6" stop-opacity=".9"/></linearGradient></defs><g stroke="url(#fg)" stroke-width="2" opacity=".75">';
+for(let i=-14;i<=14;i++){g+=`<line x1="${cx+i*14}" y1="${hy}" x2="${cx+i*260}" y2="1350"/>`}
+for(let k=1;k<12;k++){const y=hy+Math.pow(k/11,2.1)*490;g+=`<line x1="0" y1="${y.toFixed(1)}" x2="1080" y2="${y.toFixed(1)}"/>`}
+g+='</g><ellipse cx="540" cy="'+hy+'" rx="620" ry="60" fill="#3F95F6" opacity=".25" filter="blur(30px)"/>';s.innerHTML=g})();
+</script></body></html>
