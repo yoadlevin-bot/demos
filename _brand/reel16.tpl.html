@@ -1,0 +1,151 @@
+<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><link rel="stylesheet" href="base.css"><link rel="stylesheet" href="v4.css">
+<!-- REEL16 (24.11) "מה מקבלים ב־2,490 ₪" for pilates studios. LIGHT reel: #F6F7F9 + soft grid, giant type with no device first, then phone (left) + checklist ticking (right), tap on WhatsApp button, light end card. Deterministic render(t). -->
+<style>
+html,body{width:1080px;height:1920px;overflow:hidden;background:#F6F7F9;margin:0}
+.stage{position:absolute;inset:0;overflow:hidden;background:radial-gradient(60% 30% at 80% 8%,rgba(63,149,246,.16),transparent 70%),radial-gradient(50% 30% at 10% 90%,rgba(37,99,235,.10),transparent 70%),#F6F7F9;color:#0B1324}
+.grid{position:absolute;inset:0;background-image:linear-gradient(rgba(11,19,36,.06) 1.5px,transparent 1.5px),linear-gradient(90deg,rgba(11,19,36,.06) 1.5px,transparent 1.5px);background-size:72px 72px}
+.stage>.logo{top:236px;right:90px;bottom:auto;z-index:9}
+.stage>.logo img{height:62px}.stage>.logo .wm b{font-size:31px;color:#0B1324}.stage>.logo .wm small{font-size:14px;color:#2563EB}
+.chip{position:absolute;top:350px;right:90px;z-index:8;display:inline-flex;align-items:center;gap:12px;background:#0B1324;color:#fff;font:800 36px/1 Heebo;padding:17px 30px;border-radius:99px}
+.chip:before{content:"";width:12px;height:12px;border-radius:50%;background:#3F95F6;box-shadow:0 0 12px #3F95F6}
+.hl{position:absolute;right:90px;left:90px;z-index:8}
+.H{white-space:nowrap;font:900 140px/.98 Heebo;letter-spacing:-.03em;color:#0B1324}
+.H em,.H2 em{font-style:normal;color:#2563EB}
+.ln{display:block;overflow:hidden;padding:0 30px 16px;margin:0 -30px -10px}.ln>span{display:block}
+#h1{top:450px}
+.was{position:absolute;right:90px;top:985px;z-index:8;white-space:nowrap;font:600 42px/1.2 Heebo;color:#3B4458}
+.was .old{position:relative;display:inline-block;font-weight:800;color:#0B1324}.was .old i{position:absolute;right:-6px;top:52%;height:6px;background:#2563EB;border-radius:3px;width:0}.was b{color:#0B1324;font-weight:800}
+.strip{position:absolute;right:90px;left:90px;top:1170px;z-index:8;display:flex;align-items:center;justify-content:space-between;background:#fff;border:2px solid #D5E2F5;border-radius:28px;padding:26px 34px;box-shadow:0 24px 50px -24px rgba(11,19,36,.3)}
+.strip .l{display:flex;align-items:center;gap:14px;font:600 36px/1.2 Heebo;color:#3B4458}.strip .l b{color:#0B1324;font-weight:900}
+.strip svg{width:50px;height:50px;color:#25D366;flex:none}
+.strip .t{font:900 70px/1 Heebo;direction:ltr;color:#2563EB}
+#h2{top:330px}.H2{font:900 112px/1.0 Heebo;letter-spacing:-.025em}
+/* phone */
+#ph{position:absolute;left:70px;top:640px;width:470px;height:960px;z-index:6;filter:drop-shadow(0 50px 50px rgba(11,19,36,.28)) drop-shadow(0 10px 18px rgba(11,19,36,.18))}
+.phone{width:470px;height:960px;border-radius:70px;background:linear-gradient(145deg,#3a4256,#0b0f1a 30%,#0b0f1a 70%,#3a4256);padding:16px;box-shadow:inset 0 0 0 2px #4a5470}
+.scr{width:438px;height:928px;border-radius:56px;overflow:hidden;position:relative;background:#F4F1EA}
+.notch{position:absolute;top:24px;left:50%;margin-left:-62px;width:124px;height:36px;border-radius:20px;background:#05070d;z-index:20}
+.sb{position:absolute;top:0;left:0;right:0;height:72px;z-index:19;display:flex;align-items:center;justify-content:space-between;padding:16px 44px 0;direction:ltr;font:700 22px/1 Heebo;color:#23302A;background:#F4F1EA}
+.sb .bat{width:34px;height:16px;border:2.5px solid currentColor;border-radius:5px;display:inline-block}
+.view{position:absolute;top:0;left:0;width:390px;transform:scale(1.1231);transform-origin:0 0}
+/* fictional pilates studio site */
+.s-hero{padding:64px 22px 26px;background:#F4F1EA;color:#23302A;position:relative;overflow:hidden}
+.s-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}
+.s-brand{display:flex;align-items:center;gap:9px}.s-brand svg{width:34px;height:34px}
+.s-brand b{font:800 20px/1 Heebo;display:block}.s-brand small{font:500 11px/1 Heebo;color:#5E7E69;display:block;margin-top:4px}
+.s-burger{width:24px;height:15px;border-top:2.5px solid #23302A;border-bottom:2.5px solid #23302A;position:relative}.s-burger:after{content:"";position:absolute;top:4px;left:0;right:0;border-top:2.5px solid #23302A}
+.s-art{height:190px;border-radius:24px;background:linear-gradient(150deg,#8FAE98,#5E7E69);position:relative;overflow:hidden}
+.s-art:before{content:"";position:absolute;width:220px;height:220px;border-radius:50%;border:2px solid rgba(255,255,255,.35);left:-40px;top:-60px}
+.s-art svg{position:absolute;right:24px;bottom:22px;width:210px;height:110px}
+.s-art .lbl{position:absolute;top:18px;right:18px;background:rgba(255,255,255,.9);font:700 12px/1 Heebo;color:#23302A;padding:8px 11px;border-radius:99px}
+.s-h{font:900 38px/1.06 Heebo;margin-top:20px;letter-spacing:-.01em}.s-h em{font-style:normal;color:#5E7E69}
+.s-p{font:400 15.5px/1.55 Heebo;color:#56615A;margin-top:8px}
+.s-wa{display:flex;align-items:center;justify-content:center;gap:9px;background:#25D366;color:#06301A;font:800 17px/1 Heebo;padding:16px;border-radius:14px;margin-top:18px;position:relative;box-shadow:0 12px 26px -10px rgba(37,211,102,.8)}.s-wa svg{width:22px;height:22px}
+.s-cls{background:#fff;padding:18px 18px 30px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.s-cls div{background:#F4F1EA;border-radius:14px;padding:14px;font:700 15px/1.25 Heebo;color:#23302A}.s-cls small{display:block;font:500 12px/1.3 Heebo;color:#5E7E69;margin-top:5px}
+#tap{position:absolute;left:50%;top:50%;width:90px;height:90px;margin:-45px 0 0 -45px;border-radius:50%;background:rgba(255,255,255,.55);border:3px solid #fff;opacity:0;pointer-events:none}
+.fict{position:absolute;left:90px;top:262px;z-index:8;font:600 26px/1 Heebo;color:#5B6478;display:flex;gap:10px;align-items:center}
+.fict:before{content:"";width:10px;height:10px;border-radius:50%;background:#2563EB}
+/* checklist */
+#ck{position:absolute;right:90px;width:420px;top:660px;z-index:8;display:grid;gap:26px}
+.it{display:flex;gap:18px;align-items:flex-start;font:800 42px/1.15 Heebo;color:#0B1324}
+.it .b{flex:none;width:60px;height:60px;border-radius:18px;background:#fff;border:2.5px solid #D5E2F5;display:grid;place-items:center;margin-top:-4px;position:relative}
+.it .b svg{width:36px;height:36px}
+.it small{display:block;font:500 30px/1.25 Heebo;color:#5B6478;margin-top:6px}
+/* end */
+#end{position:absolute;right:90px;left:90px;top:330px;z-index:8}
+.e-chip{display:inline-flex;align-items:center;gap:12px;background:#2563EB;color:#fff;font:800 36px/1 Heebo;padding:17px 30px;border-radius:99px;box-shadow:0 18px 40px -16px rgba(37,99,235,.7)}
+.e-h{font:900 128px/1.0 Heebo;letter-spacing:-.025em;margin-top:34px}.e-h em{font-style:normal;color:#2563EB}
+.e-card{margin-top:46px;background:#0B1324;border-radius:36px;padding:46px 48px;color:#fff;box-shadow:0 40px 70px -30px rgba(11,19,36,.6)}
+.e-l{display:flex;align-items:center;gap:16px;font:600 44px/1.2 Heebo;color:rgba(255,255,255,.9)}.e-l svg{width:56px;height:56px;color:#25D366;flex:none}
+.e-tel{white-space:nowrap;font:900 112px/1 Heebo;direction:ltr;text-align:right;color:#fff;margin-top:24px;text-shadow:0 0 50px rgba(63,149,246,.55)}
+.e-p{display:flex;flex-wrap:wrap;gap:14px;margin-top:40px}
+.e-p span{display:inline-flex;align-items:center;gap:12px;background:#fff;border:2px solid #D5E2F5;border-radius:99px;padding:16px 26px;font:700 36px/1 Heebo;color:#0B1324;white-space:nowrap}
+.e-p span:before{content:"";width:12px;height:12px;border-radius:50%;background:#2563EB}
+#prog{position:absolute;bottom:0;right:0;height:8px;background:#2563EB;z-index:12}
+</style></head><body>
+<div class="stage on-light">
+  <div class="grid"></div>
+  {{LOGO_L}}
+  <div class="chip" id="chip">בלאק פריידיי · נשארו 7 ימים</div>
+  <div class="hl" id="h1"><h1 class="H"><span class="ln"><span>סטודיו</span></span><span class="ln"><span>לפילאטיס:</span></span><span class="ln"><span>אתר ב־<em>2,490 ₪</em></span></span></h1></div>
+  <div class="was" id="was">במקום <span class="old">2,900 ₪<i id="strike"></i></span> · <b>שיעורי ניסיון ישר לוואטסאפ</b></div>
+  <div class="strip" id="strip"><div class="l">{{WA}}<span>סקיצה בחינם:<br>שלחו <b>"פילאטיס"</b></span></div><div class="t">058-7336636</div></div>
+
+  <div class="hl" id="h2"><h1 class="H2"><span class="ln"><span>מה מקבלים</span></span><span class="ln"><span>ב־<em>2,490 ₪</em>?</span></span></h1></div>
+  <div id="ph"><div class="phone"><div class="scr"><div class="notch"></div><div class="sb"><span>15:00</span><span class="bat"></span></div>
+   <div class="view" id="view">
+    <div class="s-hero">
+     <div class="s-nav"><div class="s-brand"><svg viewBox="0 0 40 40" fill="none" stroke="#5E7E69" stroke-width="2.6" stroke-linecap="round"><circle cx="20" cy="20" r="15"/><path d="M9 24c5-6 17-6 22 0"/><circle cx="20" cy="14" r="3"/></svg><div><b>סטודיו נשימה</b><small>פילאטיס מכשירים · כפר סבא</small></div></div><span class="s-burger"></span></div>
+     <div class="s-art"><span class="lbl">קבוצות של עד 6</span>
+      <svg viewBox="0 0 210 110" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="62" width="176" height="14" rx="7" fill="#EDE6D6" stroke="#fff" stroke-width="2"/><rect x="70" y="52" width="58" height="12" rx="5" fill="#fff"/><rect x="72" y="40" width="14" height="14" rx="4" fill="#F4F1EA"/><path d="M178 62V26M170 26h16" stroke="#fff" stroke-width="5"/><path d="M128 58l42-6M128 64l42 4" stroke="#F4F1EA" stroke-width="2" stroke-dasharray="4 3"/><path d="M22 76v18M182 76v18" stroke="#fff" stroke-width="5"/><path d="M14 98h182" stroke="rgba(255,255,255,.6)" stroke-width="3"/><circle cx="40" cy="40" r="22" fill="rgba(255,255,255,.12)"/></svg></div>
+     <div class="s-h">גוף חזק.<br>ראש <em>שקט.</em></div>
+     <div class="s-p">פילאטיס מכשירים בקבוצות קטנות, עם יחס אישי בכל שיעור.</div>
+     <div class="s-wa" id="wa">{{WA}}<span>שיעור ניסיון בוואטסאפ</span><span id="tap"></span></div>
+    </div>
+    <div class="s-cls"><div>מכשירים<small>רפורמר · קדילאק</small></div><div>מזרן<small>בוקר וערב</small></div><div>לנשים בהיריון<small>בליווי מדריכה</small></div><div>פרטני<small>בתיאום מראש</small></div></div>
+   </div></div></div></div>
+  <div class="fict" id="fict">קונספט · עסק בדוי</div>
+  <div id="ck">
+   <div class="it"><span class="b">{{CKB}}</span><span>עיצוב אישי<small>לסטודיו שלכם</small></span></div>
+   <div class="it"><span class="b">{{CKB}}</span><span>מותאם לטלפון</span></div>
+   <div class="it"><span class="b">{{CKB}}</span><span>כפתור וואטסאפ<small>בכל מסך</small></span></div>
+   <div class="it"><span class="b">{{CKB}}</span><span>נגישות לפי התקן</span></div>
+   <div class="it"><span class="b">{{CKB}}</span><span>5 סבבי תיקונים</span></div>
+  </div>
+
+  <div id="end">
+   <span class="e-chip">2,490 ₪ · עד 30.11 כולל</span>
+   <h1 class="e-h"><span class="ln"><span>שלחו</span></span><span class="ln"><span><em>"פילאטיס"</em></span></span></h1>
+   <div class="e-card" id="ec"><div class="e-l">{{WA}}<span>בוואטסאפ:</span></div><div class="e-tel" id="etel">058-7336636</div></div>
+   <div class="e-p" id="ep"><span>סקיצה ראשונה בחינם</span><span>בלי התחייבות</span><span>עיצוב אישי</span><span>נגישות לפי התקן</span><span>5 סבבי תיקונים</span></div>
+  </div>
+  <div id="prog"></div>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+const T=12.4;
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x)), p=(t,a,b)=>cl((t-a)/(b-a));
+const eo=x=>1-Math.pow(1-x,3), eio=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2, back=x=>{const c=1.7;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+function show(el,on){el.style.display=on?'':'none'}
+function lines(el,tin,tout,pre,t){el.querySelectorAll('.ln>span').forEach((s,i)=>{let a=eo(p(t,tin+i*0.08,tin+i*0.08+0.4));if(pre)a=eo(cl(.55+t/0.35*.45-i*.07));const o=eio(p(t,tout+i*0.04,tout+i*0.04+0.28));s.style.transform=`translateY(${(1-a)*110-o*115}%)`})}
+const items=[...document.querySelectorAll('.it')];const TK=[2.75,3.35,3.95,5.4,6.0];
+window.render=function(t){
+ $('prog').style.width=(t/T*100)+'%';
+ // scene 1 (0-2.6): giant type, already moving at frame 0
+ const s1out=2.2;
+ show($('h1'),t<s1out+0.5); lines($('h1'),0,s1out,true,t);
+ const zoom=1+0.04*eo(p(t,0,2.4)); $('h1').style.transform=`scale(${zoom})`; $('h1').style.transformOrigin='100% 0';
+ $('chip').style.opacity=t<8.3?1:1-p(t,8.3,8.5); $('chip').style.transform=`translateY(${t<2.5?0:-20*eio(p(t,2.5,2.8))}px)`;
+ show($('chip'),t<2.5);
+ const wa=eo(cl(.6+t/0.4*.4)); $('was').style.opacity=wa*(1-p(t,s1out,s1out+.25)); $('was').style.transform=`translateX(${(1-wa)*-40}px)`;
+ $('strike').style.width=(eo(p(t,0.25,0.65))*110)+'%';
+ const pr=$('h1').querySelector('em'); const pk=p(t,0.55,0.95); pr.style.display='inline-block'; pr.style.transform=`scale(${pk>0&&pk<1?1+0.12*Math.sin(Math.PI*pk):1})`; pr.style.transformOrigin='50% 60%';
+ const sa=eo(cl(.5+t/0.45*.5)); $('strip').style.opacity=sa*(1-p(t,s1out,s1out+.25)); $('strip').style.transform=`translateY(${(1-sa)*40+60*p(t,s1out,s1out+.3)}px)`;
+ // scene 2 (2.6-8.3)
+ const s2=t>=2.25&&t<8.7; show($('h2'),s2); lines($('h2'),2.3,8.25,false,t);
+ const pin=eo(p(t,2.2,2.85)), pout=eio(p(t,8.2,8.7)); const peek=740-60*eo(cl(t/2.2));
+ show($('ph'),t<8.8); $('ph').style.transform=`translateY(${(1-pin)*peek+pout*1000}px) rotate(${(1-pin)*-3}deg)`;
+ // site scroll a little + zoom toward the WhatsApp button around 4.5
+ const zin=eio(p(t,4.3,4.9)), zout=eio(p(t,5.5,6.0)); const z=1+0.06*(zin-zout);
+ $('ph').style.transformOrigin='50% 58%'; $('ph').style.transform+=` scale(${z})`;
+ // tap
+ const tp=p(t,4.95,5.45); $('tap').style.opacity=tp>0&&tp<1?(1-tp)*.9:0; $('tap').style.transform=`scale(${.5+tp*1.4})`;
+ const g=Math.sin(Math.PI*p(t,4.4,6.0));$('wa').style.boxShadow=`0 0 0 ${6*g}px rgba(37,99,235,${.9*g}),0 0 ${40*g}px rgba(37,99,235,${.6*g})`;$('wa').style.transform=`scale(${1-0.05*Math.sin(Math.PI*p(t,4.95,5.15))})`;
+ $('fict').style.opacity=1-p(t,8.1,8.3);
+ show($('ck'),s2);
+ items.forEach((el,i)=>{const a=eo(p(t,TK[i]-0.25,TK[i]+0.15));const o=eio(p(t,8.1+i*0.03,8.4+i*0.03));el.style.opacity=a*(1-o);el.style.transform=`translateX(${(1-a)*-60}px)`;
+  const b=el.querySelector('.b');const k=p(t,TK[i],TK[i]+0.3);b.style.background=k>0?'#2563EB':'#fff';b.style.borderColor=k>0?'#2563EB':'#D5E2F5';b.style.transform=`scale(${k>0?back(k):1})`;
+  const pth=el.querySelector('path');pth.style.strokeDashoffset=30*(1-eo(k));
+  // dim others while zoom on WA item
+  if(i!==2){el.style.opacity*=1-0.6*(zin-zout)}});
+ // end (8.4-12.4)
+ const e=$('end'); show(e,t>=8.35);
+ const ea=eo(p(t,8.4,8.75)); e.querySelector('.e-chip').style.opacity=ea; e.querySelector('.e-chip').style.transform=`translateY(${(1-ea)*30}px)`;
+ lines(e,8.5,99,false,t);
+ [['ec',8.85],['ep',9.25]].forEach(([id,a0])=>{const a=eo(p(t,a0,a0+0.4));$(id).style.opacity=a;$(id).style.transform=`translateY(${(1-a)*50}px)`});
+ const pulse=t>10?Math.max(0,Math.sin((t-10)*Math.PI/0.9)):0; $('etel').style.textShadow=`0 0 ${40+40*pulse}px rgba(63,149,246,${.5+.3*pulse})`;
+};
+window.T=T;
+if(!location.search.includes('rec')){let s=performance.now();(function f(){render(((performance.now()-s)/1000)%T);requestAnimationFrame(f)})()} else render(0);
+</script></body></html>

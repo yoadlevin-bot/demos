@@ -1,0 +1,147 @@
+<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><link rel="stylesheet" href="base.css"><link rel="stylesheet" href="v4.css">
+<!-- REEL17 (24.11) "A או B" for real-estate agents + giveaway (code מתנה). Split screen: two phones side by side with two versions of one fictional realtor site (A dark gold, B light teal), spotlights alternate, divider line. Near-black stage with two top spotlights (no grid floor). Deterministic render(t). -->
+<style>
+html,body{width:1080px;height:1920px;overflow:hidden;background:#04060C;margin:0}
+.stage{position:absolute;inset:0;overflow:hidden;background:#04060C;color:#fff}
+.spot{position:absolute;top:-200px;width:900px;height:2000px;pointer-events:none;background:radial-gradient(40% 55% at 50% 60%,rgba(63,149,246,.28),transparent 70%);filter:blur(10px)}
+#spA{left:-330px}#spB{right:-330px}
+.div{position:absolute;left:539px;top:800px;width:2px;height:980px;background:linear-gradient(180deg,transparent,rgba(63,149,246,.7) 20%,rgba(63,149,246,.7) 80%,transparent);box-shadow:0 0 18px #3F95F6;z-index:4}
+.stage>.logo{top:236px;right:90px;bottom:auto;z-index:9}
+.stage>.logo img{height:62px}.stage>.logo .wm b{font-size:31px}.stage>.logo .wm small{font-size:14px}
+.chip{position:absolute;top:320px;right:90px;z-index:8;display:inline-flex;align-items:center;gap:12px;background:#2563EB;color:#fff;font:800 36px/1 Heebo;padding:17px 30px;border-radius:99px;box-shadow:0 0 40px rgba(63,149,246,.5)}
+.chip:before{content:"";width:12px;height:12px;border-radius:50%;background:#fff}
+.hl{position:absolute;right:90px;left:90px;top:400px;z-index:8}
+.H{font:900 104px/1.0 Heebo;letter-spacing:-.025em;white-space:nowrap}
+.H em{font-style:normal;color:#3F95F6;text-shadow:0 0 44px rgba(63,149,246,.55)}
+.ln{display:block;overflow:hidden;padding:0 30px 16px;margin:0 -30px -10px}.ln>span{display:block}
+/* phones */
+.pp{position:absolute;top:830px;transform-origin:50% 0;width:410px;height:840px;z-index:5}
+#pA{left:80px}#pB{left:590px}
+.phone{width:410px;height:840px;border-radius:62px;background:linear-gradient(145deg,#2a3350,#0b0f1a 30%,#0b0f1a 70%,#2a3350);padding:14px;box-shadow:inset 0 0 0 2px #3a4566}
+.scr{width:382px;height:812px;border-radius:50px;overflow:hidden;position:relative}
+.notch{position:absolute;top:20px;left:50%;margin-left:-55px;width:110px;height:32px;border-radius:18px;background:#05070d;z-index:20}
+.sb{position:absolute;top:0;left:0;right:0;height:64px;z-index:19;display:flex;align-items:center;justify-content:space-between;padding:14px 38px 0;direction:ltr;font:700 20px/1 Heebo}
+.sb .bat{width:30px;height:14px;border:2.2px solid currentColor;border-radius:5px;display:inline-block}
+.view{position:absolute;top:0;left:0;width:390px;transform-origin:0 0}
+.badge{position:absolute;top:-58px;left:50%;margin-left:-58px;width:116px;height:116px;border-radius:50%;display:grid;place-items:center;font:900 70px/1 Heebo;color:#fff;background:#0B1324;border:3px solid #3F95F6;box-shadow:0 0 40px rgba(63,149,246,.55);z-index:22;direction:ltr}
+/* site A: dark + gold */
+.A{background:#0E0F12;color:#F4EFE6}
+.A .sb{background:#0E0F12;color:#F4EFE6}
+.a-hero{padding:66px 22px 24px}
+.a-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}
+.a-brand b{font:800 20px/1 Heebo;letter-spacing:.02em;display:block}.a-brand small{font:500 11px/1 Heebo;color:#C9A86A;display:block;margin-top:5px}
+.bg{width:24px;height:15px;border-top:2.5px solid currentColor;border-bottom:2.5px solid currentColor;position:relative}.bg:after{content:"";position:absolute;top:4px;left:0;right:0;border-top:2.5px solid currentColor}
+.a-img{height:250px;border-radius:6px;position:relative;overflow:hidden;background:linear-gradient(180deg,#2A2418,#16140F)}
+.a-img svg{position:absolute;inset:0;width:100%;height:100%}
+.a-h{font:300 34px/1.12 Heebo;margin-top:20px}.a-h b{font-weight:900;color:#C9A86A}
+.a-p{font:400 15px/1.55 Heebo;color:rgba(244,239,230,.7);margin-top:8px}
+.a-wa{display:flex;align-items:center;justify-content:center;gap:9px;background:#C9A86A;color:#16140F;font:800 17px/1 Heebo;padding:16px;border-radius:6px;margin-top:18px}.a-wa svg{width:22px;height:22px}
+.a-list{padding:4px 22px 40px;display:grid;gap:12px}
+.a-list div{border-top:1px solid rgba(201,168,106,.35);padding:14px 0 2px;display:flex;justify-content:space-between;font:600 16px/1 Heebo}.a-list span:last-child{color:#C9A86A}
+/* site B: light + teal */
+.B{background:#F7FAFA;color:#0E2A2A}
+.B .sb{background:#fff;color:#0E2A2A}
+.b-top{background:#fff;padding:66px 18px 18px}
+.b-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.b-brand{display:flex;align-items:center;gap:8px}.b-brand i{width:32px;height:32px;border-radius:10px;background:#0F766E;display:grid;place-items:center;color:#fff;font:900 16px/1 Heebo;font-style:normal}
+.b-brand b{font:800 19px/1 Heebo;display:block}.b-brand small{font:500 11px/1 Heebo;color:#0F766E;display:block;margin-top:4px}
+.b-h{font:900 32px/1.08 Heebo}.b-h em{font-style:normal;color:#0F766E}
+.b-search{margin-top:14px;display:flex;gap:8px}
+.b-search span{flex:1;background:#F1F5F5;border:1.5px solid #DCE6E6;border-radius:12px;padding:13px 12px;font:600 14px/1 Heebo;color:#557070}
+.b-search b{background:#0F766E;color:#fff;border-radius:12px;padding:13px 14px;font:800 14px/1 Heebo}
+.b-cards{padding:14px 18px 40px;display:grid;gap:12px}
+.b-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 10px 24px -14px rgba(14,42,42,.35)}
+.b-card .im{height:120px;background:linear-gradient(140deg,#A7D7CF,#5FA89D);position:relative}
+.b-card .im svg{position:absolute;inset:0;width:100%;height:100%}
+.b-card .im small{position:absolute;top:10px;right:10px;background:#fff;color:#0F766E;font:800 11px/1 Heebo;padding:6px 9px;border-radius:99px}
+.b-card .tx{padding:12px 14px;font:800 16px/1.2 Heebo}.b-card .tx span{display:block;font:500 13px/1.3 Heebo;color:#557070;margin-top:4px}
+.b-wa{position:absolute;left:14px;right:14px;bottom:18px;display:flex;align-items:center;justify-content:center;gap:9px;background:#25D366;color:#06301A;font:800 17px/1 Heebo;padding:15px;border-radius:14px;box-shadow:0 12px 26px -10px rgba(37,211,102,.8);z-index:18}.b-wa svg{width:22px;height:22px}
+.fict{position:absolute;left:90px;top:262px;z-index:8;font:600 26px/1 Heebo;color:rgba(255,255,255,.72);display:flex;gap:10px;align-items:center}
+.fict:before{content:"";width:10px;height:10px;border-radius:50%;background:#3F95F6;box-shadow:0 0 12px #3F95F6}
+.mini{position:absolute;right:90px;left:90px;top:630px;z-index:8;font:600 34px/1.2 Heebo;color:rgba(255,255,255,.88);display:flex;align-items:center;gap:14px}
+.mini svg{width:46px;height:46px;color:#25D366;flex:none}.mini b{color:#fff;font-weight:900}.mini .t{direction:ltr;display:inline-block;font:900 50px/1.1 Heebo;color:#fff;text-shadow:0 0 30px rgba(63,149,246,.6)}
+/* end */
+#end{position:absolute;right:90px;left:90px;top:340px;z-index:8}
+.e-chip{display:inline-flex;align-items:center;gap:12px;background:#2563EB;color:#fff;font:800 36px/1 Heebo;padding:17px 30px;border-radius:99px;box-shadow:0 0 40px rgba(63,149,246,.5)}
+.e-h{font:900 116px/1.02 Heebo;letter-spacing:-.025em;margin-top:34px}.e-h em{font-style:normal;color:#3F95F6;text-shadow:0 0 44px rgba(63,149,246,.55)}
+.e-l{display:flex;align-items:center;gap:16px;font:600 46px/1.2 Heebo;color:rgba(255,255,255,.9);margin-top:44px}.e-l svg{width:56px;height:56px;color:#25D366;flex:none}
+.e-tel{font:900 132px/1 Heebo;direction:ltr;text-align:right;color:#fff;margin-top:22px;text-shadow:0 0 50px rgba(63,149,246,.6);white-space:nowrap}
+.e-p{display:flex;flex-direction:column;align-items:flex-start;gap:14px;margin-top:40px}.e-p .pill{font-size:36px;padding:16px 26px;white-space:nowrap}
+#prog{position:absolute;bottom:0;right:0;height:8px;background:#3F95F6;box-shadow:0 0 18px #3F95F6;z-index:12}
+</style></head><body>
+<div class="stage grain on-dark">
+  <div class="spot" id="spA"></div><div class="spot" id="spB"></div>
+  {{LOGO_D}}
+  <div class="chip" id="chip">תחרות: אתר מלא במתנה לעסק אחד</div>
+  <div class="hl" id="h1"><h1 class="H"><span class="ln"><span>מתווכי נדל״ן:</span></span><span class="ln"><span><em>A</em> או <em>B</em>?</span></span></h1></div>
+  <div class="hl" id="h2"><h1 class="H"><span class="ln"><span>אחד כזה יכול</span></span><span class="ln"><span>להיות <em>שלכם.</em></span></span></h1></div>
+  <div class="hl" id="h3"><h1 class="H"><span class="ln"><span>כל משתתף מקבל</span></span><span class="ln"><span><em>סקיצה בחינם.</em></span></span></h1></div>
+  <div class="mini" id="mini">{{WA}}<span>שלחו <b>"מתנה"</b> + שם העסק עד 3.12:<br><span class="t">058-7336636</span></span></div>
+  <div class="div" id="dv"></div>
+  <div class="pp" id="pA"><span class="badge">A</span><div class="phone"><div class="scr A"><div class="notch"></div><div class="sb"><span>20:30</span><span class="bat"></span></div>
+   <div class="view" id="vA">
+    <div class="a-hero"><div class="a-nav"><div class="a-brand"><b>קומה 7</b><small>תיווך נדל״ן · רמת השרון</small></div><span class="bg"></span></div>
+     <div class="a-img"><svg viewBox="0 0 346 250" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="gw" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E9C98A"/><stop offset="1" stop-color="#8A6A35"/></linearGradient></defs><rect x="40" y="60" width="110" height="190" fill="#1F1B14" stroke="#C9A86A" stroke-opacity=".5"/><rect x="170" y="20" width="130" height="230" fill="#27211A" stroke="#C9A86A" stroke-opacity=".6"/><g fill="url(#gw)" opacity=".9"><rect x="55" y="80" width="18" height="14"/><rect x="85" y="80" width="18" height="14" opacity=".4"/><rect x="115" y="110" width="18" height="14"/><rect x="55" y="140" width="18" height="14" opacity=".5"/><rect x="190" y="40" width="22" height="16"/><rect x="225" y="40" width="22" height="16" opacity=".35"/><rect x="260" y="70" width="22" height="16"/><rect x="190" y="100" width="22" height="16" opacity=".6"/><rect x="225" y="130" width="22" height="16"/><rect x="260" y="160" width="22" height="16" opacity=".4"/></g></svg></div>
+     <div class="a-h">הבית הבא שלכם,<br><b>ברמת השרון.</b></div>
+     <div class="a-p">מכירה, השכרה וליווי עד החתימה, עם היכרות אמיתית עם השכונות.</div>
+     <div class="a-wa">{{WA}}<span>תיאום צפייה בוואטסאפ</span></div></div>
+    <div class="a-list"><div><span>דירות למכירה</span><span>←</span></div><div><span>דירות להשכרה</span><span>←</span></div><div><span>הערכת שווי לנכס</span><span>←</span></div></div>
+   </div></div></div></div>
+  <div class="pp" id="pB"><span class="badge">B</span><div class="phone"><div class="scr B"><div class="notch"></div><div class="sb"><span>20:30</span><span class="bat"></span></div>
+   <div class="view" id="vB">
+    <div class="b-top"><div class="b-nav"><div class="b-brand"><i>7</i><div><b>קומה 7</b><small>תיווך נדל״ן · רמת השרון</small></div></div><span class="bg"></span></div>
+     <div class="b-h">מוצאים בית.<br><em>בלי לחפש לבד.</em></div>
+     <div class="b-search"><span>עיר, שכונה או רחוב</span><b>חיפוש</b></div></div>
+    <div class="b-cards">
+     <div class="b-card"><div class="im"><small>למכירה</small><svg viewBox="0 0 346 120" preserveAspectRatio="xMidYMid slice"><circle cx="70" cy="34" r="16" fill="#FFF4D6"/><rect x="40" y="60" width="70" height="60" fill="#E9F3F1"/><rect x="120" y="22" width="110" height="98" fill="#fff"/><rect x="240" y="48" width="80" height="72" fill="#E9F3F1"/><g fill="#7FB7AE"><rect x="134" y="34" width="20" height="14" rx="2"/><rect x="164" y="34" width="20" height="14" rx="2"/><rect x="194" y="34" width="20" height="14" rx="2"/><rect x="134" y="58" width="20" height="14" rx="2"/><rect x="164" y="58" width="20" height="14" rx="2"/><rect x="194" y="58" width="20" height="14" rx="2"/><rect x="134" y="82" width="20" height="14" rx="2"/><rect x="194" y="82" width="20" height="14" rx="2"/><rect x="52" y="72" width="16" height="12" rx="2"/><rect x="80" y="72" width="16" height="12" rx="2"/><rect x="254" y="62" width="18" height="12" rx="2"/><rect x="286" y="62" width="18" height="12" rx="2"/></g><path d="M128 50h94M128 74h94" stroke="#CFE3DF" stroke-width="3"/><circle cx="20" cy="104" r="14" fill="#3F8F80"/><circle cx="330" cy="100" r="18" fill="#3F8F80"/></svg></div><div class="tx">4 חדרים עם מרפסת<span>רמת השרון · מרכז</span></div></div>
+     <div class="b-card"><div class="im" style="background:linear-gradient(140deg,#CFE6E1,#8DC1B8)"><small>להשכרה</small><svg viewBox="0 0 346 120" preserveAspectRatio="xMidYMid slice"><rect x="60" y="30" width="226" height="90" fill="#fff" opacity=".9"/><rect x="80" y="50" width="80" height="50" fill="#8DC1B8"/><path d="M80 75h80M120 50v50" stroke="#fff" stroke-width="3"/><rect x="180" y="58" width="80" height="62" rx="4" fill="#E9F3F1"/><rect x="196" y="72" width="48" height="34" rx="3" fill="#C9A86A" opacity=".6"/><path d="M60 120h226" stroke="#5FA89D" stroke-width="4"/></svg></div><div class="tx">3 חדרים, משופצת<span>רמת השרון · מורשה</span></div></div>
+    </div>
+   </div><div class="b-wa">{{WA}}<span>וואטסאפ למתווך</span></div></div></div></div>
+  <div class="fict" id="fict">קונספט · עסק בדוי</div>
+  <div id="end">
+   <span class="e-chip">תחרות · אתר מלא במתנה</span>
+   <h1 class="e-h"><span class="ln"><span>שלחו <em>"מתנה"</em></span></span><span class="ln"><span>+ שם העסק:</span></span></h1>
+   <div class="e-l" id="e0">{{WA}}<span>בוואטסאפ:</span></div>
+   <div class="e-tel" id="e1">058-7336636</div>
+   <div class="e-p" id="e2"><span class="pill">אפשר להירשם עד 3.12</span><span class="pill">כל משתתף: סקיצה בחינם, בלי התחייבות</span><span class="pill">ב־4.12 נבחר עסק אחד שיקבל אתר מלא</span></div>
+  </div>
+  <div id="prog"></div>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+const T=12.6;
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x)), p=(t,a,b)=>cl((t-a)/(b-a));
+const eo=x=>1-Math.pow(1-x,3), eio=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+const show=(el,on)=>el.style.display=on?'':'none';
+function lines(id,tin,tout,pre,t){const el=$(id);show(el,t>=tin-0.01&&t<tout+0.4);
+ el.querySelectorAll('.ln>span').forEach((s,i)=>{let a=eo(p(t,tin+i*0.08,tin+i*0.08+0.4));if(pre)a=eo(cl(.55+t/0.35*.45-i*.07));const o=eio(p(t,tout+i*0.04,tout+i*0.04+0.28));s.style.transform=`translateY(${(1-a)*110-o*115}%)`})}
+const SC=382/390;
+window.render=function(t){
+ $('prog').style.width=(t/T*100)+'%';
+ lines('h1',0,2.5,true,t); lines('h2',2.7,5.2,false,t); lines('h3',5.4,8.0,false,t);
+ $('chip').style.opacity=1-p(t,7.95,8.2);
+ const ma=eo(cl(.4+t/0.5*.6)); $('mini').style.opacity=ma*(1-p(t,7.95,8.2)); $('mini').style.transform=`translateY(${(1-ma)*20}px)`;
+ // phones slide in from the sides (already moving at 0), then alternate spotlight
+ const sin=eo(cl(.35+t/0.9*.65)); const out=eio(p(t,7.9,8.5));
+ const fA=Math.max(0,Math.sin(Math.PI*p(t,5.6,6.9))), fB=Math.max(0,Math.sin(Math.PI*p(t,6.6,7.9)));
+ [['pA',-1,fA,fB],['pB',1,fB,fA]].forEach(([id,sd,me,other])=>{const el=$(id);
+  const x=sd*(1-sin)*520 + sd*out*700; const s=(1+0.05*me)*0.92; const ry=-sd*(1-sin)*22 + sd*6*(t>2.6?eio(p(t,2.6,3.2)):0)*(1-out);
+  el.style.transform=`perspective(1400px) translateX(${x}px) rotateY(${ry}deg) scale(${s})`;
+  el.style.filter=`brightness(${1-0.15*other}) drop-shadow(0 50px 60px rgba(0,0,0,.75)) drop-shadow(0 0 ${30+50*me}px rgba(63,149,246,${.25+.4*me}))`;
+  el.querySelector('.badge').style.transform=`scale(${1+0.25*me})`;
+ });
+ $('spA').style.opacity=.55+.45*fA-.3*fB; $('spB').style.opacity=.55+.45*fB-.3*fA;
+ $('dv').style.opacity=sin*(1-out); $('dv').style.transform=`scaleY(${sin})`;
+ // site scroll (2.8-5.2)
+ const sc=eio(p(t,2.9,4.9)); $('vA').style.transform=`scale(${SC}) translateY(${-150*sc}px)`; $('vB').style.transform=`scale(${SC}) translateY(${-118*sc}px)`;
+ $('fict').style.opacity=1-out;
+ // end
+ const e=$('end'); show(e,t>=8.2);
+ const ea=eo(p(t,8.25,8.6)); e.querySelector('.e-chip').style.opacity=ea; e.querySelector('.e-chip').style.transform=`translateY(${(1-ea)*30}px)`;
+ e.querySelectorAll('.ln>span').forEach((s,i)=>{const a=eo(p(t,8.35+i*0.09,8.8+i*0.09));s.style.transform=`translateY(${(1-a)*110}%)`});
+ [['e0',8.8],['e1',9.0],['e2',9.3]].forEach(([id,a0])=>{const a=eo(p(t,a0,a0+0.4));$(id).style.opacity=a;$(id).style.transform=`translateY(${(1-a)*40}px)`});
+ const pulse=t>10?Math.max(0,Math.sin((t-10)*Math.PI/0.9)):0; $('e1').style.textShadow=`0 0 ${50+30*pulse}px rgba(63,149,246,${.6+.25*pulse})`;
+};
+window.T=T;
+if(!location.search.includes('rec')){let s=performance.now();(function f(){render(((performance.now()-s)/1000)%T);requestAnimationFrame(f)})()} else render(0);
+</script></body></html>

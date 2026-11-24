@@ -1,0 +1,121 @@
+<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><link rel="stylesheet" href="base.css"><link rel="stylesheet" href="v4.css"><style>
+/* POST 24.11 "סוכני ביטוח: אתר ב־2,490 ₪": multi-device layout (laptop + phone in front) on the grid floor. Concept: נחשון ביטוחים, נתניה (fictional; indigo + amber). */
+html,body{margin:0}
+.slide{position:relative;width:1080px;height:1350px;overflow:hidden;background:radial-gradient(55% 32% at 50% 62%,rgba(63,149,246,.34),transparent 70%),radial-gradient(70% 30% at 0% 0%,rgba(37,99,235,.22),transparent 70%),#060B17;color:#fff}
+#floor{position:absolute;left:0;top:0;width:1080px;height:1350px}
+.slide>.logo{top:auto;bottom:52px;right:90px;z-index:9}
+.slide>.logo img{height:58px}
+.eb{position:absolute;top:78px;right:90px;display:inline-flex;align-items:center;gap:14px;background:#2563EB;color:#fff;font:800 32px/1 Heebo;padding:15px 28px;border-radius:99px;box-shadow:0 0 40px rgba(63,149,246,.45)}
+.eb:before{content:"";width:11px;height:11px;border-radius:50%;background:#fff}
+.h1{position:absolute;top:158px;right:90px;left:90px;font:900 118px/1.0 Heebo;letter-spacing:-.025em}
+.h1 em{font-style:normal;color:#3F95F6;text-shadow:0 0 44px rgba(63,149,246,.55)}
+.sub{position:absolute;top:408px;right:90px;left:90px;font:500 38px/1.3 Heebo;color:rgba(255,255,255,.86)}
+.sub s{text-decoration-color:#fff;text-decoration-thickness:4px}
+.sub b{color:#fff;font-weight:800}
+.ben{position:absolute;top:468px;right:90px;display:flex;align-items:center;gap:12px;font:600 33px/1.2 Heebo;color:#fff}.ben svg{width:38px;height:38px;color:#25D366}
+/* devices */
+.lap{left:120px;top:548px;width:760px;z-index:4}
+.lap .scr{background:#F7F5EF}
+.dv{position:absolute;top:0;left:0;width:1200px;height:694px;transform:scale(.6067);transform-origin:0 0;direction:rtl}
+.ph{position:absolute;left:60px;top:598px;width:250px;height:510px;z-index:6;filter:drop-shadow(-20px 40px 50px rgba(0,0,0,.65)) drop-shadow(0 0 40px rgba(63,149,246,.3))}
+.phone{width:250px;height:510px;border-radius:40px;background:linear-gradient(145deg,#2a3350,#0b0f1a 30%,#0b0f1a 70%,#2a3350);padding:9px;box-shadow:inset 0 0 0 1.5px #3a4566}
+.pscr{width:232px;height:492px;border-radius:32px;overflow:hidden;position:relative;background:#F7F5EF}
+.notch{position:absolute;top:12px;left:50%;margin-left:-34px;width:68px;height:20px;border-radius:12px;background:#05070d;z-index:20}
+.sb{position:absolute;top:0;left:0;right:0;height:40px;z-index:19;display:flex;align-items:center;justify-content:space-between;padding:8px 24px 0;direction:ltr;font:700 12px/1 Heebo;color:#fff;background:#1E2A5A}
+.sb .bat{width:20px;height:10px;border:1.5px solid currentColor;border-radius:3px;display:inline-block}
+.mv{position:absolute;top:0;left:0;width:390px;transform:scale(.5949);transform-origin:0 0;direction:rtl}
+.fict{position:absolute;top:1072px;right:90px;font:600 26px/1 Heebo;color:rgba(255,255,255,.72);display:flex;gap:10px;align-items:center;z-index:7}
+.fict:before{content:"";width:10px;height:10px;border-radius:50%;background:#3F95F6;box-shadow:0 0 12px #3F95F6}
+/* CTA band */
+.band{position:absolute;top:1120px;right:90px;left:90px;height:140px;border-radius:30px;background:rgba(12,22,44,.9);border:1.5px solid rgba(63,149,246,.6);box-shadow:0 0 60px rgba(63,149,246,.22);display:flex;align-items:center;justify-content:space-between;padding:0 38px;z-index:8}
+.band .l1{display:flex;align-items:center;gap:14px;font:600 33px/1.25 Heebo;color:rgba(255,255,255,.9)}
+.band .l1 svg{width:46px;height:46px;color:#25D366;flex:none}
+.band .l1 b{color:#fff;font-weight:900}
+.band .tel{font:900 72px/1 Heebo;direction:ltr;color:#fff;text-shadow:0 0 40px rgba(63,149,246,.6)}
+.slide>.logo{bottom:auto;top:1276px}.slide>.logo img{height:52px}
+.free{position:absolute;top:1290px;left:90px;font:600 28px/1 Heebo;color:rgba(255,255,255,.78)}
+/* ===== fictional insurance agency site: desktop ===== */
+.d-nav{height:78px;background:#1E2A5A;display:flex;align-items:center;justify-content:space-between;padding:0 56px;color:#fff}
+.brand{display:flex;align-items:center;gap:12px}.brand svg{width:40px;height:40px}
+.brand b{font:800 26px/1 Heebo;display:block}.brand small{font:500 13px/1 Heebo;color:#F2B544;display:block;margin-top:5px}
+.d-links{display:flex;gap:34px;font:600 17px/1 Heebo;color:rgba(255,255,255,.85)}
+.d-wa{display:flex;align-items:center;gap:8px;background:#25D366;color:#06301A;font:800 17px/1 Heebo;padding:13px 18px;border-radius:12px}.d-wa svg{width:20px;height:20px}
+.d-hero{display:grid;grid-template-columns:1.1fr .9fr;height:616px;background:#F7F5EF}
+.d-txt{padding:70px 56px 0 30px;color:#1E2A5A}
+.tagx{display:inline-block;font:700 15px/1 Heebo;color:#8A5A00;background:#FBE9C2;padding:9px 14px;border-radius:99px}
+.d-h{font:900 66px/1.02 Heebo;margin-top:22px;letter-spacing:-.01em}.d-h em{font-style:normal;color:#C98A12}
+.d-p{font:400 21px/1.55 Heebo;color:#4A5578;margin-top:18px;max-width:470px}
+.d-btns{display:flex;gap:12px;margin-top:30px}
+.d-call{display:flex;align-items:center;border:2px solid #1E2A5A;color:#1E2A5A;font:700 18px/1 Heebo;padding:14px 20px;border-radius:12px}
+.d-ins{display:flex;gap:10px;margin-top:40px}
+.d-ins span{background:#fff;border:1.5px solid #E6E1D3;border-radius:14px;padding:14px 16px;font:700 16px/1 Heebo;color:#1E2A5A;display:flex;align-items:center;gap:8px}
+.d-ins span i{width:10px;height:10px;border-radius:50%;background:#F2B544;display:block}
+.d-art{position:relative;background:linear-gradient(160deg,#25336B,#1E2A5A 60%,#141D42);overflow:hidden}
+.d-art .sh{position:absolute;left:50%;top:50%;width:300px;height:300px;transform:translate(-50%,-56%)}
+.d-art .ring{position:absolute;left:50%;top:44%;width:460px;height:460px;margin:-230px 0 0 -230px;border-radius:50%;border:2px solid rgba(242,181,68,.25)}
+.d-card{position:absolute;bottom:46px;right:40px;left:40px;background:#fff;border-radius:18px;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 20px 40px -16px rgba(0,0,0,.5)}
+.d-card b{font:800 19px/1.2 Heebo;color:#1E2A5A}.d-card small{display:block;font:500 15px/1.3 Heebo;color:#6B7392;margin-top:4px}
+.d-card .go{width:44px;height:44px;border-radius:12px;background:#F2B544;display:grid;place-items:center;font:900 22px/1 Heebo;color:#1E2A5A}
+/* ===== mobile ===== */
+.m-top{background:#1E2A5A;padding:62px 20px 30px;color:#fff;position:relative;overflow:hidden}
+.m-top:after{content:"";position:absolute;left:-70px;bottom:-90px;width:260px;height:260px;border-radius:50%;border:2px solid rgba(242,181,68,.3)}
+.m-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
+.m-burger{width:24px;height:15px;border-top:2.5px solid #fff;border-bottom:2.5px solid #fff;position:relative}.m-burger:after{content:"";position:absolute;top:4px;left:0;right:0;border-top:2.5px solid #fff}
+.m-h{font:900 40px/1.06 Heebo;margin-top:14px}.m-h em{font-style:normal;color:#F2B544}
+.m-p{font:400 16px/1.5 Heebo;color:rgba(255,255,255,.82);margin-top:10px}
+.m-wa{display:flex;align-items:center;justify-content:center;gap:9px;background:#25D366;color:#06301A;font:800 18px/1 Heebo;padding:16px;border-radius:14px;margin-top:20px;box-shadow:0 12px 26px -10px rgba(37,211,102,.8)}.m-wa svg{width:22px;height:22px}
+.m-list{background:#F7F5EF;padding:18px 18px 22px;display:grid;gap:10px}
+.m-list div{background:#fff;border:1.5px solid #E6E1D3;border-radius:14px;padding:16px;font:700 17px/1 Heebo;color:#1E2A5A;display:flex;justify-content:space-between}
+.m-list div span:last-child{color:#C98A12}
+.m-foot{background:#1E2A5A;color:#fff;padding:22px 20px 60px}.m-foot b{display:block;font:800 20px/1.2 Heebo}.m-foot span{display:block;font:400 15px/1.4 Heebo;color:rgba(255,255,255,.75);margin-top:4px}.m-foot i{display:flex;align-items:center;gap:8px;font:800 16px/1 Heebo;font-style:normal;color:#F2B544;margin-top:14px}.m-foot i svg{width:20px;height:20px}
+</style></head><body>
+<section class="slide grain on-dark">
+<svg id="floor" viewBox="0 0 1080 1350"></svg>
+<div class="eb">בלאק פריידיי · נשארו 7 ימים</div>
+<div class="h1">סוכני ביטוח:<br><em>אתר ב־2,490 ₪</em></div>
+<div class="sub">במקום <s>2,900 ₪</s> · <b>עד 30.11 כולל</b></div>
+<div class="ben">{{WA}}<span>בקשות להצעת מחיר, ישר לוואטסאפ שלכם.</span></div>
+
+<div class="lap"><div class="lid"><div class="scr"><span class="cam"></span>
+ <div class="dv">
+  <div class="d-nav"><div class="brand"><svg viewBox="0 0 40 40" fill="none" stroke="#F2B544" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round"><path d="M20 5l12 5v9c0 8-5 13-12 16C13 32 8 27 8 19v-9z"/><path d="M14.5 20l4 4 7-8"/></svg><div><b>נחשון ביטוחים</b><small>סוכנות לביטוח · נתניה</small></div></div>
+   <div class="d-links"><span>ביטוח רכב</span><span>ביטוח דירה</span><span>בריאות וחיים</span><span>צרו קשר</span></div>
+   <span class="d-wa">{{WA}}<span>וואטסאפ</span></span></div>
+  <div class="d-hero">
+   <div class="d-txt"><span class="tagx">רכב · דירה · עסק · בריאות</span>
+    <div class="d-h">ביטוח שמבינים.<br>סוכן שעונה <em>בזמן.</em></div>
+    <div class="d-p">משווים בשבילכם בין חברות הביטוח, ומלווים אתכם גם ביום של התביעה.</div>
+    <div class="d-btns"><span class="d-wa">{{WA}}<span>הצעת מחיר בוואטסאפ</span></span><span class="d-call">התקשרו</span></div>
+    <div class="d-ins"><span><i></i>ביטוח רכב</span><span><i></i>ביטוח דירה</span><span><i></i>ביטוח לעסק</span></div>
+   </div>
+   <div class="d-art"><span class="ring"></span>
+    <svg class="sh" viewBox="0 0 40 40" fill="none" stroke="#F2B544" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M20 5l12 5v9c0 8-5 13-12 16C13 32 8 27 8 19v-9z" fill="rgba(242,181,68,.08)"/><path d="M14.5 20l4 4 7-8" stroke-width="2.2"/></svg>
+    <div class="d-card"><div><b>בדיקת תיק ביטוחים</b><small>מה מכוסה, ומה כפול</small></div><span class="go">←</span></div>
+   </div>
+  </div>
+ </div></div></div><div class="base"></div></div>
+
+<div class="ph"><div class="phone"><div class="pscr"><div class="notch"></div><div class="sb"><span>12:30</span><span class="bat"></span></div>
+ <div class="mv">
+  <div class="m-top"><div class="m-nav"><div class="brand"><svg viewBox="0 0 40 40" fill="none" stroke="#F2B544" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round" style="width:32px;height:32px"><path d="M20 5l12 5v9c0 8-5 13-12 16C13 32 8 27 8 19v-9z"/><path d="M14.5 20l4 4 7-8"/></svg><div><b style="font-size:20px">נחשון ביטוחים</b><small style="font-size:11px">סוכנות לביטוח · נתניה</small></div></div><span class="m-burger"></span></div>
+   <span class="tagx" style="font-size:12px">רכב · דירה · עסק</span>
+   <div class="m-h">סוכן שעונה<br><em>בזמן.</em></div>
+   <div class="m-p">משווים בין החברות ומלווים גם ביום התביעה.</div>
+   <div class="m-wa">{{WA}}<span>הצעת מחיר בוואטסאפ</span></div>
+  </div>
+  <div class="m-list"><div><span>ביטוח רכב</span><span>+</span></div><div><span>בריאות וחיים</span><span>+</span></div><div><span>ביטוח דירה</span><span>+</span></div><div><span>ביטוח לעסק</span><span>+</span></div></div>
+  <div class="m-foot"><b>בדיקת תיק ביטוחים</b><span>מה מכוסה, ומה כפול</span><i>{{WA}} שלחו הודעה</i></div>
+ </div></div></div></div>
+
+<div class="fict">קונספט · עסק בדוי</div>
+<div class="band"><div class="l1">{{WA}}<span>סקיצה בחינם:<br>שלחו <b>"ביטוח"</b></span></div><div class="tel">058-7336636</div></div>
+{{LOGO_D}}
+<div class="free">בלי התחייבות · רואים לפני שמשלמים</div>
+</section>
+<script>
+(function(){const s=document.getElementById('floor'),hy=930,cx=540;let g='<defs><linearGradient id="fg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3F95F6" stop-opacity="0"/><stop offset=".3" stop-color="#3F95F6" stop-opacity=".75"/><stop offset="1" stop-color="#3F95F6" stop-opacity=".9"/></linearGradient></defs><g stroke="url(#fg)" stroke-width="2" opacity=".72">';
+ for(let i=-14;i<=14;i++){g+=`<line x1="${cx+i*14}" y1="${hy}" x2="${cx+i*240}" y2="1350"/>`}
+ for(let k=1;k<11;k++){const y=hy+Math.pow(k/10,2.1)*420;g+=`<line x1="0" y1="${y.toFixed(1)}" x2="1080" y2="${y.toFixed(1)}"/>`}
+ g+='</g><ellipse cx="540" cy="'+hy+'" rx="600" ry="60" fill="#3F95F6" opacity=".28" filter="blur(30px)"/>';s.innerHTML=g})();
+</script>
+</body></html>

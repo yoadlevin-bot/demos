@@ -12,6 +12,7 @@ SEARCH = '<svg viewBox="0 0 24 24" fill="none" stroke="#5f6b7a" stroke-width="2.
 def icon(p): return f'<svg class="ico" viewBox="0 0 64 64" fill="none" stroke="var(--acc-d)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">{p}</svg>'
 REP = {
  '{{LOGO_D}}': logo(True), '{{LOGO_W}}': logo(True, img='mark-white.svg'), '{{LOGO_L}}': logo(False), '{{CTA}}': CTA, '{{CK}}': CK, '{{SEARCH}}': SEARCH, '{{WA}}': WA,
+ '{{CKB}}': '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5" stroke-dasharray="30"/></svg>',
  '{{ARROW}}': arrow('#3F95F6'), '{{ARROW_B}}': arrow('#2563EB'), '{{ARROW_W}}': arrow('#FFFFFF'),
  '{{ICON_GLOBE}}': icon('<circle cx="32" cy="32" r="22"/><path d="M10 32h44M32 10c7 7 7 37 0 44M32 10c-7 7-7 37 0 44"/><path d="M12 12l40 40" stroke-width="3.4"/>'),
  '{{ICON_PIN}}': icon('<path d="M32 56s-17-15-17-29a17 17 0 0134 0c0 14-17 29-17 29z"/><circle cx="32" cy="27" r="6" stroke-dasharray="3 3"/>'),
