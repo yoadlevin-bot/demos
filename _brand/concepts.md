@@ -13,3 +13,6 @@ Before each item: pick one not used in the last 5 items / 7 days. Same-day items
 | נחשון ביטוחים | insurance agency | נתניה | indigo #1E2A5A + amber #F2B544, shield icon | post-ins | POST 24.11 |
 | סטודיו נשימה | pilates studio (reformer) | כפר סבא | cream #F4F1EA + sage #5E7E69 | reel16 | REEL 24.11 |
 | קומה 7 | real-estate agent | רמת השרון | A: black + gold #C9A86A; B: white + teal #0F766E | reel17 | REEL2 24.11 |
+| סטודיו קשת | interior design studio | גבעתיים | A: dark #17150F + brass #C49A5E (arch window); B: warm white #F3F0EA + ink blue #2F4A6D | post-ab | POST 25.11 |
+| אור | cosmetician (facials, lashes) | הוד השרון | champagne #F4EDE6 + espresso #3A2A22 + rose-gold #9A5F48, arch hero | reel18 | REEL 25.11 |
+| מוסך נתיב | garage | חולון | charcoal #1F2328 + signal yellow #F5C518, hazard stripes | reel19 | REEL2 25.11 |
