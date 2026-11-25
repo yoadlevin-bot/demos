@@ -1,0 +1,141 @@
+<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><link rel="stylesheet" href="base.css"><link rel="stylesheet" href="v4.css">
+<!-- REEL19 (25.11) "תנחשו את העסק" for garages + giveaway (code מתנה). NEW composition: LIGHT stage (#F6F7F9 + fine grid), 2x2 mosaic of macro close-up tiles from the concept site that flip in one by one (guess), then collapse into one phone with the full site, then light end card. Concept: מוסך נתיב, חולון (charcoal + signal yellow). Deterministic render(t). -->
+<style>
+html,body{width:1080px;height:1920px;overflow:hidden;background:#F6F7F9;margin:0}
+.stage{position:absolute;inset:0;overflow:hidden;background:radial-gradient(55% 30% at 50% 55%,rgba(63,149,246,.16),transparent 72%),#F6F7F9;color:#0B1324}
+.stage:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(11,19,36,.06) 1.5px,transparent 1.5px),linear-gradient(90deg,rgba(11,19,36,.06) 1.5px,transparent 1.5px);background-size:72px 72px;-webkit-mask-image:radial-gradient(80% 60% at 50% 50%,#000,transparent 85%);mask-image:radial-gradient(80% 60% at 50% 50%,#000,transparent 85%)}
+.stage>.logo{top:236px;right:90px;bottom:auto;z-index:9}
+.stage>.logo img{height:62px}.stage>.logo .wm b{font-size:31px;color:#0B1324}.stage>.logo .wm small{font-size:14px;color:#2563EB}
+.chip{position:absolute;top:240px;left:90px;z-index:9;display:inline-flex;align-items:center;gap:12px;background:#2563EB;color:#fff;font:800 34px/1 Heebo;padding:16px 26px;border-radius:99px;box-shadow:0 14px 30px -12px rgba(37,99,235,.7)}
+.chip:before{content:"";width:11px;height:11px;border-radius:50%;background:#fff}
+.hl{position:absolute;right:90px;left:90px;top:380px;z-index:8}
+.H{font:900 110px/1.0 Heebo;letter-spacing:-.025em;white-space:nowrap;color:#0B1324}
+.H em{font-style:normal;color:#2563EB}
+.ln{display:block;overflow:hidden;padding:0 30px 16px;margin:0 -30px -10px}.ln>span{display:block}
+/* mosaic tiles */
+.tile{position:absolute;width:430px;height:360px;border-radius:36px;overflow:hidden;z-index:6;box-shadow:0 30px 60px -28px rgba(11,19,36,.55),0 0 0 1px rgba(11,19,36,.06);backface-visibility:hidden}
+#t1{right:90px;top:660px;background:#1F2328;color:#fff}
+#t2{left:90px;top:660px;background:#F5C518}
+#t3{right:90px;top:1060px;background:#fff}
+#t4{left:90px;top:1060px;background:#1F2328;color:#fff}
+.hz{position:absolute;left:-40px;right:-40px;height:46px;background:repeating-linear-gradient(-45deg,#F5C518 0 34px,#1F2328 34px 68px)}
+.t1a{position:absolute;right:40px;top:120px;font:700 40px/1 Heebo;color:rgba(255,255,255,.75)}
+.t1b{position:absolute;right:40px;top:180px;white-space:nowrap;font:900 68px/1 Heebo;direction:ltr;letter-spacing:-.02em}
+.t2b{position:absolute;left:36px;right:36px;top:118px;height:124px;border-radius:24px;background:#1F2328;color:#F5C518;display:flex;align-items:center;justify-content:center;gap:16px;font:800 40px/1 Heebo;box-shadow:0 18px 30px -14px rgba(0,0,0,.6)}.t2b svg{width:50px;height:50px;color:#7FE0A3}
+.t3 svg{position:absolute;left:50%;top:50%;width:300px;height:300px;margin:-150px}
+.t4a{position:absolute;right:40px;top:110px;white-space:nowrap;font:900 70px/1 Heebo;color:#F5C518}
+.t4b{position:absolute;right:40px;left:30px;top:210px;font:600 38px/1.2 Heebo;color:rgba(255,255,255,.8)}
+.q{position:absolute;left:24px;top:24px;width:70px;height:70px;border-radius:50%;background:#2563EB;color:#fff;font:900 44px/70px Heebo;text-align:center;box-shadow:0 10px 20px -8px rgba(37,99,235,.8)}
+/* phone */
+.pp{position:absolute;left:330px;top:640px;width:420px;height:860px;transform-origin:50% 50%;z-index:5}
+.phone{width:420px;height:860px;border-radius:64px;background:linear-gradient(145deg,#2a3350,#0b0f1a 30%,#0b0f1a 70%,#2a3350);padding:14px;box-shadow:inset 0 0 0 2px #3a4566}
+.scr{width:392px;height:832px;border-radius:52px;overflow:hidden;position:relative;background:#F2F2EF}
+.notch{position:absolute;top:20px;left:50%;margin-left:-55px;width:110px;height:32px;border-radius:18px;background:#05070d;z-index:20}
+.sb{position:absolute;top:0;left:0;right:0;height:64px;z-index:19;display:flex;align-items:center;justify-content:space-between;padding:14px 40px 0;direction:ltr;font:700 20px/1 Heebo;background:#1F2328;color:#fff}
+.sb .bat{width:30px;height:14px;border:2.2px solid currentColor;border-radius:5px;display:inline-block}
+.view{position:absolute;top:0;left:0;width:390px;transform-origin:0 0;color:#1F2328}
+.g-top{background:#1F2328;color:#fff;padding:70px 20px 22px}
+.g-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.g-brand{display:flex;align-items:center;gap:10px}.g-brand i{width:36px;height:36px;border-radius:9px;background:#F5C518;color:#1F2328;display:grid;place-items:center;font:900 20px/1 Heebo;font-style:normal}
+.g-brand b{font:800 20px/1 Heebo;display:block}.g-brand small{font:500 11px/1 Heebo;color:#F5C518;display:block;margin-top:5px}
+.bg{width:24px;height:15px;border-top:2.5px solid currentColor;border-bottom:2.5px solid currentColor;position:relative}.bg:after{content:"";position:absolute;top:4px;left:0;right:0;border-top:2.5px solid currentColor}
+.g-img{height:200px;border-radius:14px;overflow:hidden;position:relative;background:linear-gradient(180deg,#30353C,#16191D)}
+.g-img svg{position:absolute;inset:0;width:100%;height:100%}
+.g-h{font:900 36px/1.05 Heebo;margin-top:18px}.g-h em{font-style:normal;color:#F5C518}
+.g-p{font:400 15px/1.5 Heebo;color:rgba(255,255,255,.72);margin-top:8px}
+.g-wa{display:flex;align-items:center;justify-content:center;gap:9px;background:#F5C518;color:#1F2328;font:800 17px/1 Heebo;padding:16px;border-radius:12px;margin-top:16px}.g-wa svg{width:22px;height:22px}
+.g-hz{height:14px;background:repeating-linear-gradient(-45deg,#F5C518 0 12px,#1F2328 12px 24px)}
+.g-hours{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;background:#fff;font:700 15px/1 Heebo}.g-hours span:last-child{direction:ltr;color:#5A6270}
+.g-list{padding:6px 20px 40px;display:grid;gap:10px}
+.g-list div{background:#fff;border-radius:12px;padding:16px;display:flex;justify-content:space-between;font:700 16px/1 Heebo;box-shadow:0 6px 14px -10px rgba(0,0,0,.35)}.g-list span:last-child{color:#B8920A}
+.fict{position:absolute;right:90px;top:1500px;z-index:8;font:600 26px/1 Heebo;color:#4A5568;display:flex;gap:10px;align-items:center}
+.fict:before{content:"";width:10px;height:10px;border-radius:50%;background:#2563EB}
+.mini{position:absolute;left:90px;top:1484px;z-index:8;display:flex;align-items:center;gap:14px;font:600 32px/1 Heebo;color:#0B1324}
+.mini svg{width:50px;height:50px;color:#25D366}.mini .t{direction:ltr;font:900 60px/1 Heebo;color:#0B1324}.mini b{font-weight:900}
+/* end */
+#end{position:absolute;right:90px;left:90px;top:450px;z-index:8}
+.e-chip{display:inline-flex;align-items:center;gap:12px;background:#2563EB;color:#fff;font:800 38px/1 Heebo;padding:18px 32px;border-radius:99px;box-shadow:0 14px 30px -12px rgba(37,99,235,.7)}
+.e-chip:before{content:"";width:12px;height:12px;border-radius:50%;background:#fff}
+.e-h{font:900 112px/1.02 Heebo;letter-spacing:-.025em;margin-top:34px}.e-h em{font-style:normal;color:#2563EB}
+.e-l{display:flex;align-items:center;gap:16px;font:600 48px/1.2 Heebo;color:#1c2638;margin-top:56px}.e-l svg{width:56px;height:56px;color:#25D366;flex:none}
+.e-tel{font:900 144px/1 Heebo;direction:ltr;text-align:right;color:#0B1324;margin-top:22px;white-space:nowrap}
+.e-p{display:flex;flex-direction:column;align-items:flex-start;gap:18px;margin-top:70px}
+.e-p .pill{font-size:38px;padding:18px 28px;white-space:nowrap;color:#0B1324;background:#fff;border-color:#D5E2F5;box-shadow:0 8px 20px -10px rgba(11,19,36,.25)}.e-p .pill:before{background:#2563EB;box-shadow:none}
+#prog{position:absolute;bottom:0;right:0;height:8px;background:#2563EB;z-index:12}
+</style></head><body>
+<div class="stage on-light">
+  {{LOGO_L}}
+  <div class="chip" id="chip">מבצע מתנה · הרשמה עד 3.12</div>
+  <div class="hl" id="h1"><h1 class="H"><span class="ln"><span>מוסכים: אתר</span></span><span class="ln"><span>מלא <em>במתנה.</em></span></span></h1></div>
+  <div class="hl" id="h2"><h1 class="H"><span class="ln"><span>כל משתתף מקבל</span></span><span class="ln"><span><em>סקיצה בחינם.</em></span></span></h1></div>
+  <div class="hl" id="h3"><h1 class="H"><span class="ln"><span>ככה זה נראה</span></span><span class="ln"><span><em>בטלפון.</em></span></span></h1></div>
+  <div class="tile" id="t1"><span class="hz" style="top:0"></span><div class="t1a">פתוח</div><div class="t1b">7:30–17:00</div></div>
+  <div class="tile" id="t2"><div class="t2b">{{WA}}<span>תיאום תור</span></div></div>
+  <div class="tile t3" id="t3"><svg viewBox="0 0 100 100" fill="none" stroke="#1F2328" stroke-width="5" stroke-linecap="round"><path d="M18 70a34 34 0 1 1 64 0"/><path d="M50 62L68 38" stroke="#E0A800" stroke-width="6"/><circle cx="50" cy="62" r="6" fill="#1F2328"/><path d="M24 50h6M50 26v6M70 34l-4 4M76 50h-6M30 34l4 4" stroke-width="4"/></svg></div>
+  <div class="tile" id="t4"><div class="t4a" id="t4a">טסט שנתי</div><div class="t4b">הכנה לטסט, בלי הפתעות</div></div>
+  <div class="pp" id="pp"><div class="phone"><div class="scr"><div class="notch"></div><div class="sb"><span>20:30</span><span class="bat"></span></div>
+   <div class="view" id="view">
+    <div class="g-top"><div class="g-nav"><div class="g-brand"><i>נ</i><div><b>מוסך נתיב</b><small>חולון · כל סוגי הרכבים</small></div></div><span class="bg"></span></div>
+     <div class="g-img"><svg viewBox="0 0 350 200" preserveAspectRatio="xMidYMid slice"><defs><radialGradient id="lg" cx=".5" cy="0" r=".9"><stop offset="0" stop-color="#F5C518" stop-opacity=".55"/><stop offset="1" stop-color="#F5C518" stop-opacity="0"/></radialGradient></defs><rect width="350" height="200" fill="url(#lg)"/><rect x="40" y="0" width="270" height="10" fill="#F5C518" opacity=".9"/>
+      <path d="M60 128 C70 104 100 96 130 94 L160 76 C180 66 225 66 245 78 L272 96 C292 98 300 108 302 128 Z" fill="#E8EAED"/><path d="M168 82 L190 74 L232 74 L252 94 L168 94Z" fill="#9FB3C8"/><path d="M140 94 L162 80 L162 94Z" fill="#9FB3C8"/>
+      <circle cx="110" cy="130" r="22" fill="#111"/><circle cx="110" cy="130" r="9" fill="#9AA3AD"/><circle cx="258" cy="130" r="22" fill="#111"/><circle cx="258" cy="130" r="9" fill="#9AA3AD"/>
+      <rect x="40" y="156" width="270" height="12" rx="3" fill="#5A6270"/><rect x="70" y="168" width="14" height="32" fill="#4A515C"/><rect x="266" y="168" width="14" height="32" fill="#4A515C"/><rect x="0" y="196" width="350" height="4" fill="#F5C518" opacity=".6"/></svg></div>
+     <div class="g-h">הרכב בידיים<br><em>טובות.</em></div>
+     <div class="g-p">טיפולים, תיקונים והכנה לטסט, עם הסבר ברור לפני כל עבודה.</div>
+     <div class="g-wa">{{WA}}<span>תיאום תור בוואטסאפ</span></div></div>
+    <div class="g-hz"></div>
+    <div class="g-hours"><span>שעות פתיחה</span><span>א׳–ה׳ 7:30–17:00</span></div>
+    <div class="g-list"><div><span>טיפול תקופתי</span><span>←</span></div><div><span>הכנה לטסט</span><span>←</span></div><div><span>בלמים ומתלים</span><span>←</span></div></div>
+   </div></div></div></div>
+  <div class="fict" id="fict">קונספט · עסק בדוי</div>
+  <div class="mini" id="mini">{{WA}}<span>שלחו <b>"מתנה"</b></span><span class="t">058-7336636</span></div>
+  <div id="end">
+   <span class="e-chip">מבצע מתנה · הרשמה עד 3.12</span>
+   <h1 class="e-h"><span class="ln"><span>שלחו <em>"מתנה"</em></span></span><span class="ln"><span>+ שם המוסך:</span></span></h1>
+   <div class="e-l" id="e0">{{WA}}<span>בוואטסאפ:</span></div>
+   <div class="e-tel" id="e1">058-7336636</div>
+   <div class="e-p" id="e2"><span class="pill">כל משתתף מקבל סקיצה בחינם</span><span class="pill">בלי התחייבות</span><span class="pill">ב־4.12 נבחר עסק אחד לאתר מלא</span></div>
+  </div>
+  <div id="prog"></div>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+const T=12.6;
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x)), p=(t,a,b)=>cl((t-a)/(b-a));
+const eo=x=>1-Math.pow(1-x,3), eio=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+const show=(el,on)=>el.style.display=on?'':'none';
+function lines(id,tin,tout,pre,t){const el=$(id);show(el,t>=tin-0.01&&t<tout+0.4);
+ el.querySelectorAll('.ln>span').forEach((s,i)=>{let a=eo(p(t,tin+i*0.08,tin+i*0.08+0.4));if(pre)a=eo(cl(.55+t/0.35*.45-i*.07));const o=eio(p(t,tout+i*0.04,tout+i*0.04+0.28));s.style.transform=`translateY(${(1-a)*110-o*115}%)`})}
+const SC=392/390;
+window.render=function(t){
+ $('prog').style.width=(t/T*100)+'%';
+ lines('h1',0,2.6,true,t); lines('h2',2.8,4.9,false,t); lines('h3',5.1,8.0,false,t);
+ const co=1-p(t,7.95,8.2); $('chip').style.opacity=co; $('mini').style.opacity=co*eo(cl(.5+t/0.4*.5));
+ // tiles flip in: t1 already flipping at 0, then every 0.55s; collapse into phone 4.6-5.2
+ const col=eio(p(t,4.55,5.0));
+ [['t1',-0.6,1,1],['t2',0.1,-1,1],['t3',0.35,1,-1],['t4',0.6,-1,-1]].forEach(([id,a0,sx,sy],i)=>{const el=$(id);
+  const a=eo(p(t,a0,a0+0.55)); const r=(1-a)*90;
+  const dx=-sx*col*230, dy=-sy*col*200; const s=(1-col*.6);
+  const pu=1.06-0.06*eo(p(t,a0,a0+1.2)); el.style.transform=`perspective(1200px) translate(${dx}px,${dy}px) rotateY(${r}deg) scale(${s*pu})`; el.style.opacity=(a>0?1:0)*(1-col);
+  // slow push-in after landing
+  
+ });
+ const bl=0; $('t4a').style.filter=`blur(${bl}px)`; 
+ // phone
+ const pa=eio(p(t,4.85,5.45)); const out=eio(p(t,7.9,8.4));
+ show($('pp'),t>4.7);
+ $('pp').style.opacity=pa*(1-out);
+ $('pp').style.transform=`translateY(${-28*pa+300*out}px) scale(${(0.55+0.47*pa)})`;
+ $('pp').style.filter=`drop-shadow(0 40px 50px rgba(11,19,36,.35)) drop-shadow(0 0 30px rgba(37,99,235,${.25*pa}))`;
+ $('view').style.transform=`scale(${SC}) translateY(${-150*eio(p(t,5.8,7.6))}px)`;
+ $('fict').style.opacity=pa*(1-out);
+ // end
+ const e=$('end'); show(e,t>=8.2);
+ const ea=eo(p(t,8.25,8.6)); e.querySelector('.e-chip').style.opacity=ea; e.querySelector('.e-chip').style.transform=`translateY(${(1-ea)*30}px)`;
+ e.querySelectorAll('.ln>span').forEach((s,i)=>{const a=eo(p(t,8.35+i*0.09,8.8+i*0.09));s.style.transform=`translateY(${(1-a)*110}%)`});
+ [['e0',8.85],['e1',9.05],['e2',9.3]].forEach(([id,a0])=>{const a=eo(p(t,a0,a0+0.4));$(id).style.opacity=a;$(id).style.transform=`translateY(${(1-a)*40}px)`});
+ const pulse=t>10?Math.max(0,Math.sin((t-10)*Math.PI/0.9)):0; $('e1').style.transform+=` scale(${1+0.02*pulse})`;
+};
+window.T=T;
+if(!location.search.includes('rec')){let s=performance.now();(function f(){render(((performance.now()-s)/1000)%T);requestAnimationFrame(f)})()} else render(0);
+</script></body></html>

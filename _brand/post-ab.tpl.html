@@ -1,0 +1,90 @@
+<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><link rel="stylesheet" href="base.css"><link rel="stylesheet" href="v4.css"><style>
+/* POST 25.11 "מעצבי פנים: A או B?" + BF countdown (code עיצוב). Two straight phones side by side with A/B badges on a blue glow, CTA band. Concept: סטודיו קשת, גבעתיים (fictional; A dark + brass, B warm white + ink blue). */
+html,body{margin:0}
+.slide{position:relative;width:1080px;height:1350px;overflow:hidden;background:radial-gradient(50% 30% at 50% 62%,rgba(63,149,246,.36),transparent 70%),radial-gradient(70% 30% at 100% 0%,rgba(37,99,235,.22),transparent 70%),#060B17;color:#fff}
+.flr{position:absolute;left:0;right:0;top:960px;height:390px;background-image:linear-gradient(rgba(63,149,246,.35) 2px,transparent 2px),linear-gradient(90deg,rgba(63,149,246,.35) 2px,transparent 2px);background-size:80px 40px;-webkit-mask-image:linear-gradient(180deg,#000,transparent 70%);mask-image:linear-gradient(180deg,#000,transparent 70%);opacity:.7}
+.eb{position:absolute;top:78px;right:90px;display:inline-flex;align-items:center;gap:14px;background:#2563EB;color:#fff;font:800 32px/1 Heebo;padding:15px 28px;border-radius:99px;box-shadow:0 0 40px rgba(63,149,246,.45)}
+.eb:before{content:"";width:11px;height:11px;border-radius:50%;background:#fff}
+.h1{position:absolute;top:158px;right:90px;left:90px;font:900 120px/1.0 Heebo;letter-spacing:-.025em}
+.h1 em{font-style:normal;color:#3F95F6;text-shadow:0 0 44px rgba(63,149,246,.55)}
+.sub{position:absolute;top:410px;right:90px;left:90px;font:500 38px/1.3 Heebo;color:rgba(255,255,255,.86)}
+.sub s{text-decoration-thickness:4px}.sub b{color:#3F95F6;font-weight:900;font-size:46px;text-shadow:0 0 30px rgba(63,149,246,.5)}
+.pp{position:absolute;top:520px;width:410px;height:840px;transform:scale(.655);transform-origin:50% 0;filter:drop-shadow(0 40px 50px rgba(0,0,0,.7)) drop-shadow(0 0 40px rgba(63,149,246,.3))}
+#pA{right:340px;margin-right:-60px}#pB{left:340px;margin-left:-60px}
+#pA{right:auto;left:533px}#pB{left:137px}
+.phone{width:410px;height:840px;border-radius:62px;background:linear-gradient(145deg,#2a3350,#0b0f1a 30%,#0b0f1a 70%,#2a3350);padding:14px;box-shadow:inset 0 0 0 2px #3a4566}
+.scr{width:382px;height:812px;border-radius:50px;overflow:hidden;position:relative}
+.notch{position:absolute;top:20px;left:50%;margin-left:-55px;width:110px;height:32px;border-radius:18px;background:#05070d;z-index:20}
+.sb{position:absolute;top:0;left:0;right:0;height:64px;z-index:19;display:flex;align-items:center;justify-content:space-between;padding:14px 38px 0;direction:ltr;font:700 20px/1 Heebo}
+.sb .bat{width:30px;height:14px;border:2.2px solid currentColor;border-radius:5px;display:inline-block}
+.view{position:absolute;top:0;left:0;width:390px;transform:scale(.9795);transform-origin:0 0}
+.badge{position:absolute;top:-66px;left:50%;margin-left:-66px;width:132px;height:132px;border-radius:50%;display:grid;place-items:center;font:900 82px/1 Heebo;color:#fff;background:#0B1324;border:4px solid #3F95F6;box-shadow:0 0 40px rgba(63,149,246,.55);z-index:22;direction:ltr}
+.bg{width:24px;height:15px;border-top:2.5px solid currentColor;border-bottom:2.5px solid currentColor;position:relative}.bg:after{content:"";position:absolute;top:4px;left:0;right:0;border-top:2.5px solid currentColor}
+/* A: dark + brass */
+.A{background:#17150F;color:#F3EDE2}.A .sb{background:#17150F;color:#F3EDE2}
+.a-in{padding:68px 22px 0}
+.a-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.a-brand b{font:300 26px/1 Heebo;letter-spacing:.28em;display:block}.a-brand small{font:600 11px/1 Heebo;color:#C49A5E;display:block;margin-top:6px}
+.a-img{height:300px;border-radius:170px 170px 8px 8px;overflow:hidden;position:relative;background:#2A251C}
+.a-img svg{position:absolute;inset:0;width:100%;height:100%}
+.a-h{font:300 36px/1.1 Heebo;margin-top:20px}.a-h b{font-weight:900;color:#C49A5E}
+.a-p{font:400 15px/1.55 Heebo;color:rgba(243,237,226,.7);margin-top:8px}
+.a-list{display:grid;margin-top:14px}.a-list div{border-top:1px solid rgba(196,154,94,.35);padding:14px 0;display:flex;justify-content:space-between;font:600 16px/1 Heebo}.a-list span:last-child{color:#C49A5E}
+.a-wa{display:flex;align-items:center;justify-content:center;gap:9px;background:#C49A5E;color:#17150F;font:800 17px/1 Heebo;padding:16px;border-radius:6px;margin-top:18px}.a-wa svg{width:22px;height:22px}
+/* B: warm white + ink blue */
+.B{background:#F3F0EA;color:#1E2B3A}.B .sb{background:#F3F0EA;color:#1E2B3A}
+.b-in{padding:68px 18px 0}
+.b-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.b-brand{display:flex;align-items:center;gap:8px}.b-brand i{width:34px;height:34px;border-radius:50%;border:2.5px solid #2F4A6D;display:grid;place-items:center;font:900 15px/1 Heebo;font-style:normal;color:#2F4A6D}
+.b-brand b{font:800 19px/1 Heebo;display:block}.b-brand small{font:500 11px/1 Heebo;color:#2F4A6D;display:block;margin-top:4px}
+.b-h{font:900 38px/1.02 Heebo;letter-spacing:-.01em}.b-h em{font-style:normal;color:#2F4A6D}
+.b-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:10px;margin-top:16px;height:250px}
+.b-grid div{border-radius:16px;overflow:hidden;position:relative}.b-grid svg{position:absolute;inset:0;width:100%;height:100%}
+.b-grid small{position:absolute;bottom:10px;right:10px;background:#fff;color:#1E2B3A;font:800 11px/1 Heebo;padding:6px 9px;border-radius:99px}
+.b-p{font:400 15px/1.5 Heebo;color:#4A5868;margin-top:14px}.b-steps{display:flex;gap:8px;margin-top:16px}.b-q{margin-top:16px;background:#2F4A6D;color:#fff;border-radius:16px;padding:16px;font:700 15px/1.4 Heebo}.b-q b{display:block;font:900 20px/1.1 Heebo;margin-bottom:6px;color:#F2D7A1}.b-steps span b{display:block;font:900 20px/1 Heebo;margin-bottom:6px}.b-steps span{flex:1;background:#fff;border-radius:12px;padding:12px 8px;text-align:center;font:700 13px/1.2 Heebo;color:#2F4A6D;box-shadow:0 6px 14px -10px rgba(30,43,58,.4)}
+.b-wa{position:absolute;left:14px;right:14px;bottom:18px;display:flex;align-items:center;justify-content:center;gap:9px;background:#25D366;color:#06301A;font:800 17px/1 Heebo;padding:15px;border-radius:14px;box-shadow:0 12px 26px -10px rgba(37,211,102,.8);z-index:18}.b-wa svg{width:22px;height:22px}
+.fict{position:absolute;top:1098px;right:90px;font:600 26px/1 Heebo;color:rgba(255,255,255,.72);display:flex;gap:10px;align-items:center;z-index:7}
+.fict:before{content:"";width:10px;height:10px;border-radius:50%;background:#3F95F6;box-shadow:0 0 12px #3F95F6}
+.ask{position:absolute;top:1098px;right:90px;font:700 34px/1 Heebo;color:#fff;z-index:7}.ask b{color:#3F95F6}
+.band{position:absolute;top:1152px;right:90px;left:90px;height:112px;border-radius:30px;background:rgba(12,22,44,.92);border:1.5px solid rgba(63,149,246,.6);box-shadow:0 0 60px rgba(63,149,246,.22);display:flex;align-items:center;justify-content:space-between;padding:0 32px;z-index:8;gap:20px}
+.band .l1{display:flex;align-items:center;gap:14px;white-space:nowrap;font:600 31px/1.25 Heebo;color:rgba(255,255,255,.9)}
+.band .l1 svg{width:46px;height:46px;color:#25D366;flex:none}.band .l1 b{color:#fff;font-weight:900}
+.band .tel{white-space:nowrap;font:900 60px/1 Heebo;direction:ltr;color:#fff;text-shadow:0 0 40px rgba(63,149,246,.6)}
+.slide>.logo{bottom:auto;top:1284px;right:90px}.slide>.logo img{height:46px}.slide>.logo .wm b{font-size:26px}.slide>.logo .wm small{font-size:12px}
+.free{position:absolute;top:1296px;left:90px;font:600 28px/1 Heebo;color:rgba(255,255,255,.78)}
+</style></head><body>
+<div class="slide grain on-dark">
+ <div class="flr"></div>
+ <div class="eb">נובמבר סייל · נשארו 6 ימים</div>
+ <h1 class="h1">מעצבי פנים:<br><em>A</em> או <em>B</em>?</h1>
+ <div class="sub">רואים לפני שמשלמים: <b>2,490 ₪</b> במקום <s>2,900 ₪</s></div>
+ <div class="pp" id="pA"><span class="badge">A</span><div class="phone"><div class="scr A"><div class="notch"></div><div class="sb"><span>12:30</span><span class="bat"></span></div>
+  <div class="view"><div class="a-in">
+   <div class="a-nav"><div class="a-brand"><b>קשת</b><small>סטודיו לעיצוב פנים · גבעתיים</small></div><span class="bg"></span></div>
+   <div class="a-img"><svg viewBox="0 0 346 300" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="win" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F6E2B8"/><stop offset="1" stop-color="#C49A5E"/></linearGradient><linearGradient id="wl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3A3226"/><stop offset="1" stop-color="#211D16"/></linearGradient></defs>
+    <rect width="346" height="300" fill="url(#wl)"/><path d="M120 210V110a53 53 0 0 1 106 0v100Z" fill="url(#win)" opacity=".9"/><path d="M173 57v153M120 140h106" stroke="#2A251C" stroke-width="5"/>
+    <path d="M120 210 L60 300 H290 L226 210Z" fill="#F6E2B8" opacity=".12"/><rect y="236" width="346" height="64" fill="#1A1711"/>
+    <rect x="70" y="200" width="200" height="50" rx="18" fill="#8C6B45"/><rect x="62" y="186" width="44" height="64" rx="16" fill="#9C7A52"/><rect x="234" y="186" width="44" height="64" rx="16" fill="#9C7A52"/><rect x="104" y="190" width="132" height="26" rx="10" fill="#A9875D"/>
+    <path d="M300 250V120" stroke="#C49A5E" stroke-width="4"/><path d="M282 124h36l-8-26h-20Z" fill="#E8C98C"/><circle cx="300" cy="140" r="24" fill="#F6E2B8" opacity=".18"/>
+    <path d="M36 250c-6-40 6-70 22-86-4 30 0 60 6 86Z" fill="#6E7C5A"/><path d="M48 250c4-34 22-56 38-62-10 22-14 44-14 62Z" fill="#83926B"/><rect x="30" y="236" width="40" height="18" rx="4" fill="#3A3226"/></svg></div>
+   <div class="a-h">בית שמרגיש<br><b>כמו שלכם.</b></div>
+   <div class="a-p">תכנון ועיצוב דירות, מהסקיצה ועד הוילון האחרון.</div>
+   <div class="a-wa">{{WA}}<span>פגישת היכרות בוואטסאפ</span></div><div class="a-list"><div><span>תכנון דירה</span><span>←</span></div><div><span>עיצוב מטבח</span><span>←</span></div><div><span>ליווי שיפוץ</span><span>←</span></div></div>
+  </div></div></div></div></div>
+ <div class="pp" id="pB"><span class="badge">B</span><div class="phone"><div class="scr B"><div class="notch"></div><div class="sb"><span>12:30</span><span class="bat"></span></div>
+  <div class="view"><div class="b-in">
+   <div class="b-nav"><div class="b-brand"><i>ק</i><div><b>סטודיו קשת</b><small>עיצוב פנים · גבעתיים</small></div></div><span class="bg"></span></div>
+   <div class="b-h">מתכננים, מעצבים<br><em>ומלווים עד הסוף.</em></div>
+   <div class="b-grid">
+    <div style="background:#DCD3C4"><svg viewBox="0 0 200 250" preserveAspectRatio="xMidYMid slice"><rect width="200" height="250" fill="#E7DFD2"/><rect x="0" y="180" width="200" height="70" fill="#C9B79C"/><rect x="30" y="40" width="70" height="90" fill="#F7F3EC" stroke="#B9A88E" stroke-width="3"/><path d="M65 40v90M30 85h70" stroke="#B9A88E" stroke-width="3"/><rect x="20" y="150" width="160" height="40" rx="14" fill="#2F4A6D"/><rect x="28" y="138" width="60" height="22" rx="10" fill="#3E5D84"/><rect x="104" y="138" width="60" height="22" rx="10" fill="#3E5D84"/><circle cx="160" cy="70" r="20" fill="#F2D7A1"/><path d="M160 90v60" stroke="#8C7A5E" stroke-width="3"/></svg><small>סלון</small></div>
+    <div style="background:#CFD8E2"><svg viewBox="0 0 160 250" preserveAspectRatio="xMidYMid slice"><rect width="160" height="250" fill="#D9E1EA"/><rect y="170" width="160" height="80" fill="#F3F0EA"/><rect x="20" y="120" width="120" height="60" fill="#2F4A6D"/><rect x="20" y="110" width="120" height="12" fill="#E7DFD2"/><rect x="30" y="40" width="100" height="40" fill="#fff" opacity=".8"/><circle cx="50" cy="60" r="8" fill="#C49A5E"/><circle cx="80" cy="60" r="8" fill="#C49A5E"/><circle cx="110" cy="60" r="8" fill="#C49A5E"/><path d="M50 68v30M80 68v30M110 68v30" stroke="#8C7A5E" stroke-width="2"/></svg><small>מטבח</small></div>
+   </div>
+   <div class="b-p">דירות ובתים פרטיים, תכנון מלא או ייעוץ נקודתי.</div><div class="b-steps"><span><b>01</b>פגישה</span><span><b>02</b>תכנון</span><span><b>03</b>ביצוע</span></div><div class="b-q"><b>פגישת היכרות בסטודיו</b>מביאים תוכנית דירה, ומתחילים משם.</div>
+  </div></div><div class="b-wa">{{WA}}<span>וואטסאפ לסטודיו</span></div></div></div></div>
+ 
+ <div class="fict">קונספט · עסק בדוי</div>
+ <div class="band"><div class="l1">{{WA}}<span>שלחו <b>"עיצוב"</b> בוואטסאפ</span></div><div class="tel">058-7336636</div></div>
+ {{LOGO_D}}
+ <div class="free">המבצע עד 30.11 · סקיצה ראשונה בחינם</div>
+</div>
+</body></html>

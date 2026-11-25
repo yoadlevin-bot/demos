@@ -1,0 +1,162 @@
+<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><link rel="stylesheet" href="base.css"><link rel="stylesheet" href="v4.css">
+<!-- REEL18 (25.11) "גוגל בלי אתר" for cosmeticians + BF (code יופי). NEW composition: giant typography search bar (no device) -> result list -> macro close-up of the concept site that zooms out into a phone (clip-path window) -> WA tap -> BF end card. Deep navy with one top light beam + light sweep. Deterministic render(t). -->
+<style>
+html,body{width:1080px;height:1920px;overflow:hidden;background:#050A16;margin:0}
+.stage{position:absolute;inset:0;overflow:hidden;background:radial-gradient(60% 28% at 50% 0%,rgba(63,149,246,.38),transparent 72%),radial-gradient(50% 30% at 100% 80%,rgba(37,99,235,.18),transparent 70%),#050A16;color:#fff}
+.beam{position:absolute;top:-300px;left:50%;margin-left:-260px;width:520px;height:1500px;background:linear-gradient(180deg,rgba(120,180,255,.20),transparent 80%);transform:rotate(-14deg);filter:blur(30px);pointer-events:none}
+.sweep{position:absolute;top:0;bottom:0;width:260px;background:linear-gradient(90deg,transparent,rgba(160,205,255,.16),transparent);transform:skewX(-18deg);pointer-events:none;z-index:7}
+.stage>.logo{top:236px;right:90px;bottom:auto;z-index:9}
+.stage>.logo img{height:62px}.stage>.logo .wm b{font-size:31px}.stage>.logo .wm small{font-size:14px}
+.offer{position:absolute;top:236px;left:90px;z-index:9;text-align:left;direction:rtl}
+.offer .o1{display:inline-flex;align-items:center;gap:12px;background:#2563EB;color:#fff;font:800 34px/1 Heebo;padding:16px 26px;border-radius:99px;box-shadow:0 0 40px rgba(63,149,246,.5)}
+.offer .o1:before{content:"";width:11px;height:11px;border-radius:50%;background:#fff}
+.offer .o2{font:600 32px/1 Heebo;color:rgba(255,255,255,.85);margin-top:14px}.offer .o2 b{font:900 44px/1 Heebo;color:#fff;text-shadow:0 0 24px rgba(63,149,246,.6)}.offer .o2 s{text-decoration-thickness:3px}
+.hl{position:absolute;right:90px;left:90px;top:390px;z-index:8}
+#h1 .H{font-size:88px}
+.H{font:900 100px/1.0 Heebo;letter-spacing:-.025em;white-space:nowrap}
+.H em{font-style:normal;color:#3F95F6;text-shadow:0 0 44px rgba(63,149,246,.55)}
+.ln{display:block;overflow:hidden;padding:0 30px 16px;margin:0 -30px -10px}.ln>span{display:block}
+/* giant search */
+#srch{position:absolute;right:70px;left:70px;top:690px;height:150px;border-radius:75px;background:#fff;color:#1d2533;display:flex;align-items:center;gap:26px;padding:0 50px;z-index:6;box-shadow:0 40px 80px -30px rgba(0,0,0,.8),0 0 0 6px rgba(63,149,246,.25),0 0 80px rgba(63,149,246,.35)}
+#srch svg{width:62px;height:62px;flex:none}
+#q{font:700 62px/1 Heebo;white-space:nowrap;overflow:hidden}
+.caret{display:inline-block;width:5px;height:66px;background:#2563EB;vertical-align:middle;margin-right:6px}
+#res{position:absolute;right:70px;left:70px;top:880px;z-index:6;display:grid;gap:18px}
+.r{height:112px;border-radius:28px;background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.14);display:flex;align-items:center;justify-content:space-between;padding:0 40px}
+.r .nm{display:flex;flex-direction:column;gap:14px}.r .nm i{display:block;height:22px;border-radius:11px;background:rgba(255,255,255,.55);filter:blur(5px)}.r .nm i+i{height:16px;background:rgba(255,255,255,.28);filter:blur(3px)}
+.r .tg{transition:none;font:800 34px/1 Heebo;color:#0B1324;background:#E6EDF8;padding:14px 22px;border-radius:99px;display:flex;gap:10px;align-items:center}
+.r .tg:after{content:"↗";font-weight:900;direction:ltr}
+.r.me{background:rgba(11,19,36,.6);border:2px dashed rgba(255,255,255,.35)}
+.r.me .nm b{font:800 42px/1 Heebo;color:#fff}.r.me .nm small{font:600 28px/1 Heebo;color:rgba(255,255,255,.62)}
+.r.me .tg{background:transparent;color:rgba(255,255,255,.7);border:2px solid rgba(255,255,255,.35)}.r.me .tg:after{content:"✕";color:#8FA3C0}
+/* phone window */
+#win{position:absolute;inset:0;z-index:5}
+.pp{position:absolute;left:330px;top:640px;width:420px;height:860px;transform-origin:50% 50%}
+.phone{width:420px;height:860px;border-radius:64px;background:linear-gradient(145deg,#2a3350,#0b0f1a 30%,#0b0f1a 70%,#2a3350);padding:14px;box-shadow:inset 0 0 0 2px #3a4566}
+.scr{width:392px;height:832px;border-radius:52px;overflow:hidden;position:relative;background:#F4EDE6}
+.notch{position:absolute;top:20px;left:50%;margin-left:-55px;width:110px;height:32px;border-radius:18px;background:#05070d;z-index:20}
+.sb{position:absolute;top:0;left:0;right:0;height:64px;z-index:19;display:flex;align-items:center;justify-content:space-between;padding:14px 40px 0;direction:ltr;font:700 20px/1 Heebo;background:#F4EDE6;color:#3A2A22}
+.sb .bat{width:30px;height:14px;border:2.2px solid currentColor;border-radius:5px;display:inline-block}
+.view{position:absolute;top:0;left:0;width:390px;transform-origin:0 0;color:#3A2A22}
+.s-nav{padding:70px 22px 14px;display:flex;justify-content:space-between;align-items:center}
+.s-brand b{font:300 30px/1 Heebo;letter-spacing:.32em;display:block}.s-brand small{font:600 11px/1 Heebo;color:#9A6A55;display:block;margin-top:6px;letter-spacing:.06em}
+.bg{width:24px;height:15px;border-top:2.5px solid currentColor;border-bottom:2.5px solid currentColor;position:relative}.bg:after{content:"";position:absolute;top:4px;left:0;right:0;border-top:2.5px solid currentColor}
+.s-img{margin:0 16px;height:270px;border-radius:140px 140px 18px 18px;overflow:hidden;position:relative;background:linear-gradient(170deg,#EBCFC0,#C99A84)}
+.s-img svg{position:absolute;inset:0;width:100%;height:100%}
+.s-h{font:300 40px/1.08 Heebo;padding:20px 22px 0}.s-h b{font-weight:900;color:#9A5F48}
+.s-p{font:400 15px/1.55 Heebo;color:#6B564B;padding:10px 22px 0}
+.s-wa{margin:16px 22px 0;display:flex;align-items:center;justify-content:center;gap:9px;background:#3A2A22;color:#F4EDE6;font:800 17px/1 Heebo;padding:17px;border-radius:12px;position:relative}.s-wa svg{width:22px;height:22px;color:#7FE0A3}
+.s-list{padding:18px 22px 40px;display:grid;gap:0}
+.s-list div{border-top:1px solid rgba(58,42,34,.18);padding:15px 0;display:flex;justify-content:space-between;font:700 16px/1 Heebo}.s-list span:last-child{color:#9A5F48}
+.rip{position:absolute;left:50%;top:50%;width:40px;height:40px;margin:-20px;border-radius:50%;border:3px solid #7FE0A3;opacity:0}
+.toast{position:absolute;left:16px;right:16px;top:70px;background:#fff;border-radius:18px;padding:14px 16px;display:flex;gap:12px;align-items:center;box-shadow:0 18px 40px -12px rgba(0,0,0,.45);z-index:21;color:#1d2533}
+.toast i{width:40px;height:40px;border-radius:12px;background:#25D366;display:grid;place-items:center;flex:none}.toast i svg{width:24px;height:24px;color:#fff}
+.toast b{font:800 15px/1.2 Heebo;display:block}.toast small{font:500 13px/1.2 Heebo;color:#5b6575}
+.finger{position:absolute;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.9) 0 18%,rgba(255,255,255,.35) 19% 40%,transparent 41%);z-index:22;pointer-events:none}
+.fict{position:absolute;right:90px;top:1494px;z-index:8;font:600 26px/1 Heebo;color:rgba(255,255,255,.72);display:flex;gap:10px;align-items:center}
+.fict:before{content:"";width:10px;height:10px;border-radius:50%;background:#3F95F6;box-shadow:0 0 12px #3F95F6}
+.mini{position:absolute;left:90px;top:1478px;z-index:8;display:flex;align-items:center;gap:14px;font:600 32px/1 Heebo;color:rgba(255,255,255,.88)}
+.mini svg{width:52px;height:52px;color:#25D366}.mini .t{direction:ltr;font:900 64px/1 Heebo;color:#fff;text-shadow:0 0 30px rgba(63,149,246,.6)}
+/* end */
+#end{position:absolute;right:90px;left:90px;top:360px;z-index:8}
+.e-chip{display:inline-flex;align-items:center;gap:12px;background:#2563EB;color:#fff;font:800 38px/1 Heebo;padding:18px 32px;border-radius:99px;box-shadow:0 0 40px rgba(63,149,246,.5)}
+.e-chip:before{content:"";width:12px;height:12px;border-radius:50%;background:#fff}
+.e-h{font:900 112px/1.02 Heebo;letter-spacing:-.025em;margin-top:34px}.e-h em{font-style:normal;color:#3F95F6;text-shadow:0 0 44px rgba(63,149,246,.55)}
+.e-was{font:600 46px/1 Heebo;color:rgba(255,255,255,.78);margin-top:18px}.e-was s{text-decoration-thickness:4px}
+.e-l{display:flex;align-items:center;gap:16px;font:600 48px/1.2 Heebo;color:rgba(255,255,255,.92);margin-top:70px}.e-l svg{width:56px;height:56px;color:#25D366;flex:none}.e-l b{color:#fff;font-weight:900}
+.e-tel{font:900 144px/1 Heebo;direction:ltr;text-align:right;color:#fff;margin-top:22px;text-shadow:0 0 50px rgba(63,149,246,.6);white-space:nowrap}
+.e-p{display:flex;flex-direction:column;align-items:flex-start;gap:16px;margin-top:64px}.e-p .pill{font-size:38px;padding:16px 26px;white-space:nowrap}
+#prog{position:absolute;bottom:0;right:0;height:8px;background:#3F95F6;box-shadow:0 0 18px #3F95F6;z-index:12}
+</style></head><body>
+<div class="stage grain on-dark">
+  <div class="beam"></div><div class="sweep" id="sw"></div>
+  {{LOGO_D}}
+  <div class="offer" id="offer"><div class="o1">בלאק פריידיי · נשארו 6 ימים</div><div class="o2"><b>2,490 ₪</b> במקום <s>2,900 ₪</s></div></div>
+  <div class="hl" id="h1"><h1 class="H"><span class="ln"><span>קוסמטיקאיות:</span></span><span class="ln"><span>הלקוחה מוצאת <em>מתחרה.</em></span></span></h1></div>
+  <div class="hl" id="h2"><h1 class="H"><span class="ln"><span>והעסק שלכן?</span></span><span class="ln"><span><em>לא נמצא.</em></span></span></h1></div>
+  <div class="hl" id="h3"><h1 class="H"><span class="ln"><span>עם אתר, הלקוחה</span></span><span class="ln"><span>מוצאת <em>אתכן.</em></span></span></h1></div>
+  <div id="srch">{{SEARCH}}<div id="q"></div></div>
+  <div id="res">
+   <div class="r"><div class="nm"><i style="width:340px"></i><i style="width:240px"></i></div><span class="tg">אתר</span></div>
+   <div class="r"><div class="nm"><i style="width:290px"></i><i style="width:300px"></i></div><span class="tg">אתר</span></div>
+   <div class="r"><div class="nm"><i style="width:370px"></i><i style="width:210px"></i></div><span class="tg">אתר</span></div>
+   <div class="r me" id="me"><div class="nm" id="meSk"><i style="width:320px"></i><i style="width:230px"></i></div><div class="nm" id="meTx"><b>העסק שלכן?</b><small>לא נמצא. אין אתר.</small></div><span class="tg">אתר</span></div>
+  </div>
+  <div id="win"><div class="pp" id="pp"><div class="phone"><div class="scr"><div class="notch"></div><div class="sb"><span>15:00</span><span class="bat"></span></div>
+   <div class="toast" id="toast"><i>{{WA}}</i><div><b>ההודעה נשלחה</b><small>"היי, אפשר לתאם טיפול פנים?"</small></div></div>
+   <div class="view" id="view">
+    <div class="s-nav"><div class="s-brand"><b>אור</b><small>קוסמטיקה מתקדמת · הוד השרון</small></div><span class="bg"></span></div>
+    <div class="s-img"><svg viewBox="0 0 358 270" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="gb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFF6F0"/><stop offset="1" stop-color="#E7C3B1"/></linearGradient><linearGradient id="gg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8E5A44"/><stop offset=".5" stop-color="#D9A88E"/><stop offset="1" stop-color="#8E5A44"/></linearGradient></defs>
+     <circle cx="250" cy="90" r="70" fill="#F7E2D6" opacity=".7"/><ellipse cx="179" cy="252" rx="170" ry="26" fill="#B98670" opacity=".45"/>
+     <path d="M70 250 C60 170 90 120 120 95 C110 140 115 200 130 250Z" fill="#7E8F6A" opacity=".75"/><path d="M95 250 C100 180 140 140 170 128 C150 165 140 210 140 250Z" fill="#94A57E" opacity=".8"/>
+     <rect x="168" y="120" width="64" height="122" rx="14" fill="url(#gb)" stroke="#C4927B" stroke-width="2"/><rect x="180" y="98" width="40" height="26" rx="6" fill="url(#gg)"/><rect x="192" y="70" width="16" height="30" rx="5" fill="#3A2A22"/><rect x="180" y="160" width="40" height="34" rx="4" fill="#fff" opacity=".85"/><path d="M188 172h24M188 182h16" stroke="#B98670" stroke-width="3"/>
+     <rect x="246" y="176" width="70" height="66" rx="33" fill="#FFF6F0" stroke="#C4927B" stroke-width="2"/><rect x="250" y="164" width="62" height="18" rx="9" fill="url(#gg)"/>
+     <circle cx="300" cy="40" r="3" fill="#fff"/><circle cx="140" cy="60" r="2.5" fill="#fff"/><circle cx="60" cy="110" r="2" fill="#fff"/></svg></div>
+    <div class="s-h">עור שמרגיש<br><b>טוב.</b></div>
+    <div class="s-p">טיפולי פנים, ניקוי עמוק והרמת ריסים, בתיאום אישי.</div>
+    <div class="s-wa" id="swa">{{WA}}<span>תיאום טיפול בוואטסאפ</span><span class="rip" id="rip"></span></div>
+    <div class="s-list"><div><span>טיפול פנים</span><span>←</span></div><div><span>ניקוי עמוק</span><span>←</span></div><div><span>הרמת ריסים</span><span>←</span></div></div>
+   </div><div class="finger" id="fg"></div></div></div></div></div>
+  <div class="fict" id="fict">קונספט · עסק בדוי</div>
+  <div class="mini" id="mini">{{WA}}<span class="t">058-7336636</span></div>
+  <div id="end">
+   <span class="e-chip">בלאק פריידיי · נשארו 6 ימים</span>
+   <h1 class="e-h"><span class="ln"><span>אתר ב־<em>2,490 ₪</em></span></span></h1>
+   <div class="e-was" id="e00">במקום <s>2,900 ₪</s>, עד 30.11 כולל</div>
+   <div class="e-l" id="e0">{{WA}}<span>שלחו <b>"יופי"</b> + שם העסק:</span></div>
+   <div class="e-tel" id="e1">058-7336636</div>
+   <div class="e-p" id="e2"><span class="pill">סקיצה ראשונה בחינם</span><span class="pill">בלי התחייבות</span><span class="pill">מותאם לטלפון, נגיש</span></div>
+  </div>
+  <div id="prog"></div>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+const T=12.4;
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x)), p=(t,a,b)=>cl((t-a)/(b-a));
+const eo=x=>1-Math.pow(1-x,3), eio=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+const show=(el,on)=>el.style.display=on?'':'none';
+function lines(id,tin,tout,pre,t){const el=$(id);show(el,t>=tin-0.01&&t<tout+0.4);
+ el.querySelectorAll('.ln>span').forEach((s,i)=>{let a=eo(p(t,tin+i*0.08,tin+i*0.08+0.4));if(pre)a=eo(cl(.55+t/0.35*.45-i*.07));const o=eio(p(t,tout+i*0.04,tout+i*0.04+0.28));s.style.transform=`translateY(${(1-a)*110-o*115}%)`})}
+const Q='קוסמטיקאית בהוד השרון', SC=392/390;
+window.render=function(t){
+ $('prog').style.width=(t/T*100)+'%';
+ lines('h1',0,2.5,true,t); lines('h2',2.7,4.9,false,t); lines('h3',5.1,6.95,false,t);
+ // offer chip + mini number visible from frame 0 until end card
+ const oo=1-p(t,8.0,8.25); $('offer').style.opacity=oo; $('mini').style.opacity=oo*eo(cl(.5+t/0.4*.5));
+ // search: typing already mid-word at 0
+ const n=Math.min(Q.length,Math.floor(11+t*7)); $('q').innerHTML=Q.slice(0,n)+(n<Q.length||Math.floor(t*3)%2?'<span class="caret"></span>':'');
+ const sOut=eio(p(t,4.8,5.3)); const s=$('srch'); s.style.opacity=1-sOut; s.style.transform=`translateY(${-sOut*120}px) scale(${1-0.08*sOut})`; show(s,t<5.4);
+ // results drop in 2.6-3.6, "me" row at 3.6, out at 4.8
+ const R=[...document.querySelectorAll('.r')]; 
+ show($('res'),t<5.4);
+ R.forEach((r,i)=>{const a=eo(cl(.6+t/0.6*.4-i*.1));r.style.opacity=a*(1-sOut);r.style.transform=`translateY(${(1-a)*60-sOut*120}px)`;
+  const tg=r.querySelector('.tg'); const ta=i<3?eo(cl(.3+t/0.8*.7-i*.12)):eo(p(t,1.1,1.35)); tg.style.opacity=ta; tg.style.transform=`scale(${.6+.4*ta})`;
+  r.querySelectorAll('i').forEach((b,k)=>{b.style.opacity=1})});
+ show($('meSk'),t<1.1); show($('meTx'),t>=1.1); $('me').classList.toggle('me',t>=1.1);
+ const shake=t>1.4&&t<1.9?Math.sin((t-1.4)*60)*8*(1-p(t,1.4,1.9)):t>3.0&&t<3.5?Math.sin((t-3.0)*60)*8*(1-p(t,3.0,3.5)):0; $('me').style.transform+=` translateX(${shake}px)`;
+ // phone window: macro close-up 5.0-6.6 then zoom out to full phone 6.6-7.3
+ const w=$('win'); show(w,t>4.9);
+ const ci=eo(p(t,4.95,5.45)); const zo=eio(p(t,6.5,7.3)); const out=eio(p(t,7.9,8.35));
+ const inset=(1-ci)*50; const ex=eio(p(t,6.95,7.35)); w.style.clipPath=`inset(${(640+inset*6)*(1-ex)}px ${70*(1-ex)}px ${(460+inset*6)*(1-ex)}px ${70*(1-ex)}px round ${(40+60*(1-zo))*(1-ex)}px)`;
+ w.style.opacity=ci;
+ const gr=eio(p(t,6.95,7.35)); const sc=(2.35-1.45*zo+0.32*gr)*(1-.53*out); const px=(1-zo)*(-40+60*p(t,5,6.5)); const py=(1-zo)*(420-120*eio(p(t,5,6.5)));
+ $('pp').style.transform=`translate(${px-345*out}px,${py-110*gr*(1-out)+185*out}px) scale(${sc})`;
+ $('pp').style.filter=`drop-shadow(0 50px 60px rgba(0,0,0,.7)) drop-shadow(0 0 ${40*zo}px rgba(63,149,246,.35))`;
+ $('view').style.transform=`scale(${SC}) translateY(${-40*eio(p(t,5.2,6.4))}px)`;
+ // tap WA 7.4
+ const fa=p(t,7.45,7.65), fb=p(t,7.85,8.0); const fg=$('fg'); fg.style.opacity=fa*(1-fb); fg.style.left='136px'; fg.style.top=(540-30*(1-fa))+'px'; fg.style.transform=`scale(${1-0.15*Math.sin(Math.PI*p(t,7.4,7.6))})`;
+ const rp=p(t,7.65,8.1); $('rip').style.opacity=rp>0&&rp<1?1-rp:0; $('rip').style.transform=`scale(${1+rp*6})`;
+ const ta2=eo(p(t,7.75,8.0)); $('toast').style.opacity=ta2; $('toast').style.transform=`translateY(${(1-ta2)*-40}px)`;
+ $('fict').style.opacity=ci*zo*(1-out);
+ // light sweep across at 7.3
+ $('sw').style.left=(-300+1700*p(t,7.0,7.8))+'px'; $('sw').style.opacity=t>7&&t<7.8?1:0;
+ // end
+ const e=$('end'); show(e,t>=8.2);
+ const ea=eo(p(t,8.25,8.6)); e.querySelector('.e-chip').style.opacity=ea; e.querySelector('.e-chip').style.transform=`translateY(${(1-ea)*30}px)`;
+ e.querySelectorAll('.ln>span').forEach((s,i)=>{const a=eo(p(t,8.35+i*0.09,8.8+i*0.09));s.style.transform=`translateY(${(1-a)*110}%)`});
+ [['e00',8.6],['e0',8.85],['e1',9.05],['e2',9.3]].forEach(([id,a0])=>{const a=eo(p(t,a0,a0+0.4));$(id).style.opacity=a;$(id).style.transform=`translateY(${(1-a)*40}px)`});
+ const pulse=t>10?Math.max(0,Math.sin((t-10)*Math.PI/0.9)):0; $('e1').style.textShadow=`0 0 ${50+30*pulse}px rgba(63,149,246,${.6+.25*pulse})`;
+};
+window.T=T;
+if(!location.search.includes('rec')){let s=performance.now();(function f(){render(((performance.now()-s)/1000)%T);requestAnimationFrame(f)})()} else render(0);
+</script></body></html>
