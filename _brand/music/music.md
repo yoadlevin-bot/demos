@@ -8,5 +8,6 @@
 | levin-split-decision.mp3 | synth.py, 24.11 (minor, key 55) | 96 | calm, curious (A/B, comparisons) | REEL2 24.11 |
 | levin-coverage-drive.mp3 | synth.py, 24.11 (key 59) | 128 | energetic, driving (offers, countdown) | REEL 25.11 |
 | levin-garage-groove.mp3 | synth.py, 25.11 (minor, key 53) | 106 | driving, gritty (garages, trades) | REEL2 25.11 |
-| levin-soft-glow.mp3 | synth.py, 25.11 (key 65, calm) | 92 | soft, warm (beauty, clinics, studios) | unused |
-Note (24.11): pool now 6 tracks. Pixabay/FreePD/archive.org are blocked from the cloud sandbox; yesterday's tracks (Forever, Good Puppy) were not saved in the repo. Pool is 8 tracks (25.11).
+| levin-soft-glow.mp3 | synth.py, 25.11 (key 65, calm) | 92 | soft, warm (beauty, clinics, studios) | REEL 26.11 |
+| levin-blueprint-build.mp3 | synth.py, 26.11 (key 58, energetic, prog I-V-vi-IV) | 116 | driving, constructive (trades, build, before/after) | REEL2 26.11 |
+Note (24.11): pool now 6 tracks. Pixabay/FreePD/archive.org are blocked from the cloud sandbox; yesterday's tracks (Forever, Good Puppy) were not saved in the repo. Pool is 9 tracks (26.11).

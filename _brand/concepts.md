@@ -16,3 +16,6 @@ Before each item: pick one not used in the last 5 items / 7 days. Same-day items
 | סטודיו קשת | interior design studio | גבעתיים | A: dark #17150F + brass #C49A5E (arch window); B: warm white #F3F0EA + ink blue #2F4A6D | post-ab | POST 25.11 |
 | אור | cosmetician (facials, lashes) | הוד השרון | champagne #F4EDE6 + espresso #3A2A22 + rose-gold #9A5F48, arch hero | reel18 | REEL 25.11 |
 | מוסך נתיב | garage | חולון | charcoal #1F2328 + signal yellow #F5C518, hazard stripes | reel19 | REEL2 25.11 |
+| חלון | family/couples photographer | רעננה | off-white #FAF8F5 + ink #1C1C1A + olive #6B7A4B, golden-hour hero (generated soft-focus images in assets/gen) | post-photo | POST 26.11 |
+| זנב | veterinary clinic | ראש העין | forest green #1F3B33 + cream #F3EFE6 + sand/brass #B08540, paw icon, pets hero | reel20 | REEL 26.11 |
+| קו ישר | renovation contractor | מודיעין | concrete #ECE8E2 + charcoal #22201D + terracotta #B5543A, kitchen before/after images (assets/gen) | reel21 | REEL2 26.11 |
