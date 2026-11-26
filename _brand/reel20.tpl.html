@@ -1,0 +1,153 @@
+<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><link rel="stylesheet" href="base.css"><link rel="stylesheet" href="v4.css">
+<!-- REEL20 (26.11) POV night->morning for VETS + BF (code חיות). NEW: giant outline clock typography (23:12 -> flips to 08:00) behind a centered phone; offer + number in top-left block from frame 0; background shifts night -> dawn; phone switches from customer's site view to the clinic's lock screen with the WA lead. Deterministic render(t). -->
+<style>
+html,body{width:1080px;height:1920px;overflow:hidden;background:#040814;margin:0}
+.stage{position:absolute;inset:0;overflow:hidden;background:#040814;color:#fff}
+.night,.dawn{position:absolute;inset:0}
+.night{background:radial-gradient(55% 30% at 50% 42%,rgba(63,149,246,.26),transparent 72%),radial-gradient(40% 25% at 15% 10%,rgba(37,99,235,.16),transparent 70%),#040814}
+.dawn{background:radial-gradient(80% 40% at 50% 100%,rgba(120,180,255,.55),transparent 70%),radial-gradient(60% 34% at 50% 42%,rgba(63,149,246,.34),transparent 72%),linear-gradient(180deg,#071226,#0E2550);opacity:0}
+.stars i{position:absolute;width:3px;height:3px;border-radius:50%;background:#fff}
+.stage>.logo{top:262px;right:90px;bottom:auto;z-index:9}
+.stage>.logo img{height:62px}.stage>.logo .wm b{font-size:31px}.stage>.logo .wm small{font-size:14px}
+.offer{position:absolute;top:258px;left:90px;z-index:9;direction:rtl;display:flex;flex-direction:column;align-items:flex-end;gap:12px}
+.offer .o1{display:inline-flex;align-items:center;gap:12px;background:#2563EB;color:#fff;font:800 32px/1 Heebo;padding:15px 24px;border-radius:99px;box-shadow:0 0 40px rgba(63,149,246,.5)}
+.offer .o1:before{content:"";width:11px;height:11px;border-radius:50%;background:#fff}
+.offer .o2{font:600 30px/1 Heebo;color:rgba(255,255,255,.85)}.offer .o2 b{font:900 46px/1 Heebo;color:#fff;text-shadow:0 0 24px rgba(63,149,246,.6)}.offer .o2 s{text-decoration-thickness:3px}
+.offer .o3{display:flex;align-items:center;gap:10px;font:900 40px/1 Heebo;direction:ltr;color:#fff}.offer .o3 svg{width:40px;height:40px;color:#25D366}
+.hl{position:absolute;right:90px;left:90px;top:446px;z-index:8}
+.H{font:900 90px/1.02 Heebo;letter-spacing:-.025em;white-space:nowrap}
+.H em{font-style:normal;color:#3F95F6;text-shadow:0 0 44px rgba(63,149,246,.55)}
+.ln{display:block;overflow:hidden;padding:0 30px 16px;margin:0 -30px -10px}.ln>span{display:block}
+/* giant clock */
+#clk{position:absolute;left:0;right:0;top:640px;height:330px;overflow:hidden;z-index:3;direction:ltr;text-align:center}
+#clk div{position:absolute;left:0;right:0;top:0;font:900 330px/1 Heebo;letter-spacing:-.03em;color:transparent;-webkit-text-stroke:4px rgba(120,180,255,.55);text-shadow:0 0 60px rgba(63,149,246,.25)}
+#clk .col{display:inline-block}
+/* phone */
+.pp{position:absolute;left:330px;top:760px;width:420px;height:860px;z-index:5;filter:drop-shadow(0 50px 60px rgba(0,0,0,.7)) drop-shadow(0 0 50px rgba(63,149,246,.35))}
+.phone{width:420px;height:860px;border-radius:64px;background:linear-gradient(145deg,#2a3350,#0b0f1a 30%,#0b0f1a 70%,#2a3350);padding:14px;box-shadow:inset 0 0 0 2px #3a4566}
+.scr{width:392px;height:832px;border-radius:52px;overflow:hidden;position:relative;background:#F3EFE6}
+.notch{position:absolute;top:20px;left:50%;margin-left:-55px;width:110px;height:32px;border-radius:18px;background:#05070d;z-index:20}
+.sb{position:absolute;top:0;left:0;right:0;height:64px;z-index:19;display:flex;align-items:center;justify-content:space-between;padding:14px 40px 0;direction:ltr;font:700 20px/1 Heebo;background:#F3EFE6;color:#1F3B33}
+.sb .bat{width:30px;height:14px;border:2.2px solid currentColor;border-radius:5px;display:inline-block}
+.view{position:absolute;top:0;left:0;width:390px;transform-origin:0 0;color:#1F3B33}
+.v-nav{padding:70px 22px 14px;display:flex;justify-content:space-between;align-items:center}
+.v-brand{display:flex;align-items:center;gap:10px}.v-brand svg{width:34px;height:34px}
+.v-brand b{font:900 24px/1 Heebo;display:block}.v-brand small{font:600 11px/1 Heebo;color:#8A6A33;display:block;margin-top:5px}
+.bg{width:24px;height:15px;border-top:2.5px solid currentColor;border-bottom:2.5px solid currentColor;position:relative}.bg:after{content:"";position:absolute;top:4px;left:0;right:0;border-top:2.5px solid currentColor}
+.v-hero{margin:0 14px;height:250px;border-radius:24px;overflow:hidden;position:relative;background:#1F3B33}
+.v-hero svg{position:absolute;inset:0;width:100%;height:100%}
+.v-h{font:900 34px/1.08 Heebo;padding:18px 22px 0;letter-spacing:-.01em}.v-h em{font-style:normal;color:#B08540}
+.v-p{font:400 15px/1.5 Heebo;color:#4E5F58;padding:8px 22px 0}
+.v-wa{margin:14px 22px 0;display:flex;align-items:center;justify-content:center;gap:9px;background:#25D366;color:#073B1F;font:800 17px/1 Heebo;padding:16px;border-radius:14px;position:relative;box-shadow:0 10px 24px -10px rgba(37,211,102,.8)}.v-wa svg{width:22px;height:22px}
+.v-hrs{margin:14px 22px 0;display:flex;justify-content:space-between;font:700 14px/1 Heebo;color:#1F3B33;background:#E7E0D1;border-radius:12px;padding:13px 14px}
+.v-list{padding:10px 22px 40px}
+.v-list div{border-top:1px solid rgba(31,59,51,.16);padding:14px 0;display:flex;justify-content:space-between;font:700 16px/1 Heebo}.v-list span:last-child{color:#B08540}
+.rip{position:absolute;left:50%;top:50%;width:40px;height:40px;margin:-20px;border-radius:50%;border:3px solid #fff;opacity:0}
+.toast{position:absolute;left:16px;right:16px;top:70px;background:#fff;border-radius:18px;padding:14px 16px;display:flex;gap:12px;align-items:center;box-shadow:0 18px 40px -12px rgba(0,0,0,.45);z-index:21;color:#1d2533}
+.toast i,.nt i{width:40px;height:40px;border-radius:12px;background:#25D366;display:grid;place-items:center;flex:none}.toast i svg,.nt i svg{width:24px;height:24px;color:#fff}
+.toast b{font:800 15px/1.2 Heebo;display:block}.toast small{font:500 13px/1.25 Heebo;color:#5b6575}
+.finger{position:absolute;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.9) 0 18%,rgba(255,255,255,.35) 19% 40%,transparent 41%);z-index:22;pointer-events:none}
+/* lock screen */
+.lock{position:absolute;inset:0;z-index:18;background:radial-gradient(80% 50% at 50% 100%,#3E78C8,transparent 70%),linear-gradient(180deg,#0C1A38,#1C3B73);color:#fff;opacity:0}
+.lock .lt{position:absolute;top:110px;left:0;right:0;text-align:center;font:200 92px/1 Heebo;direction:ltr}
+.lock .ld{position:absolute;top:84px;left:0;right:0;text-align:center;font:600 18px/1 Heebo;color:rgba(255,255,255,.8)}
+.nt{position:absolute;left:16px;right:16px;top:260px;background:rgba(255,255,255,.92);color:#1d2533;border-radius:20px;padding:15px 16px;display:flex;gap:12px;align-items:flex-start}
+.nt .tx{flex:1}.nt .hd{display:flex;justify-content:space-between;font:700 13px/1 Heebo;color:#5b6575}.nt b{font:800 16px/1.25 Heebo;display:block;margin-top:6px}.nt small{font:500 15px/1.3 Heebo;color:#2b3442;display:block;margin-top:3px}
+.rep{position:absolute;left:60px;right:16px;top:420px;background:#DCF8C6;color:#1d2533;border-radius:20px 20px 4px 20px;padding:14px 16px;font:600 17px/1.35 Heebo;box-shadow:0 18px 40px -12px rgba(0,0,0,.5);opacity:0}.rep b{display:block;font:800 13px/1 Heebo;color:#128C4A;margin-bottom:6px}
+.fict{position:absolute;left:90px;top:1380px;z-index:8;font:600 26px/1.25 Heebo;color:rgba(255,255,255,.72);width:200px}
+.fict:before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;background:#3F95F6;box-shadow:0 0 12px #3F95F6;margin-left:10px;vertical-align:middle}
+/* end */
+#end{position:absolute;right:170px;left:40px;top:470px;z-index:8}
+.e-chip{display:inline-flex;align-items:center;gap:12px;background:#2563EB;color:#fff;font:800 38px/1 Heebo;padding:18px 32px;border-radius:99px;box-shadow:0 0 40px rgba(63,149,246,.5)}
+.e-chip:before{content:"";width:12px;height:12px;border-radius:50%;background:#fff}
+.e-h{font:900 110px/1.02 Heebo;letter-spacing:-.025em;margin-top:34px}.e-h em{font-style:normal;color:#3F95F6;text-shadow:0 0 44px rgba(63,149,246,.55)}
+.e-was{font:600 44px/1 Heebo;color:rgba(255,255,255,.8);margin-top:22px}.e-was s{text-decoration-thickness:4px}
+.e-l{display:flex;align-items:center;gap:16px;font:600 46px/1.2 Heebo;color:rgba(255,255,255,.92);margin-top:64px}.e-l svg{width:56px;height:56px;color:#25D366;flex:none}.e-l b{color:#fff;font-weight:900}
+.e-tel{font:900 136px/1 Heebo;direction:ltr;text-align:right;color:#fff;margin-top:22px;text-shadow:0 0 50px rgba(63,149,246,.6);white-space:nowrap}
+.e-p{display:flex;flex-direction:column;align-items:flex-start;gap:16px;margin-top:60px}.e-p .pill{font-size:38px;padding:16px 26px;white-space:nowrap}
+#prog{position:absolute;bottom:0;right:0;height:8px;background:#3F95F6;box-shadow:0 0 18px #3F95F6;z-index:12}
+</style></head><body>
+<div class="stage grain on-dark">
+  <div class="night"></div><div class="dawn" id="dawn"></div>
+  <div class="stars" id="stars"></div>
+  {{LOGO_D}}
+  <div class="offer" id="offer"><div class="o1">בלאק פריידיי · נשארו 5 ימים</div><div class="o2"><b>2,490 ₪</b> במקום <s>2,900 ₪</s></div><div class="o3">{{WA}}<span>058-7336636</span></div></div>
+  <div class="hl" id="h1"><h1 class="H"><span class="ln"><span>וטרינרים, אחרי 23:00.</span></span><span class="ln"><span>מישהו <em>מחפש אתכם.</em></span></span></h1></div>
+  <div class="hl" id="h2"><h1 class="H"><span class="ln"><span>מוצא את האתר שלכם</span></span><span class="ln"><span>ושולח <em>וואטסאפ.</em></span></span></h1></div>
+  <div class="hl" id="h3"><h1 class="H"><span class="ln"><span>בבוקר, הפנייה</span></span><span class="ln"><span><em>כבר מחכה לכם.</em></span></span></h1></div>
+  <div id="clk"><div id="c1">23<span class="col" id="cc1">:</span>12</div><div id="c2">08<span class="col">:</span>00</div></div>
+  <div class="pp" id="pp"><div class="phone"><div class="scr"><div class="notch"></div><div class="sb" id="sb"><span id="sbt">23:12</span><span class="bat"></span></div>
+   <div class="toast" id="toast"><i>{{WA}}</i><div><b>ההודעה נשלחה</b><small>"היי, אפשר תור למחר בבוקר?"</small></div></div>
+   <div class="view" id="view">
+    <div class="v-nav"><div class="v-brand"><svg viewBox="0 0 40 40" fill="#B08540"><ellipse cx="20" cy="26" rx="8" ry="7"/><ellipse cx="10" cy="17" rx="3.6" ry="4.6"/><ellipse cx="16.5" cy="11" rx="3.6" ry="4.8"/><ellipse cx="23.5" cy="11" rx="3.6" ry="4.8"/><ellipse cx="30" cy="17" rx="3.6" ry="4.6"/></svg><div><b>זנב</b><small>מרפאה וטרינרית · ראש העין</small></div></div><span class="bg"></span></div>
+    <div class="v-hero"><svg viewBox="0 0 362 250" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="vh" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2C5247"/><stop offset="1" stop-color="#1A332C"/></linearGradient></defs>
+     <rect width="362" height="250" fill="url(#vh)"/><circle cx="270" cy="80" r="80" fill="#D9B77E" opacity=".18"/><circle cx="92" cy="200" r="120" fill="#D9B77E" opacity=".08"/>
+     <g fill="#F3EFE6"><path d="M196 236 C196 196 206 170 226 156 L222 124 C220 112 230 104 238 112 L246 128 C258 124 270 124 282 128 L292 110 C300 102 310 110 306 122 L300 152 C318 168 324 196 322 236 Z"/></g>
+     <g fill="#D9B77E"><path d="M60 236 C58 206 66 186 84 176 C80 164 82 150 92 140 L88 118 C88 108 98 106 104 114 L114 132 C126 130 138 134 146 142 L160 130 C168 124 176 132 172 142 L164 164 C176 180 178 206 176 236 Z"/></g>
+     <circle cx="252" cy="160" r="5" fill="#1F3B33"/><circle cx="276" cy="160" r="5" fill="#1F3B33"/><circle cx="114" cy="168" r="4.5" fill="#1F3B33"/><circle cx="136" cy="168" r="4.5" fill="#1F3B33"/></svg></div>
+    <div class="v-h">מרפאה שכונתית<br><em>לכלבים וחתולים.</em></div>
+    <div class="v-p">חיסונים, בדיקות שגרתיות ושבבים, ביחס אישי.</div>
+    <div class="v-wa" id="vwa">{{WA}}<span>קביעת תור בוואטסאפ</span><span class="rip" id="rip"></span></div>
+    <div class="v-hrs"><span>א׳–ה׳</span><span dir="ltr">8:00–20:00</span></div><div class="v-hrs" style="margin-top:6px"><span>ו׳</span><span dir="ltr">8:00–13:00</span></div>
+    <div class="v-list"><div><span>חיסונים</span><span>←</span></div><div><span>בדיקה שגרתית</span><span>←</span></div><div><span>שבב וחיסון כלבת</span><span>←</span></div></div>
+   </div>
+   <div class="lock" id="lock"><div class="lt">08:00</div>
+    <div class="rep" id="rep"><b>המרפאה</b>בוקר טוב דנה, יש תור היום ב־9:30 🐾</div><div class="nt" id="nt"><i>{{WA}}</i><div class="tx"><div class="hd"><span>WhatsApp</span><span dir="ltr">23:12</span></div><b>דנה</b><small>"היי, אפשר תור למחר בבוקר?"</small></div></div></div>
+   <div class="finger" id="fg"></div></div></div></div>
+  <div class="fict" id="fict">קונספט<br>עסק בדוי</div>
+  <div id="end">
+   <span class="e-chip">בלאק פריידיי · נשארו 5 ימים</span>
+   <h1 class="e-h"><span class="ln"><span>אתר למרפאה</span></span><span class="ln"><span>ב־<em>2,490 ₪</em></span></span></h1>
+   <div class="e-was" id="e00">במקום <s>2,900 ₪</s>, עד 30.11 כולל</div>
+   <div class="e-l" id="e0">{{WA}}<span>שלחו <b>"חיות"</b> + שם המרפאה:</span></div>
+   <div class="e-tel" id="e1">058-7336636</div>
+   <div class="e-p" id="e2"><span class="pill">סקיצה ראשונה בחינם</span><span class="pill">בלי התחייבות</span></div>
+  </div>
+  <div id="prog"></div>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+const T=12.4;
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x)), p=(t,a,b)=>cl((t-a)/(b-a));
+const eo=x=>1-Math.pow(1-x,3), eio=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+const show=(el,on)=>el.style.display=on?'':'none';
+(function(){let h='';const r=n=>{let x=Math.sin(n*99.7)*43758.5;return x-Math.floor(x)};for(let i=0;i<46;i++){h+=`<i style="left:${(r(i)*1080).toFixed(0)}px;top:${(r(i+50)*1100).toFixed(0)}px;opacity:${(.25+r(i+90)*.55).toFixed(2)}"></i>`}$('stars').innerHTML=h})();
+function lines(id,tin,tout,pre,t){const el=$(id);show(el,t>=tin-0.01&&t<tout+0.4);
+ el.querySelectorAll('.ln>span').forEach((s,i)=>{let a=eo(p(t,tin+i*0.08,tin+i*0.08+0.4));if(pre)a=eo(cl(.55+t/0.35*.45-i*.07));const o=eio(p(t,tout+i*0.04,tout+i*0.04+0.28));s.style.transform=`translateY(${(1-a)*110-o*115}%)`})}
+const SC=392/390;
+window.render=function(t){
+ $('prog').style.width=(t/T*100)+'%';
+ lines('h1',0,2.45,true,t); lines('h2',2.65,4.75,false,t); lines('h3',5.05,7.25,false,t);
+ const oo=1-p(t,7.5,7.75); $('offer').style.opacity=oo;
+ // night -> dawn at 4.9-5.6
+ const dw=eio(p(t,4.9,5.7)); $('dawn').style.opacity=dw*(1-0.6*p(t,7.6,8.2)); $('stars').style.opacity=1-dw;
+ // clock: colon blink, flip at 4.95
+ $('cc1').style.opacity=(Math.floor(t*2)%2)?.35:1;
+ const fl=eio(p(t,4.9,5.4)); $('c1').style.transform=`translateY(${-fl*105}%)`; $('c2').style.transform=`translateY(${(1-fl)*105}%)`;
+ const co=1-eio(p(t,7.45,7.85)); $('clk').style.opacity=co*eo(cl(.6+t/0.4*.4));
+ // phone: already rising at frame 0
+ const rise=eo(cl(.35+t/0.7*.65)); const out=eio(p(t,7.4,7.9));
+ $('pp').style.transform=`translateY(${(1-rise)*260+out*1300}px)`; $('pp').style.opacity=1-out;
+ // site scroll 0.3-2.6 small, keep WA visible for tap
+ const sc=eio(p(t,0.4,2.4)); $('view').style.transform=`scale(${SC}) translateY(${-60*sc}px)`;
+ // tap WA at 3.3
+ const fa=p(t,3.0,3.25), fb=p(t,3.65,3.85); const fg=$('fg'); fg.style.opacity=fa*(1-fb); fg.style.left='136px'; fg.style.top=(512-40*(1-fa))+'px'; fg.style.transform=`scale(${1-0.15*Math.sin(Math.PI*p(t,3.25,3.45))})`;
+ const rp=p(t,3.35,3.85); $('rip').style.opacity=rp>0&&rp<1?1-rp:0; $('rip').style.transform=`scale(${1+rp*6})`;
+ const ta=eo(p(t,3.5,3.8))*(1-p(t,4.7,4.9)); $('toast').style.opacity=ta; $('toast').style.transform=`translateY(${(1-ta)*-40}px)`;
+ // lock screen of the clinic at 5.1
+ const lk=eio(p(t,5.0,5.45)); $('lock').style.opacity=lk; $('sbt').textContent=t<5.2?'23:12':'08:00';
+ $('sb').style.background=t<5.2?'#F3EFE6':'transparent'; $('sb').style.color=t<5.2?'#1F3B33':'#fff';
+ const na=eo(p(t,5.6,6.0)); $('nt').style.opacity=na; $('nt').style.transform=`translateY(${(1-na)*-50}px) scale(${.94+.06*na})`;
+ const pulse=t>6.2&&t<7.3?Math.sin((t-6.2)*Math.PI/0.55):0; $('nt').style.boxShadow=`0 0 0 ${Math.max(0,pulse)*6}px rgba(37,211,102,.55), 0 18px 40px -12px rgba(0,0,0,.5)`;
+ const rq=eo(p(t,6.4,6.75)); $('rep').style.opacity=rq; $('rep').style.transform=`translateY(${(1-rq)*40}px) scale(${.92+.08*rq})`;
+ $('fict').style.opacity=eo(cl(.5+t/0.4*.5))*(1-out);
+ // end card 7.7+
+ const e=$('end'); show(e,t>=7.65);
+ const ea=eo(p(t,7.7,8.05)); e.querySelector('.e-chip').style.opacity=ea; e.querySelector('.e-chip').style.transform=`translateY(${(1-ea)*30}px)`;
+ e.querySelectorAll('.ln>span').forEach((s,i)=>{const a=eo(p(t,7.8+i*0.09,8.25+i*0.09));s.style.transform=`translateY(${(1-a)*110}%)`});
+ [['e00',8.15],['e0',8.4],['e1',8.6],['e2',8.85]].forEach(([id,a0])=>{const a=eo(p(t,a0,a0+0.4));$(id).style.opacity=a;$(id).style.transform=`translateY(${(1-a)*40}px)`});
+ const pu=t>9.6?Math.max(0,Math.sin((t-9.6)*Math.PI/0.9)):0; $('e1').style.textShadow=`0 0 ${50+30*pu}px rgba(63,149,246,${.6+.25*pu})`;
+};
+window.T=T;
+if(!location.search.includes('rec')){let s=performance.now();(function f(){render(((performance.now()-s)/1000)%T);requestAnimationFrame(f)})()} else render(0);
+</script></body></html>
