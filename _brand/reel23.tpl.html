@@ -1,0 +1,162 @@
+<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><link rel="stylesheet" href="base.css"><link rel="stylesheet" href="v4.css">
+<!-- REEL23 (28.11) ARCHITECTS + giveaway (code מתנה). Format 3 "תנחשו את המקצוע": LIGHT stage (#F6F7F9 + fine grid), multi-device (laptop + phone), the concept site starts heavily blurred and sharpens as 3 clue chips appear, then the reveal "אדריכלים." and a light giveaway end card. Deterministic render(t). -->
+<style>
+html,body{width:1080px;height:1920px;overflow:hidden;background:#F6F7F9;margin:0}
+.stage{position:absolute;inset:0;overflow:hidden;background:radial-gradient(60% 30% at 50% 58%,rgba(63,149,246,.16),transparent 70%),#F6F7F9;color:#0B1324}
+.grid{position:absolute;inset:0;background-image:linear-gradient(rgba(37,99,235,.07) 1.5px,transparent 1.5px),linear-gradient(90deg,rgba(37,99,235,.07) 1.5px,transparent 1.5px);background-size:60px 60px}
+.stage>.logo{top:262px;right:90px;bottom:auto;z-index:9}
+.stage>.logo img{height:62px}.stage>.logo .wm b{font-size:31px;color:#0B1324}.stage>.logo .wm small{font-size:14px}
+.offer{position:absolute;top:252px;left:80px;z-index:9;display:flex;flex-direction:column;align-items:flex-end;gap:12px}
+.offer .o1{display:inline-flex;align-items:center;gap:12px;background:#2563EB;color:#fff;font:800 31px/1 Heebo;padding:15px 24px;border-radius:99px;box-shadow:0 12px 30px -10px rgba(37,99,235,.6)}
+.offer .o1:before{content:"";width:11px;height:11px;border-radius:50%;background:#fff}
+.offer .o2{font:600 30px/1 Heebo;color:#33415C}.offer .o2 b{font-weight:900;color:#0B1324}
+.offer .o3{display:flex;align-items:center;gap:10px;font:900 40px/1 Heebo;direction:ltr;color:#0B1324}.offer .o3 svg{width:40px;height:40px;color:#1DA851}
+.hl{position:absolute;right:90px;left:90px;top:450px;z-index:8}
+.H{font:900 90px/1.02 Heebo;letter-spacing:-.025em;white-space:nowrap;margin:0}
+.H em{font-style:normal;color:#2563EB}
+.ln{display:block;overflow:hidden;padding:0 30px 16px;margin:0 -30px -10px}.ln>span{display:block}
+/* laptop */
+.lap{position:absolute;left:230px;top:780px;width:780px;z-index:4;filter:drop-shadow(0 40px 50px rgba(11,19,36,.25))}
+.lid{width:780px;height:500px;border-radius:26px 26px 0 0;background:#1A2030;padding:18px 18px 0;box-shadow:inset 0 0 0 2px #2C3448}
+.lscr{width:744px;height:482px;overflow:hidden;position:relative;background:#F2EFEA;border-radius:8px 8px 0 0}
+.base{width:880px;height:30px;margin-left:-50px;background:linear-gradient(#D7DCE4,#A9B1BE);border-radius:0 0 22px 22px;position:relative}.base:after{content:"";position:absolute;left:50%;top:0;width:140px;margin-left:-70px;height:10px;background:#9AA3B1;border-radius:0 0 10px 10px}
+.bl{position:absolute;inset:0;transform-origin:50% 50%}
+/* site L */
+.L-nav{display:flex;justify-content:space-between;align-items:center;padding:20px 30px;color:#151515;direction:rtl}
+.L-nav b{font:900 26px/1 Heebo;letter-spacing:.02em}.L-nav b small{display:block;font:600 11px/1 Heebo;color:#8C7556;margin-top:5px;letter-spacing:.1em}
+.L-nav span{font:600 14px/1 Heebo;color:#3a3a3a;display:flex;gap:22px}
+.L-hero{position:absolute;left:0;right:0;top:72px;bottom:0;display:grid;grid-template-columns:1.25fr 1fr;direction:rtl}
+.L-txt{padding:40px 30px 0;color:#151515}.L-txt h3{font:900 52px/1.02 Heebo;margin:0;letter-spacing:-.02em}.L-txt h3 em{font-style:normal;color:#8C7556}
+.L-txt p{font:400 15px/1.55 Heebo;color:#4b4b4b;margin:14px 0 0;max-width:300px}
+.L-btn{display:inline-flex;align-items:center;gap:8px;margin-top:22px;background:#151515;color:#F2EFEA;font:700 15px/1 Heebo;padding:14px 20px;border-radius:10px}.L-btn svg{width:18px;height:18px;color:#7FE0A3}
+.L-img{position:relative;overflow:hidden}
+.L-img svg,.P-img svg{position:absolute;inset:0;width:100%;height:100%}
+/* phone */
+.pp{position:absolute;left:50px;top:1040px;width:300px;height:620px;z-index:6;filter:drop-shadow(0 40px 46px rgba(11,19,36,.35))}
+.phone{width:300px;height:620px;border-radius:48px;background:linear-gradient(145deg,#2a3350,#0b0f1a 30%,#0b0f1a 70%,#2a3350);padding:11px;box-shadow:inset 0 0 0 2px #3a4566}
+.scr{width:278px;height:598px;border-radius:38px;overflow:hidden;position:relative;background:#F2EFEA}
+.notch{position:absolute;top:14px;left:50%;margin-left:-40px;width:80px;height:24px;border-radius:13px;background:#05070d;z-index:20}
+.sb{position:absolute;top:0;left:0;right:0;height:48px;z-index:19;display:flex;align-items:center;justify-content:space-between;padding:10px 28px 0;direction:ltr;font:700 15px/1 Heebo;color:#151515;background:#F2EFEA}
+.sb .bat{width:22px;height:11px;border:2px solid currentColor;border-radius:4px;display:inline-block}
+.pv{position:absolute;top:0;left:0;width:390px;transform:scale(.713);transform-origin:0 0;color:#151515}
+.P-nav{padding:66px 22px 12px;display:flex;justify-content:space-between;align-items:center}.P-nav b{font:900 26px/1 Heebo}.P-nav b small{display:block;font:600 11px/1 Heebo;color:#8C7556;margin-top:5px;letter-spacing:.1em}
+.bg{width:24px;height:15px;border-top:2.5px solid currentColor;border-bottom:2.5px solid currentColor;position:relative}.bg:after{content:"";position:absolute;top:4px;left:0;right:0;border-top:2.5px solid currentColor}
+.P-img{position:relative;height:280px;margin:0 14px;border-radius:6px;overflow:hidden}
+.P-h{font:900 40px/1.02 Heebo;padding:20px 22px 0;letter-spacing:-.02em}.P-h em{font-style:normal;color:#8C7556}
+.P-p{font:400 16px/1.5 Heebo;color:#4b4b4b;padding:10px 22px 0}
+.P-wa{margin:16px 22px 0;display:flex;align-items:center;justify-content:center;gap:9px;background:#151515;color:#F2EFEA;font:800 18px/1 Heebo;padding:18px;border-radius:12px}.P-wa svg{width:22px;height:22px;color:#7FE0A3}
+.P-list{padding:10px 22px}.P-list div{border-top:1px solid rgba(0,0,0,.14);padding:15px 0;display:flex;justify-content:space-between;font:700 17px/1 Heebo}.P-list span:last-child{color:#8C7556}
+/* clues */
+.clue{position:absolute;right:90px;z-index:8;display:inline-flex;align-items:center;gap:14px;background:#fff;border:2px solid rgba(37,99,235,.35);box-shadow:0 14px 34px -14px rgba(11,19,36,.35);border-radius:99px;padding:14px 26px 14px 18px;font:800 34px/1 Heebo;color:#0B1324;opacity:0}
+.clue i{font-style:normal;width:46px;height:46px;border-radius:50%;background:#2563EB;color:#fff;display:grid;place-items:center;font:900 24px/1 Heebo}
+.qm{position:absolute;left:96px;top:1290px;z-index:7;font:900 200px/1 Heebo;color:#2563EB;opacity:0}
+.stamp{position:absolute;left:80px;top:1300px;z-index:9;background:#0B1324;color:#fff;font:900 86px/1 Heebo;padding:22px 40px;border-radius:24px;box-shadow:0 24px 50px -20px rgba(11,19,36,.6);opacity:0}
+.stamp em{font-style:normal;color:#7FB6FF}
+.fict{position:absolute;right:90px;top:1530px;z-index:8;font:600 26px/1 Heebo;color:#33415C;display:flex;gap:10px;align-items:center}
+.fict:before{content:"";width:10px;height:10px;border-radius:50%;background:#2563EB}
+/* end */
+#end{position:absolute;right:90px;left:90px;top:440px;z-index:8}
+.e-chip{display:inline-flex;align-items:center;gap:12px;background:#2563EB;color:#fff;font:800 38px/1 Heebo;padding:18px 32px;border-radius:99px;box-shadow:0 14px 34px -12px rgba(37,99,235,.7)}
+.e-chip:before{content:"";width:12px;height:12px;border-radius:50%;background:#fff}
+.e-h{font:900 116px/1.02 Heebo;letter-spacing:-.025em;margin:34px 0 0}.e-h em{font-style:normal;color:#2563EB}
+.e-was{font:600 40px/1.25 Heebo;color:#33415C;margin-top:24px}
+.e-l{display:flex;align-items:center;gap:16px;font:600 46px/1.2 Heebo;color:#1C2740;margin-top:60px}.e-l svg{width:58px;height:58px;color:#1DA851;flex:none}.e-l b{color:#0B1324;font-weight:900}
+.e-tel{font:900 140px/1 Heebo;direction:ltr;text-align:right;color:#0B1324;margin-top:20px;white-space:nowrap}
+.e-sub{font:600 34px/1.2 Heebo;color:#33415C;margin-top:16px}
+.e-p{display:flex;flex-wrap:wrap;gap:16px;margin-top:44px}.e-p span{display:inline-flex;align-items:center;gap:12px;padding:16px 26px;border-radius:99px;font:700 34px/1 Heebo;color:#0B1324;background:#fff;border:2px solid rgba(37,99,235,.4)}
+.e-p span:before{content:"";width:12px;height:12px;border-radius:50%;background:#2563EB}
+#prog{position:absolute;bottom:0;right:0;height:8px;background:#2563EB;z-index:12}
+</style></head><body>
+<div class="stage grain on-light">
+  <div class="grid"></div>
+  {{LOGO_L}}
+  <div class="offer" id="offer"><div class="o1">אתר מלא לעסק אחד · עד 3.12</div><div class="o2">שלחו <b>"מתנה"</b> + שם העסק</div><div class="o3">{{WA}}<span>058-7336636</span></div></div>
+  <div class="hl" id="h1"><h1 class="H"><span class="ln"><span>תנחשו: לאיזה מקצוע</span></span><span class="ln"><span><em>בנינו את האתר?</em></span></span></h1></div>
+  <div class="hl" id="h2"><h1 class="H"><span class="ln"><span>כתבו בתגובות.</span></span><span class="ln"><span>עוד <em>רמז אחד...</em></span></span></h1></div>
+  <div class="hl" id="h3"><h1 class="H"><span class="ln"><span>נכון. אתר</span></span><span class="ln"><span>ל<em>משרד אדריכלים.</em></span></span></h1></div>
+  <div class="lap" id="lap"><div class="lid"><div class="lscr"><div class="bl" id="bl1">
+    <div class="L-nav"><b>קו אופק<small>אדריכלות ועיצוב · רמת גן</small></b><span><i style="font-style:normal">פרויקטים</i><i style="font-style:normal">הסטודיו</i><i style="font-style:normal">קשר</i></span></div>
+    <div class="L-hero"><div class="L-txt"><h3>בתים שנבנים<br><em>סביב האור.</em></h3><p>תכנון בתים פרטיים ושיפוץ דירות, מהסקיצה הראשונה ועד ההיתר.</p><div class="L-btn">{{WA}}<span>פגישת היכרות בוואטסאפ</span></div></div>
+     <div class="L-img"><svg viewBox="0 0 330 410" preserveAspectRatio="xMidYMid slice"><defs>
+<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C9D6DF"/><stop offset=".6" stop-color="#F1E3CC"/><stop offset="1" stop-color="#F6EBDD"/></linearGradient>
+<linearGradient id="wall" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#F7F4EF"/><stop offset="1" stop-color="#DCD5CA"/></linearGradient>
+<linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9DB4C4"/><stop offset=".45" stop-color="#3E4B58"/><stop offset=".55" stop-color="#6E8597"/><stop offset="1" stop-color="#2A333D"/></linearGradient>
+<linearGradient id="pool" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5FA2B8"/><stop offset="1" stop-color="#A9D3DE"/></linearGradient>
+<linearGradient id="wood" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#B08A5E"/><stop offset="1" stop-color="#8A6A45"/></linearGradient></defs>
+<rect width="330" height="410" fill="url(#sky)"/>
+<path d="M0 300 L330 300 L330 410 L0 410Z" fill="#B9BFA6"/>
+<path d="M-20 168 L250 150 L250 158 L-20 176Z" fill="#2A2A2A"/>
+<rect x="10" y="174" width="200" height="126" fill="url(#wall)"/>
+<rect x="24" y="190" width="128" height="104" fill="url(#glass)"/><path d="M24 190 L70 190 L24 240Z" fill="#fff" opacity=".22"/><rect x="86" y="190" width="3" height="104" fill="#1E1E1E"/>
+<rect x="150" y="96" width="170" height="78" fill="#EFEAE2"/><rect x="150" y="96" width="170" height="78" fill="url(#wall)" opacity=".6"/>
+<rect x="160" y="108" width="90" height="54" fill="url(#glass)"/><rect x="140" y="88" width="190" height="8" fill="#2A2A2A"/>
+<rect x="216" y="174" width="104" height="126" fill="url(#wood)"/><g stroke="#6E5236" stroke-width="2" opacity=".7"><line x1="226" y1="174" x2="226" y2="300"/><line x1="238" y1="174" x2="238" y2="300"/><line x1="250" y1="174" x2="250" y2="300"/><line x1="262" y1="174" x2="262" y2="300"/><line x1="274" y1="174" x2="274" y2="300"/><line x1="286" y1="174" x2="286" y2="300"/><line x1="298" y1="174" x2="298" y2="300"/><line x1="310" y1="174" x2="310" y2="300"/></g>
+<path d="M10 300 L320 300 L360 330 L-20 330Z" fill="#000" opacity=".14"/>
+<rect x="40" y="318" width="240" height="46" rx="2" fill="url(#pool)"/><rect x="40" y="318" width="240" height="6" fill="#fff" opacity=".5"/>
+<rect x="0" y="300" width="330" height="4" fill="#E9E4DC"/>
+<path d="M300 300 q12 -76 24 0" fill="#56704C"/><path d="M-6 300 q18 -96 34 0" fill="#56704C"/><circle cx="270" cy="60" r="26" fill="#FFF3DC" opacity=".9"/></svg></div></div>
+  </div></div></div><div class="base"></div></div>
+  <div class="pp" id="pp"><div class="phone"><div class="scr"><div class="notch"></div><div class="sb"><span>20:30</span><span class="bat"></span></div><div class="bl" id="bl2"><div class="pv" id="pv">
+    <div class="P-nav"><b>קו אופק<small>אדריכלות · רמת גן</small></b><span class="bg"></span></div>
+    <div class="P-img"><svg viewBox="0 0 362 280" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="psky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C9D6DF"/><stop offset="1" stop-color="#F3E6D2"/></linearGradient><linearGradient id="pw" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#F8F5F0"/><stop offset="1" stop-color="#D8D0C4"/></linearGradient><linearGradient id="pg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9DB4C4"/><stop offset=".5" stop-color="#3E4B58"/><stop offset="1" stop-color="#2A333D"/></linearGradient></defs>
+<rect width="362" height="280" fill="url(#psky)"/><rect y="230" width="362" height="50" fill="#B9BFA6"/>
+<rect x="30" y="110" width="210" height="120" fill="url(#pw)"/><rect x="20" y="102" width="300" height="9" fill="#2A2A2A"/>
+<rect x="46" y="126" width="110" height="104" fill="url(#pg)"/><path d="M46 126 L90 126 L46 170Z" fill="#fff" opacity=".22"/>
+<rect x="240" y="110" width="80" height="120" fill="#A07D53"/><g stroke="#6E5236" stroke-width="2" opacity=".7"><line x1="252" y1="110" x2="252" y2="230"/><line x1="266" y1="110" x2="266" y2="230"/><line x1="280" y1="110" x2="280" y2="230"/><line x1="294" y1="110" x2="294" y2="230"/><line x1="308" y1="110" x2="308" y2="230"/></g>
+<path d="M30 230 L320 230 L350 250 L0 250Z" fill="#000" opacity=".14"/><path d="M330 230 q12 -70 24 0" fill="#56704C"/></svg></div>
+    <div class="P-h">בתים שנבנים<br><em>סביב האור.</em></div>
+    <div class="P-p">תכנון בתים פרטיים ושיפוץ דירות, מהסקיצה ועד ההיתר.</div>
+    <div class="P-wa">{{WA}}<span>פגישת היכרות בוואטסאפ</span></div>
+    <div class="P-list"><div><span>בתים פרטיים</span><span>←</span></div><div><span>שיפוץ דירות</span><span>←</span></div><div><span>היתרי בנייה</span><span>←</span></div></div>
+  </div></div></div></div></div>
+  <div class="clue" id="k1" style="top:1350px"><i>1</i>קווים נקיים ואור טבעי</div>
+  <div class="clue" id="k2" style="top:1440px"><i>2</i>מהסקיצה הראשונה ועד המפתח</div>
+  <div class="clue" id="k3" style="top:1350px"><i>3</i>"בתים שנבנים סביב האור"</div>
+  
+  
+  <div class="fict" id="fict">קונספט · עסק בדוי</div>
+  <div id="end">
+   <span class="e-chip">אתר מלא לעסק אחד · עד 3.12</span>
+   <h1 class="e-h"><span class="ln"><span>ואם זה היה</span></span><span class="ln"><span><em>העסק שלכם?</em></span></span></h1>
+   <div class="e-was" id="e00">ב־4.12 נבחר את העסק שהכי צריך אתר,<br>והוא יקבל אתר מלא במתנה.</div>
+   <div class="e-l" id="e0">{{WA}}<span>שלחו <b>"מתנה"</b> + שם העסק:</span></div>
+   <div class="e-tel" id="e1">058-7336636</div>
+   <div class="e-sub" id="e3">רק הודעה בוואטסאפ נחשבת השתתפות</div>
+   <div class="e-p" id="e2"><span>כל משתתף: סקיצה בחינם</span><span>בלי התחייבות</span></div>
+  </div>
+  <div id="prog"></div>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+const T=12.8;
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x)), p=(t,a,b)=>cl((t-a)/(b-a));
+const eo=x=>1-Math.pow(1-x,3), eio=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+const show=(el,on)=>el.style.display=on?'':'none';
+function lines(id,tin,tout,pre,t){const el=$(id);show(el,t>=tin-0.01&&t<tout+0.4);
+ el.querySelectorAll('.ln>span').forEach((s,i)=>{let a=eo(p(t,tin+i*0.08,tin+i*0.08+0.4));if(pre)a=eo(cl(.55+t/0.35*.45-i*.07));const o=eio(p(t,tout+i*0.04,tout+i*0.04+0.28));s.style.transform=`translateY(${(1-a)*110-o*115}%)`})}
+window.render=function(t){
+ $('prog').style.width=(t/T*100)+'%';
+ lines('h1',0,2.6,true,t); lines('h2',2.8,4.9,false,t); lines('h3',5.15,7.5,false,t);
+ const out=eio(p(t,7.5,8.0));
+ $('offer').style.opacity=1-p(t,7.55,7.8);
+ // blur: 22px -> 10 (clue1) -> 5 (clue2) -> 2 (clue3) -> 0 at reveal 5.2
+ let b=14; b-=5*eio(p(t,0.0,0.9)); b-=6*eio(p(t,2.0,2.6)); b-=5*eio(p(t,3.6,4.2)); b-=3*eio(p(t,5.0,5.4));
+ const f=`blur(${Math.max(0,b).toFixed(2)}px) saturate(${(.6+.4*(1-b/14)).toFixed(2)})`; $('bl1').style.filter=f; $('bl2').style.filter=f;
+ // devices drift + exit
+ const drift=t*6; $('lap').style.transform=`translate(${drift*.3}px,${out*1200}px) scale(${0.93+0.07*eo(cl(t/1.0))+t*0.004})`; $('lap').style.opacity=1-out;
+ $('pp').style.transform=`translate(${-drift*.3}px,${-t*3+out*1300}px)`; $('pp').style.opacity=1-out;
+ $('pv').style.transform=`scale(.713) translateY(${-eio(p(t,5.6,7.2))*140}px)`;
+ // clues
+ const k=(id,a0,a1)=>{const a=eo(p(t,a0,a0+0.35))*(1-eio(p(t,a1,a1+0.25)));$(id).style.opacity=a;$(id).style.transform=`translateX(${(1-eo(p(t,a0,a0+0.35)))*-50}px)`};
+ k('k1',-0.5,3.4); k('k2',2.1,3.4); k('k3',3.7,5.0);
+ 
+ 
+ $('fict').style.opacity=(1-out);
+ const e=$('end'); show(e,t>=7.75);
+ const ea=eo(p(t,7.8,8.15)); e.querySelector('.e-chip').style.opacity=ea; e.querySelector('.e-chip').style.transform=`translateY(${(1-ea)*30}px)`;
+ e.querySelectorAll('.ln>span').forEach((s,i)=>{const a=eo(p(t,7.9+i*0.09,8.35+i*0.09));s.style.transform=`translateY(${(1-a)*110}%)`});
+ [['e00',8.25],['e0',8.5],['e1',8.7],['e3',8.85],['e2',9.0]].forEach(([id,a0])=>{const a=eo(p(t,a0,a0+0.4));$(id).style.opacity=a;$(id).style.transform=`translateY(${(1-a)*40}px)`});
+};
+window.T=T;
+if(!location.search.includes('rec')){let s=performance.now();(function f(){render(((performance.now()-s)/1000)%T);requestAnimationFrame(f)})()} else render(0);
+</script></body></html>
