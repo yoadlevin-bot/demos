@@ -1,0 +1,194 @@
+<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><link rel="stylesheet" href="base.css"><link rel="stylesheet" href="v4.css">
+<!-- REEL22 (28.11) DENTISTS + BF last 3 days (code שיניים). Format 8 "הטעות שעולה לקוחות": phone right with an OUTDATED fictional clinic site, 3 numbered blue callouts on the left with leader lines to circles on the phone; a glowing scan line sweeps down and rebuilds it as the new site, callouts flip to checks, finger taps WhatsApp. Dark navy + grid floor. Deterministic render(t). -->
+<style>
+html,body{width:1080px;height:1920px;overflow:hidden;background:#050A16;margin:0}
+.stage{position:absolute;inset:0;overflow:hidden;background:radial-gradient(50% 28% at 74% 52%,rgba(63,149,246,.3),transparent 72%),radial-gradient(40% 22% at 10% 8%,rgba(37,99,235,.18),transparent 70%),#050A16;color:#fff}
+#floor{position:absolute;left:0;top:0;width:1080px;height:1920px}
+.stage>.logo{top:262px;right:90px;bottom:auto;z-index:9}
+.stage>.logo img{height:62px}.stage>.logo .wm b{font-size:31px}.stage>.logo .wm small{font-size:14px}
+.offer{position:absolute;top:252px;left:80px;z-index:9;display:flex;flex-direction:column;align-items:flex-end;gap:12px}
+.offer .o1{display:inline-flex;align-items:center;gap:12px;background:#2563EB;color:#fff;font:800 31px/1 Heebo;padding:15px 24px;border-radius:99px;box-shadow:0 0 40px rgba(63,149,246,.5)}
+.offer .o1:before{content:"";width:11px;height:11px;border-radius:50%;background:#fff}
+.offer .o2{font:600 30px/1 Heebo;color:rgba(255,255,255,.85)}.offer .o2 b{font:900 48px/1 Heebo;color:#fff;text-shadow:0 0 24px rgba(63,149,246,.6)}.offer .o2 s{text-decoration-thickness:3px}
+.offer .o3{display:flex;align-items:center;gap:10px;font:900 40px/1 Heebo;direction:ltr;color:#fff}.offer .o3 svg{width:40px;height:40px;color:#25D366}
+.hl{position:absolute;right:90px;left:90px;top:450px;z-index:8}
+.H{font:900 88px/1.02 Heebo;letter-spacing:-.025em;white-space:nowrap;margin:0}
+.H em{font-style:normal;color:#3F95F6;text-shadow:0 0 44px rgba(63,149,246,.55)}
+.ln{display:block;overflow:hidden;padding:0 30px 16px;margin:0 -30px -10px}.ln>span{display:block}
+/* phone */
+.pp{position:absolute;left:600px;top:700px;width:400px;height:820px;z-index:5;filter:drop-shadow(0 50px 60px rgba(0,0,0,.7)) drop-shadow(0 0 50px rgba(63,149,246,.35))}
+.phone{width:400px;height:820px;border-radius:62px;background:linear-gradient(145deg,#2a3350,#0b0f1a 30%,#0b0f1a 70%,#2a3350);padding:14px;box-shadow:inset 0 0 0 2px #3a4566}
+.scr{width:372px;height:792px;border-radius:50px;overflow:hidden;position:relative;background:#fff}
+.notch{position:absolute;top:19px;left:50%;margin-left:-52px;width:104px;height:30px;border-radius:17px;background:#05070d;z-index:20}
+.sb{position:absolute;top:0;left:0;right:0;height:60px;z-index:19;background:#c9c9c4;display:flex;align-items:center;justify-content:space-between;padding:13px 38px 0;direction:ltr;font:700 19px/1 Heebo;color:#222}
+.sb .bat{width:28px;height:13px;border:2.2px solid currentColor;border-radius:5px;display:inline-block}
+.view{position:absolute;top:0;left:0;width:390px;transform-origin:0 0;transform:scale(.954)}
+/* OLD site */
+#old{background:#E9E9E6;color:#333;font-family:"Times New Roman",serif;height:830px}
+.o-top{padding:66px 10px 6px;background:#c9c9c4;font:11px/1.3 Arial,sans-serif;color:#444;display:flex;justify-content:space-between}
+.o-top b{font:bold 13px/1 "Times New Roman",serif;color:#335}
+.o-ban{margin:8px;height:150px;background:linear-gradient(180deg,#9aa6b2,#7d8794);display:grid;place-items:center;color:#fff;font:italic 22px/1 "Times New Roman",serif;text-shadow:1px 1px 0 #333;border:3px ridge #bbb}
+.o-p{padding:6px 12px;font:10.5px/1.45 Arial,sans-serif;color:#555;text-align:justify}
+.o-row{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:6px 10px}.o-row div{height:84px;background:#cfd2d6;border:1px solid #b5b8bc;font:10px/1.3 Arial;padding:5px;color:#666}
+.o-ft{margin:10px 10px 0;padding:8px;background:#c9c9c4;font:9.5px/1.4 Arial;color:#555}
+/* NEW site */
+#neu{position:absolute;inset:0;background:#F7FBFB;color:#12343B;clip-path:inset(0 0 100% 0);z-index:5}
+#neu .sbn{position:absolute;top:0;left:0;right:0;height:60px;background:#F7FBFB}
+.n-nav{padding:66px 22px 12px;display:flex;justify-content:space-between;align-items:center}
+.n-brand{display:flex;align-items:center;gap:10px}.n-brand i{width:40px;height:40px;border-radius:12px;background:#0E7C7B;display:grid;place-items:center}.n-brand i svg{width:24px;height:24px}
+.n-brand b{font:900 25px/1 Heebo;display:block}.n-brand small{font:600 11.5px/1 Heebo;color:#0E7C7B;display:block;margin-top:5px}
+.bg{width:24px;height:15px;border-top:2.5px solid currentColor;border-bottom:2.5px solid currentColor;position:relative}.bg:after{content:"";position:absolute;top:4px;left:0;right:0;border-top:2.5px solid currentColor}
+.n-hero{margin:0 14px;height:200px;border-radius:24px;overflow:hidden;position:relative;background:#D9F0EE}
+.n-hero svg{position:absolute;inset:0;width:100%;height:100%}
+.n-h{font:900 34px/1.08 Heebo;padding:16px 22px 0;letter-spacing:-.01em}.n-h em{font-style:normal;color:#0E7C7B}
+.n-p{font:400 15.5px/1.5 Heebo;color:#3F5A5F;padding:8px 22px 0}
+.n-wa{margin:14px 22px 0;display:flex;align-items:center;justify-content:center;gap:9px;background:#25D366;color:#073B1F;font:800 18px/1 Heebo;padding:17px;border-radius:14px;position:relative;box-shadow:0 10px 24px -10px rgba(37,211,102,.8)}.n-wa svg{width:22px;height:22px}
+.n-hrs{margin:12px 22px 0;display:flex;justify-content:space-between;font:700 15px/1 Heebo;background:#E3F1EF;border-radius:12px;padding:14px}
+.n-list{padding:8px 22px}.n-list div{border-top:1px solid rgba(18,52,59,.14);padding:14px 0;display:flex;justify-content:space-between;font:700 16px/1 Heebo}.n-list span:last-child{color:#0E7C7B}
+#scan{position:absolute;left:-10px;right:-10px;height:6px;background:#7FC0FF;box-shadow:0 0 24px 8px rgba(63,149,246,.85);z-index:15;opacity:0}
+.rip{position:absolute;left:50%;top:50%;width:40px;height:40px;margin:-20px;border-radius:50%;border:3px solid #fff;opacity:0}
+.toast{position:absolute;left:14px;right:14px;top:66px;background:#fff;border-radius:18px;padding:14px 16px;display:flex;gap:12px;align-items:center;box-shadow:0 18px 40px -12px rgba(0,0,0,.45);z-index:21;color:#1d2533;opacity:0}
+.toast i{width:40px;height:40px;border-radius:12px;background:#25D366;display:grid;place-items:center;flex:none}.toast i svg{width:24px;height:24px;color:#fff}
+.toast b{font:800 15px/1.2 Heebo;display:block}.toast small{font:500 13px/1.25 Heebo;color:#5b6575}
+.finger{position:absolute;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.9) 0 18%,rgba(255,255,255,.35) 19% 40%,transparent 41%);z-index:22;pointer-events:none;opacity:0}
+/* circles on phone (stage coords) */
+.ring{position:absolute;border:5px solid #3F95F6;border-radius:40px;box-shadow:0 0 26px rgba(63,149,246,.9),inset 0 0 18px rgba(63,149,246,.5);z-index:7;opacity:0}
+#lines{position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:6}
+/* callouts */
+.co{position:absolute;left:70px;width:470px;z-index:8;display:flex;align-items:center;gap:18px;opacity:0}
+.co .b{flex:none;width:72px;height:72px;border-radius:50%;display:grid;place-items:center;font:900 38px/1 Heebo;position:relative}
+.co .b .x,.co .b .v{position:absolute;inset:0;display:grid;place-items:center;border-radius:50%}
+.co .b .x{background:#0E1A33;border:3px solid #3F95F6;color:#9CC8FF}
+.co .b .v{background:#2563EB;color:#fff;box-shadow:0 0 26px rgba(63,149,246,.8);opacity:0}
+.co .b svg{width:38px;height:38px}
+.co .t{position:relative;font:800 40px/1.1 Heebo;height:96px;flex:1}
+.co .t span{position:absolute;right:0;top:50%;transform:translateY(-50%);white-space:nowrap}
+.co .t .tv{opacity:0;color:#fff}.co .t .tx{color:rgba(255,255,255,.92)}
+.co .t small{display:block;font:500 28px/1.2 Heebo;color:rgba(255,255,255,.72);margin-top:6px}
+.fict{position:absolute;left:80px;top:1440px;z-index:8;font:600 26px/1 Heebo;color:rgba(255,255,255,.72);display:flex;gap:10px;align-items:center}
+.fict:before{content:"";width:10px;height:10px;border-radius:50%;background:#3F95F6;box-shadow:0 0 12px #3F95F6}
+.tag{position:absolute;z-index:9;font:800 28px/1 Heebo;padding:12px 20px;border-radius:99px;opacity:0}
+#tOld{left:612px;top:650px;background:#1A2234;color:#C8D3E6;border:2px solid #44506a}
+#tNew{left:612px;top:650px;background:#2563EB;color:#fff;box-shadow:0 0 30px rgba(63,149,246,.6)}
+/* end */
+#end{position:absolute;right:90px;left:90px;top:470px;z-index:8}
+.e-chip{display:inline-flex;align-items:center;gap:12px;background:#2563EB;color:#fff;font:800 38px/1 Heebo;padding:18px 32px;border-radius:99px;box-shadow:0 0 40px rgba(63,149,246,.5)}
+.e-chip:before{content:"";width:12px;height:12px;border-radius:50%;background:#fff}
+.e-h{font:900 118px/1.02 Heebo;letter-spacing:-.025em;margin:34px 0 0}.e-h em{font-style:normal;color:#3F95F6;text-shadow:0 0 44px rgba(63,149,246,.55)}
+.e-was{font:600 44px/1 Heebo;color:rgba(255,255,255,.82);margin-top:22px}.e-was s{text-decoration-thickness:4px}
+.e-l{display:flex;align-items:center;gap:16px;font:600 46px/1.2 Heebo;color:rgba(255,255,255,.92);margin-top:70px}.e-l svg{width:58px;height:58px;color:#25D366;flex:none}.e-l b{color:#fff;font-weight:900}
+.e-tel{font:900 140px/1 Heebo;direction:ltr;text-align:right;color:#fff;margin-top:22px;text-shadow:0 0 50px rgba(63,149,246,.6);white-space:nowrap}
+.e-sub{font:600 36px/1.2 Heebo;color:rgba(255,255,255,.8);margin-top:18px}
+.e-p{display:flex;flex-wrap:wrap;gap:16px;margin-top:46px}.e-p .pill{font-size:34px;padding:16px 26px;white-space:nowrap}
+#prog{position:absolute;bottom:0;right:0;height:8px;background:#3F95F6;box-shadow:0 0 18px #3F95F6;z-index:12}
+</style></head><body>
+<div class="stage grain on-dark">
+  <svg id="floor" viewBox="0 0 1080 1920"></svg>
+  {{LOGO_D}}
+  <div class="offer" id="offer"><div class="o1">בלאק פריידיי · 3 ימים אחרונים</div><div class="o2"><b>2,490 ₪</b> במקום <s>2,900 ₪</s></div><div class="o3">{{WA}}<span>058-7336636</span></div></div>
+  <div class="hl" id="h1"><h1 class="H"><span class="ln"><span>מרפאות שיניים: הטעות</span></span><span class="ln"><span>ש<em>עולה לכם מטופלים.</em></span></span></h1></div>
+  <div class="hl" id="h2"><h1 class="H"><span class="ln"><span>מטופל לא מוצא</span></span><span class="ln"><span>איך <em>קובעים תור.</em></span></span></h1></div>
+  <div class="hl" id="h3"><h1 class="H"><span class="ln"><span>התיקון: תור</span></span><span class="ln"><span>ב<em>לחיצה אחת.</em></span></span></h1></div>
+  <span class="tag" id="tOld">לפני</span><span class="tag" id="tNew">אחרי</span>
+  <svg id="lines" viewBox="0 0 1080 1920"></svg>
+  <div class="ring" id="r1"></div><div class="ring" id="r2"></div><div class="ring" id="r3"></div>
+  <div class="co" id="c1" style="top:780px"><div class="b"><span class="x">1</span><span class="v">{{CKB}}</span></div><div class="t"><span class="tx">אין כפתור וואטסאפ</span><span class="tv">וואטסאפ בכל מסך</span></div></div>
+  <div class="co" id="c2" style="top:1010px"><div class="b"><span class="x">2</span><span class="v">{{CKB}}</span></div><div class="t"><span class="tx">טקסט קטן מדי</span><span class="tv">טקסט קריא בטלפון</span></div></div>
+  <div class="co" id="c3" style="top:1240px"><div class="b"><span class="x">3</span><span class="v">{{CKB}}</span></div><div class="t"><span class="tx">שעות וטלפון? קבורים</span><span class="tv">שעות קבלה גלויות</span></div></div>
+  <div class="pp" id="pp"><div class="phone"><div class="scr"><div class="notch"></div><div class="sb" id="sb"><span>15:00</span><span class="bat"></span></div>
+   <div class="view" id="old">
+    <div class="o-top"><b>מרפאת שיניים חיוך</b><span>ראשי | אודות | מאמרים | צור קשר</span></div>
+    <div class="o-ban">ברוכים הבאים לאתר!</div>
+    <div class="o-p">מרפאת השיניים שלנו מעניקה מגוון טיפולים לכל המשפחה. אנו מאמינים ביחס אישי ובסבלנות לכל מטופל ומטופלת. במרפאה ניתן לקבל טיפולים שונים בהתאם לצורך, בתיאום מראש מול המזכירות. למידע נוסף על הטיפולים השונים ניתן לעיין בעמודי האתר או לפנות אלינו בשעות הפעילות של המרפאה. אנו מזמינים אתכם להתרשם מהמרפאה ומהצוות.</div>
+    <div class="o-row"><div>טיפולים »<br>לחצו כאן לפרטים</div><div>מאמרים »<br>לחצו כאן לקריאה</div></div>
+    <div class="o-p">המרפאה ממוקמת במרכז העיר. חניה בסביבה. לשאלות ולבירורים ניתן לשלוח טופס באתר, ונחזור אליכם בהקדם האפשרי. תודה על פנייתכם.</div>
+    <div class="o-row"><div>גלריה »</div><div>שאלות »</div></div>
+    <div class="o-ft">© כל הזכויות שמורות · לתיאום תור יש לפנות למזכירות בשעות הקבלה · מפת האתר · תנאי שימוש</div>
+   </div>
+   <div id="neu"><div class="sbn"></div><div class="view">
+    <div class="n-nav"><div class="n-brand"><i><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"><path d="M7 3c-2.5 0-4 2-4 4.6 0 3 1.4 4.4 2 7.4.5 2.8 1 6 2.6 6 1.5 0 1.6-3.6 2.4-5.2.4-.8 1.6-.8 2 0 .8 1.6.9 5.2 2.4 5.2 1.6 0 2.1-3.2 2.6-6 .6-3 2-4.4 2-7.4C21 5 19.5 3 17 3c-2 0-3 1.2-5 1.2S9 3 7 3z"/></svg></i><div><b>חיוך</b><small>מרפאת שיניים · קריית אונו</small></div></div><span class="bg"></span></div>
+    <div class="n-hero"><svg viewBox="0 0 362 200" preserveAspectRatio="xMidYMid slice"><rect width="362" height="200" fill="#D9F0EE"/><circle cx="290" cy="40" r="90" fill="#fff" opacity=".55"/><circle cx="60" cy="190" r="110" fill="#0E7C7B" opacity=".08"/>
+     <g transform="translate(150 34)"><path d="M30 0c-14 0-22 11-22 25 0 17 8 25 11 41 3 16 6 34 15 34 8 0 9-20 13-29 2-4 9-4 11 0 4 9 5 29 13 29 9 0 12-18 15-34 3-16 11-24 11-41C97 11 89 0 75 0 64 0 58 7 52 7S41 0 30 0z" fill="#fff" stroke="#0E7C7B" stroke-width="3"/><path d="M78 16c6 2 9 8 9 14" stroke="#7FC9C3" stroke-width="5" stroke-linecap="round" fill="none"/></g>
+     <g fill="#0E7C7B"><circle cx="70" cy="60" r="4"/><circle cx="92" cy="44" r="2.5"/><circle cx="300" cy="150" r="3"/></g></svg></div>
+    <div class="n-h">טיפולי שיניים<br><em>בגישה רגועה.</em></div>
+    <div class="n-p">בדיקות, ניקוי אבנית והלבנה, בתיאום מראש.</div>
+    <div class="n-wa" id="vwa">{{WA}}<span>קביעת תור בוואטסאפ</span><span class="rip" id="rip"></span></div>
+    <div class="n-hrs"><span>א׳–ה׳</span><span dir="ltr">8:00–19:00</span></div>
+    <div class="n-list"><div><span>בדיקה וניקוי</span><span>←</span></div><div><span>הלבנת שיניים</span><span>←</span></div></div>
+   </div></div>
+   <div id="scan"></div>
+   <div class="toast" id="toast"><i>{{WA}}</i><div><b>ההודעה נשלחה</b><small>"היי, אפשר תור לבדיקה?"</small></div></div>
+   <div class="finger" id="fg"></div>
+  </div></div></div>
+  <div class="fict" id="fict">קונספט · עסק בדוי</div>
+  <div id="end">
+   <span class="e-chip">בלאק פריידיי · 3 ימים אחרונים</span>
+   <h1 class="e-h"><span class="ln"><span>אתר למרפאה</span></span><span class="ln"><span>ב־<em>2,490 ₪</em></span></span></h1>
+   <div class="e-was" id="e00">במקום <s>2,900 ₪</s>, עד יום שני 30.11</div>
+   <div class="e-l" id="e0">{{WA}}<span>שלחו <b>"שיניים"</b> + שם המרפאה:</span></div>
+   <div class="e-tel" id="e1">058-7336636</div>
+   <div class="e-sub" id="e3">הקישור לוואטסאפ בתיאור 👇</div>
+   <div class="e-p" id="e2"><span class="pill">סקיצה ראשונה בחינם</span><span class="pill">בלי התחייבות</span><span class="pill">נגישות לפי התקן</span></div>
+  </div>
+  <div id="prog"></div>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+const T=12.6;
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x)), p=(t,a,b)=>cl((t-a)/(b-a));
+const eo=x=>1-Math.pow(1-x,3), eio=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+const show=(el,on)=>el.style.display=on?'':'none';
+(function(){const s=$('floor'),hy=1290,cx=800;let g='<defs><linearGradient id="fg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3F95F6" stop-opacity="0"/><stop offset=".25" stop-color="#3F95F6" stop-opacity=".7"/><stop offset="1" stop-color="#3F95F6" stop-opacity=".85"/></linearGradient></defs><g stroke="url(#fg)" stroke-width="2" opacity=".72">';
+for(let i=-18;i<=18;i++){g+=`<line x1="${cx+i*14}" y1="${hy}" x2="${cx+i*260}" y2="1920"/>`}
+for(let k=1;k<12;k++){const y=hy+Math.pow(k/11,2.1)*630;g+=`<line x1="0" y1="${y.toFixed(1)}" x2="1080" y2="${y.toFixed(1)}"/>`}
+g+='</g><ellipse cx="'+cx+'" cy="'+hy+'" rx="600" ry="70" fill="#3F95F6" opacity=".22" filter="blur(30px)"/>';s.innerHTML=g})();
+// ring targets in stage coords (phone screen origin = 614,714)
+const R=[[804,1052,300,160],[804,1200,330,170],[804,1480,330,90]]; // cx,cy,w,h
+const RN=[[804,1080,320,90],[804,1132,340,140],[804,1142,330,70]];
+const CY=[828,1058,1288];
+const OLDT=['.o-ban','.o-p','.o-ft'], NEWT=['#vwa','.n-h','.n-hrs'];
+function box(sel){const r=document.querySelector(sel).getBoundingClientRect();return [r.left+r.width/2,r.top+r.height/2,Math.min(r.width+40,380),r.height+34]}
+function lines(id,tin,tout,pre,t){const el=$(id);show(el,t>=tin-0.01&&t<tout+0.4);
+ el.querySelectorAll('.ln>span').forEach((s,i)=>{let a=eo(p(t,tin+i*0.08,tin+i*0.08+0.4));if(pre)a=eo(cl(.55+t/0.35*.45-i*.07));const o=eio(p(t,tout+i*0.04,tout+i*0.04+0.28));s.style.transform=`translateY(${(1-a)*110-o*115}%)`})}
+window.render=function(t){
+ $('prog').style.width=(t/T*100)+'%';
+ lines('h1',0,2.55,true,t); lines('h2',2.75,4.6,false,t); lines('h3',4.85,7.45,false,t);
+ $('offer').style.opacity=1-p(t,7.55,7.8);
+ const rise=eo(cl(.4+t/0.6*.6)), out=eio(p(t,7.5,8.0));
+ const pp=$('pp'); pp.style.transform=`translateY(${(1-rise)*200+out*1300}px)`; pp.style.opacity=1-out;
+ $('fict').style.opacity=(1-out)*eo(cl(.5+t*2));
+ // old site slow scroll 0-3.8
+ $('old').style.transform=`scale(.954) translateY(${-eio(p(t,0.2,3.6))*30}px)`;
+ // scan 3.9 -> 5.0
+ const sc=eio(p(t,3.9,5.0)); $('neu').style.clipPath=`inset(0 0 ${(1-sc)*100}% 0)`; $('scan').style.top=(sc*792-3)+'px'; $('scan').style.opacity=(t>3.85&&t<5.1)?1:0;
+ $('sb').style.color='#222'; $('sb').style.background=sc>0.06?'#F7FBFB':'#c9c9c4';
+ $('tOld').style.opacity=1*(1-p(t,3.9,4.1)); $('tNew').style.opacity=eo(p(t,5.0,5.3))*(1-out);
+ // callouts + rings
+ const L=[];
+ [0,1,2].forEach(i=>{const a0=i==0?-0.4:0.35+i*0.75; const a=eo(p(t,a0,a0+0.35)); const fade=1-out;
+  const co=$('c'+(i+1)); co.style.opacity=a*fade; co.style.transform=`translateX(${(1-a)*-60}px)`;
+  const fl=eio(p(t,5.1+i*0.35,5.4+i*0.35));
+  co.querySelector('.x').style.opacity=1-fl; co.querySelector('.v').style.opacity=fl;
+  const tx=co.querySelector('.tx'),tv=co.querySelector('.tv'); tx.style.opacity=cl(1-fl*2); tv.style.opacity=cl(fl*2-1); tx.style.transform=`translateY(calc(-50% - ${fl*40}px))`; tv.style.transform=`translateY(calc(-50% + ${(1-fl)*40}px))`;
+  co.querySelector('.t').style.transform=`translateY(${0}px)`;
+  const r=$('r'+(i+1)); const ra=eo(p(t,a0+0.15,a0+0.5));
+  const vis=(t<3.95?ra:0)+(t>5.1?eo(p(t,5.1+i*0.35,5.45+i*0.35))*(1-p(t,6.9,7.3)):0);
+  const [cx,cy,w,h]=box(t<4.5?OLDT[i]:NEWT[i]);
+  r.style.left=(cx-w/2)+'px'; r.style.top=(cy-h/2)+'px'; r.style.width=w+'px'; r.style.height=h+'px'; r.style.opacity=vis*fade; r.style.transform=`scale(${1.25-0.25*(t<3.95?ra:eo(p(t,5.1+i*0.35,5.45+i*0.35)))})`;
+  if(vis*fade>0.02){L.push(`<line x1="540" y1="${CY[i]}" x2="${cx-w/2}" y2="${cy}" stroke="#3F95F6" stroke-width="3" stroke-dasharray="8 8" opacity="${(vis*fade*.8).toFixed(2)}"/>`)}
+ });
+ $('lines').innerHTML=L.join('');
+ // tap WA at 6.2 (new site WA button center ~ (804,1080))
+ const fa=p(t,5.9,6.15), fb=p(t,6.6,6.8); const fg=$('fg'); fg.style.opacity=fa*(1-fb); fg.style.left='130px'; fg.style.top=(312-40*(1-fa))+'px'; fg.style.transform=`scale(${1-0.15*Math.sin(Math.PI*p(t,6.15,6.35))})`;
+ const rp=p(t,6.25,6.75); $('rip').style.opacity=rp>0&&rp<1?1-rp:0; $('rip').style.transform=`scale(${1+rp*6})`;
+ const ta=eo(p(t,6.4,6.7))*(1-p(t,7.35,7.5)); $('toast').style.opacity=ta; $('toast').style.transform=`translateY(${(1-ta)*-40}px)`;
+ // end
+ const e=$('end'); show(e,t>=7.75);
+ const ea=eo(p(t,7.8,8.15)); e.querySelector('.e-chip').style.opacity=ea; e.querySelector('.e-chip').style.transform=`translateY(${(1-ea)*30}px)`;
+ e.querySelectorAll('.ln>span').forEach((s,i)=>{const a=eo(p(t,7.9+i*0.09,8.35+i*0.09));s.style.transform=`translateY(${(1-a)*110}%)`});
+ [['e00',8.25],['e0',8.5],['e1',8.7],['e3',8.85],['e2',9.0]].forEach(([id,a0])=>{const a=eo(p(t,a0,a0+0.4));$(id).style.opacity=a;$(id).style.transform=`translateY(${(1-a)*40}px)`});
+ const pu=t>9.7?Math.max(0,Math.sin((t-9.7)*Math.PI/0.9)):0; $('e1').style.textShadow=`0 0 ${50+30*pu}px rgba(63,149,246,${.6+.25*pu})`;
+};
+window.T=T;
+if(!location.search.includes('rec')){let s=performance.now();(function f(){render(((performance.now()-s)/1000)%T);requestAnimationFrame(f)})()} else render(0);
+</script></body></html>
