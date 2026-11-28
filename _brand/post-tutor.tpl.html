@@ -1,0 +1,76 @@
+<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><link rel="stylesheet" href="base.css"><link rel="stylesheet" href="v4.css"><style>
+/* POST (28.11) private tutors / learning centers + BF countdown (code לימוד). NEW "countdown" layout: giant outline numeral 3 on the left as the countdown, straight phone right with a learning-center concept site, full-width CTA band at the bottom. */
+html,body{margin:0}
+.slide{position:relative;width:1080px;height:1350px;overflow:hidden;background:radial-gradient(50% 36% at 68% 58%,rgba(63,149,246,.32),transparent 70%),radial-gradient(60% 30% at 0% 0%,rgba(37,99,235,.22),transparent 70%),#060B17;color:#fff}
+#floor{position:absolute;left:0;top:0;width:1080px;height:1350px}
+.slide>.logo{top:auto;bottom:58px;right:90px;z-index:7}
+.eb{position:absolute;top:80px;right:90px;display:inline-flex;align-items:center;gap:14px;background:#2563EB;color:#fff;font:800 32px/1 Heebo;padding:15px 28px;border-radius:99px;box-shadow:0 0 40px rgba(63,149,246,.45)}
+.eb:before{content:"";width:11px;height:11px;border-radius:50%;background:#fff}
+.h1{position:absolute;top:166px;right:90px;left:90px;font:900 104px/1.02 Heebo;letter-spacing:-.025em}
+.h1 em{font-style:normal;color:#3F95F6;text-shadow:0 0 44px rgba(63,149,246,.55)}
+.h1 .lt{font-weight:300;display:block;font-size:64px;margin-bottom:10px;color:rgba(255,255,255,.9)}
+/* countdown */
+.cd{position:absolute;left:80px;top:520px;width:440px;z-index:4;text-align:right}
+.cd .row{display:flex;align-items:center;gap:26px;direction:rtl}
+.cd .n{font:900 300px/.8 Heebo;color:#3F95F6;text-shadow:0 0 60px rgba(63,149,246,.55);letter-spacing:-.04em;order:2}
+.cd .l{font:900 62px/1.02 Heebo;order:1}.cd .l small{display:block;font:500 28px/1.2 Heebo;color:rgba(255,255,255,.82);margin-top:12px}.cd .l2{font:500 32px/1.2 Heebo;color:rgba(255,255,255,.82);margin-top:8px}
+.cd .pr{margin-top:56px;font:900 104px/1 Heebo;white-space:nowrap;text-shadow:0 0 40px rgba(63,149,246,.6)}
+.cd .was{font:600 32px/1 Heebo;color:rgba(255,255,255,.82);margin-top:10px}.cd .was s{text-decoration-thickness:4px}
+/* phone */
+#ph{position:absolute;right:96px;top:462px;width:410px;height:620px;z-index:5;filter:drop-shadow(0 46px 56px rgba(0,0,0,.65)) drop-shadow(0 0 60px rgba(63,149,246,.3))}
+.phone{width:410px;height:834px;border-radius:60px;background:linear-gradient(145deg,#2a3350,#0b0f1a 30%,#0b0f1a 70%,#2a3350);padding:13px;box-shadow:inset 0 0 0 2px #3a4566}
+.clip{position:absolute;inset:0;overflow:hidden;border-radius:60px 60px 0 0;height:586px}
+.scr{width:384px;height:808px;border-radius:48px;overflow:hidden;position:relative;background:#FBF7EF}
+.notch{position:absolute;top:18px;left:50%;margin-left:-50px;width:100px;height:29px;border-radius:16px;background:#05070d;z-index:20}
+.sb{position:absolute;top:0;left:0;right:0;height:58px;z-index:19;display:flex;align-items:center;justify-content:space-between;padding:13px 34px 0;direction:ltr;font:700 18px/1 Heebo;color:#1F3354;background:#FBF7EF}
+.sb .bat{width:27px;height:13px;border:2.2px solid currentColor;border-radius:5px;display:inline-block}
+.view{position:absolute;top:0;left:0;width:390px;transform:scale(.985);transform-origin:0 0;color:#1F3354}
+.c-nav{padding:68px 22px 14px;display:flex;justify-content:space-between;align-items:center}
+.c-brand{display:flex;align-items:center;gap:10px}.c-brand i{width:38px;height:38px;border-radius:11px;background:#1F3354;display:grid;place-items:center}.c-brand i svg{width:24px;height:24px}
+.c-brand b{font:900 26px/1 Heebo;display:block}.c-brand small{font:600 12px/1 Heebo;color:#9A7417;display:block;margin-top:5px}
+.bg{width:24px;height:15px;border-top:2.5px solid currentColor;border-bottom:2.5px solid currentColor;position:relative}.bg:after{content:"";position:absolute;top:4px;left:0;right:0;border-top:2.5px solid currentColor}
+.hero{margin:0 14px;height:214px;border-radius:22px;overflow:hidden;position:relative;background:#1F3354}
+.hero svg{position:absolute;inset:0;width:100%;height:100%}
+.c-h{font:900 34px/1.08 Heebo;padding:18px 22px 0}.c-h em{font-style:normal;background:linear-gradient(transparent 58%,#F2C14E 58%)}
+.c-p{font:400 15px/1.5 Heebo;color:#4A5568;padding:8px 22px 0}
+.c-wa{margin:14px 22px 0;display:flex;align-items:center;justify-content:center;gap:9px;background:#25D366;color:#073B1F;font:800 17px/1 Heebo;padding:16px;border-radius:14px;box-shadow:0 10px 24px -10px rgba(37,211,102,.8)}.c-wa svg{width:22px;height:22px}
+.hrs{margin:14px 22px 0;display:flex;justify-content:space-between;font:700 15px/1 Heebo;background:#EFE6D2;border-radius:12px;padding:14px}
+.subj{display:flex;gap:8px;padding:14px 22px 0;flex-wrap:wrap}.subj span{font:700 14px/1 Heebo;padding:9px 13px;border-radius:99px;background:#EFE6D2;color:#1F3354}
+/* CTA band */
+.band{position:absolute;left:60px;right:60px;top:1078px;height:126px;border-radius:30px;background:linear-gradient(90deg,#1D4FD8,#2563EB 60%,#3F7DF0);box-shadow:0 0 70px rgba(63,149,246,.4);z-index:6;display:flex;align-items:center;justify-content:space-between;padding:0 40px}
+.band .l1{display:flex;align-items:center;gap:14px;font:600 34px/1.15 Heebo}.band .l1 svg{width:50px;height:50px;color:#fff;flex:none}.band .l1 b{font-weight:900}
+.band .tel{font:900 64px/1 Heebo;direction:ltr;white-space:nowrap}
+.fict{position:absolute;top:1278px;left:92px;font:600 25px/1 Heebo;color:rgba(255,255,255,.72);display:flex;gap:10px;align-items:center;z-index:4}
+.fict:before{content:"";width:10px;height:10px;border-radius:50%;background:#3F95F6;box-shadow:0 0 12px #3F95F6}
+</style></head><body>
+<section class="slide grain on-dark">
+<svg id="floor" viewBox="0 0 1080 1350"></svg>
+{{LOGO_D}}
+<div class="eb">בלאק פריידיי · עד 30.11 כולל</div>
+<div class="h1"><span class="lt">מורים פרטיים ומרכזי לימוד:</span>הורים בודקים<br>אתכם <em>בגוגל</em> קודם.</div>
+<div class="cd"><div class="row"><div class="n">3</div><div class="l">ימים<br>אחרונים</div></div><div class="pr">2,490 ₪</div><div class="was">במקום <s>2,900 ₪</s></div></div>
+<div id="ph"><div class="clip"><div class="phone"><div class="scr"><div class="notch"></div><div class="sb"><span>12:30</span><span class="bat"></span></div>
+<div class="view">
+  <div class="c-nav"><div class="c-brand"><i><svg viewBox="0 0 24 24" fill="none" stroke="#F2C14E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18l5-6 4 3 7-9"/><path d="M15 6h5v5"/></svg></i><div><b>צעד</b><small>מרכז למידה · נס ציונה</small></div></div><span class="bg"></span></div>
+  <div class="hero"><svg viewBox="0 0 362 214" preserveAspectRatio="xMidYMid slice">
+   <rect width="362" height="214" fill="#1F3354"/><circle cx="300" cy="40" r="90" fill="#F2C14E" opacity=".14"/>
+   <g fill="none" stroke="rgba(251,247,239,.35)" stroke-width="1.6" font-family="Heebo"><text x="24" y="46" fill="rgba(251,247,239,.55)" stroke="none" font-size="22" font-weight="700" direction="ltr">x² + 5x = 24</text><text x="40" y="92" fill="rgba(251,247,239,.4)" stroke="none" font-size="18" direction="ltr">a² + b² = c²</text><path d="M30 120 l60 0 M30 120 l0 -60" /><path d="M30 120 Q60 70 90 66"/></g>
+   <g transform="translate(176 92)"><rect x="0" y="40" width="150" height="26" rx="4" fill="#F2C14E"/><rect x="10" y="16" width="134" height="26" rx="4" fill="#FBF7EF"/><rect x="-4" y="64" width="160" height="28" rx="4" fill="#E26D5A"/><rect x="18" y="20" width="4" height="18" fill="#1F3354" opacity=".5"/><rect x="18" y="45" width="4" height="16" fill="#1F3354" opacity=".4"/>
+   <g transform="rotate(-28 120 0)"><rect x="60" y="-30" width="110" height="14" rx="3" fill="#F2C14E"/><path d="M170 -30 l16 7 l-16 7z" fill="#FBF7EF"/><rect x="50" y="-30" width="12" height="14" rx="2" fill="#E26D5A"/></g></g>
+  </svg></div>
+  <div class="c-h">מתמטיקה ואנגלית,<br><em>בקבוצות קטנות.</em></div>
+  <div class="c-p">כיתות ז׳–י״ב, הכנה לבגרות ושיעורים פרטיים.</div>
+  <div class="c-wa">{{WA}}<span>תיאום שיעור בוואטסאפ</span></div>
+  <div class="subj"><span>מתמטיקה</span><span>אנגלית</span><span>בגרויות</span></div>
+  <div class="hrs"><span>א׳–ה׳</span><span dir="ltr">14:00–21:00</span></div>
+</div>
+</div></div></div></div>
+<div class="band"><div class="l1">{{WA}}<span>שלחו <b>"לימוד"</b><br>לסקיצה ראשונה בחינם:</span></div><div class="tel">058-7336636</div></div>
+<div class="fict">קונספט · עסק בדוי</div>
+</section>
+<script>
+(function(){const s=document.getElementById('floor'),hy=900,cx=760;let g='<defs><linearGradient id="fg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3F95F6" stop-opacity="0"/><stop offset=".25" stop-color="#3F95F6" stop-opacity=".7"/><stop offset="1" stop-color="#3F95F6" stop-opacity=".85"/></linearGradient></defs><g stroke="url(#fg)" stroke-width="2" opacity=".72">';
+for(let i=-16;i<=16;i++){g+=`<line x1="${cx+i*14}" y1="${hy}" x2="${cx+i*240}" y2="1350"/>`}
+for(let k=1;k<11;k++){const y=hy+Math.pow(k/10,2.1)*450;g+=`<line x1="0" y1="${y.toFixed(1)}" x2="1080" y2="${y.toFixed(1)}"/>`}
+g+='</g><ellipse cx="'+cx+'" cy="'+hy+'" rx="560" ry="60" fill="#3F95F6" opacity=".22" filter="blur(30px)"/>';s.innerHTML=g})();
+</script></body></html>
