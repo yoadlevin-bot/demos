@@ -19,3 +19,6 @@ Before each item: pick one not used in the last 5 items / 7 days. Same-day items
 | חלון | family/couples photographer | רעננה | off-white #FAF8F5 + ink #1C1C1A + olive #6B7A4B, golden-hour hero (generated soft-focus images in assets/gen) | post-photo | POST 26.11 |
 | זנב | veterinary clinic | ראש העין | forest green #1F3B33 + cream #F3EFE6 + sand/brass #B08540, paw icon, pets hero | reel20 | REEL 26.11 |
 | קו ישר | renovation contractor | מודיעין | concrete #ECE8E2 + charcoal #22201D + terracotta #B5543A, kitchen before/after images (assets/gen) | reel21 | REEL2 26.11 |
+| צעד | learning center (math/English, grades 7–12) | נס ציונה | cream #FBF7EF + ink navy #1F3354 + sunflower #F2C14E + coral, books/pencil hero | post-tutor | POST 28.11 |
+| חיוך | dental clinic | קריית אונו | OLD: grey Times/Arial 2005 look; NEW: mint-white #F7FBFB + teal #0E7C7B, tooth icon | reel22 | REEL 28.11 |
+| קו אופק | architecture studio | רמת גן | warm stone #F2EFEA + black #151515 + sand #8C7556, modernist house vector render (glass, wood slats, pool) | reel23 | REEL2 28.11 |
